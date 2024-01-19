@@ -1,0 +1,17 @@
+.sideText {
+    background: black;
+    color: white;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    border: 1px solid black;
+}
+
+td {
+    padding: 10px 0;
+}
