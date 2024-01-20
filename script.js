@@ -34,22 +34,22 @@ for (let i = 0; i < courseList.length; i++) {
             .then(res => res.json())
             .then(json => {
                 console.log(json[`${courseNumber}`].courseName);
-                document.querySelector("#courseName").textContent = `${courseNumber}, ${json[`${courseNumber}`].courseName}`; 
-                document.querySelector("#courseHours").textContent = json[`${courseNumber}`].courseHours; 
-                document.querySelector("#courseCredits").textContent = json[`${courseNumber}`].courseCredits; 
-                document.querySelector("#coursePrerequisite").textContent = json[`${courseNumber}`].coursePrerequisite; 
-                document.querySelector("#courseDescription").textContent = json[`${courseNumber}`].courseDescription; 
+                document.querySelector("#courseName").textContent = `${courseNumber}, ${json[`${courseNumber}`].courseName}`;
+                document.querySelector("#courseHours").textContent = json[`${courseNumber}`].courseHours;
+                document.querySelector("#courseCredits").textContent = json[`${courseNumber}`].courseCredits;
+                document.querySelector("#coursePrerequisite").textContent = json[`${courseNumber}`].coursePrerequisite;
+                document.querySelector("#courseDescription").textContent = json[`${courseNumber}`].courseDescription;
                 document.querySelector("#courseRepeatability").textContent = json[`${courseNumber}`].courseRepeatability;
-                document.querySelector("#courseCore").textContent = json[`${courseNumber}`].courseCore;  
-                document.querySelector("#courseFee").textContent = json[`${courseNumber}`].courseFee;  
+                document.querySelector("#courseCore").textContent = json[`${courseNumber}`].courseCore;
+                document.querySelector("#courseFee").textContent = json[`${courseNumber}`].courseFee;
                 return json;
             });
-            if (localStorage.getItem("openCourse") === "false") {
-                localStorage.setItem("openCourse", "true");
-                courseContainer.classList.toggle("fadeOut");
-                courseContainer.classList.toggle("fadeIn");
-                courseContainer.style.visibility = "visible";
-            }
+        if (localStorage.getItem("openCourse") === "false") {
+            localStorage.setItem("openCourse", "true");
+            courseContainer.classList.toggle("fadeOut");
+            courseContainer.classList.toggle("fadeIn");
+            courseContainer.style.visibility = "visible";
+        }
     })
 }
 

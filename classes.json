@@ -44,7 +44,7 @@
     "courseHours": "Lecture Contact Hours: 4, Lab Contact Hours: 3",
     "courseCredits": "Credit Hours: 4",
     "coursePrerequisite": "Credit for MATH 2312 with a grade of C- or higher, or a satisfactory score on a placement examination.",
-    "courseDescription": "Calculus of rational functions, limits, derivatives, applications of the derivative, antiderivatives, the definite integral with applications, mean value theorem, fundamental theorem of calculus, and numerical integration.    ",
+    "courseDescription": "Calculus of rational functions, limits, derivatives, applications of the derivative, antiderivatives, the definite integral with applications, mean value theorem, fundamental theorem of calculus, and numerical integration.",
     "courseRepeatability": "Yes",
     "courseCore": "(90) Core-Math/Reasoning, Component Area Option (20) Core-Mathematics TCCNS Equivalent: MATH 2413",
     "courseFee": "Y"
@@ -54,7 +54,7 @@
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
     "courseCredits": "Credit Hours: 4",
     "coursePrerequisite": "A grade of C- or better in COSC 1336, and credit for or concurrent enrollment in MATH 2413.",
-    "courseDescription": "Fundamental concepts of structured programming; procedures and elementary data structures with a focus on problem solving strategies and implementation; computer organization, structured procedural programming, C/C++ programming language, and algorithm design.    ",
+    "courseDescription": "Fundamental concepts of structured programming; procedures and elementary data structures with a focus on problem solving strategies and implementation; computer organization, structured procedural programming, C/C++ programming language, and algorithm design.",
     "courseRepeatability": "No",
     "courseCore": "",
     "courseFee": "N"
@@ -64,7 +64,7 @@
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
     "courseCredits": "Credit Hours: 3",
     "coursePrerequisite": "ENGL 1301 or equivalent.",
-    "courseDescription": "Detailed study of the principles of rhetoric as applied to analyzing and writing argumentative and persuasive essays; principles and methods of research, culminating in writing a substantial research paper.    ",
+    "courseDescription": "Detailed study of the principles of rhetoric as applied to analyzing and writing argumentative and persuasive essays; principles and methods of research, culminating in writing a substantial research paper.",
     "courseRepeatability": "No",
     "courseCore": "(10) Core-Communication TCCNS Equivalent: ENGL 1302",
     "courseFee": "Y"
@@ -84,7 +84,7 @@
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
     "courseCredits": "Credit Hours: 3",
     "coursePrerequisite": "",
-    "courseDescription": "Introduction to the institutions of government with an emphasis on the congress, the president, and the federal courts. (Introductory category.)    ",
+    "courseDescription": "Introduction to the institutions of government with an emphasis on the congress, the president, and the federal courts. (Introductory category.)",
     "courseRepeatability": "No",
     "courseCore": "(70) Core-Government/Political Science TCCNS Equivalent: GOVT 2305",
     "courseFee": "Y"
@@ -94,9 +94,149 @@
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 3",
     "courseCredits": "Credit Hours: 4",
     "coursePrerequisite": "Credit for MATH 2413 with a grade of C- or higher.",
-    "courseDescription": "Calculus of transcendental functions: additional techniques and applications of integration, indeterminate forms, improper integrals, Taylor’s formula, and infinite series.    ",
+    "courseDescription": "Calculus of transcendental functions: additional techniques and applications of integration, indeterminate forms, improper integrals, Taylor’s formula, and infinite series.",
     "courseRepeatability": "Yes",
     "courseCore": "(90) Core-Math/Reasoning, Component Area Option TCCNS Equivalent: MATH 2414",
+    "courseFee": "Y"
+  },
+  "COSC 2436": {
+    "courseName": "Programming and Data Structures",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
+    "courseCredits": "Credit Hours: 4",
+    "coursePrerequisite": "A grade of C- or better in COSC 1437 and credit for or concurrent enrollment in MATH 2414.",
+    "courseDescription": "Introduction to fundamental data structures: arrays, lists, stacks, queues, hash tables, trees; sorting and searching; graph algorithms; design, analysis, and comparison of algorithms. Correctness verification techniques such as assertions and invariants. Review program specification, unit testing, and debugging.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "N"
+  },
+  "COSC 2425": {
+    "courseName": "Computer Organization and Architecture",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
+    "courseCredits": "Credit Hours: 4",
+    "coursePrerequisite": "A grade of C- or better in COSC 1437.",
+    "courseDescription": "Low-level computer design, basics of digital design, and hardware/software interface; Principles of pipelining and caching, instruction pipelining, SIMD and multiprocessor systems.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "N"
+  },
+  "MATH 2318": {
+    "courseName": "Linear Algebra",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "Credit for or concurrent enrollment in MATH 2414.",
+    "courseDescription": "Solutions of systems of linear equations, matrices, vector spaces, linear transformations, similarity, eigenvalues and eigenvectors.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 3321": {
+    "courseName": "Engineering Mathematics",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "MATH 2414.",
+    "courseDescription": "First order ordinary differential equations and initial value problems; higher order differential equations; vector spaces, matrices, determinants, eigenvectors and eigenvalues; applications to systems of first order equations; Laplace transforms.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 3360": {
+    "courseName": "Fundamentals of Operating Systems",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "COSC majors and minors: A grade of C- or better in COSC 2436 and COSC 2425; CpE majors: A grade of C- or better in COSC 2320 AND ECE 5367.",
+    "courseDescription": "Operating system; sequential processes, concurrent processes, deadlock, mutual exclusion, semaphores; memory management, processor management, peripheral device management.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 3336": {
+    "courseName": "Discrete Mathematics",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "MATH 2318 or equivalent",
+    "courseDescription": "Topics selected from logic, set theory, combinatorics, and graph theory.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 3336": {
+    "courseName": "Computing Structures",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in MATH 2318 or MATH 3321, and COSC 2425.",
+    "courseDescription": "Introduce methods of reasoning used in computer science; logical notation and proof methods; induction and recursion; sets, functions, and relations; graphs; the growth of functions; annotated programs and loop invariants.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "N"
+  },
+  "COSC 3340": {
+    "courseName": "Introduction to Automata and Computability",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in MATH 3336, and COSC 2320 or COSC 2436.",
+    "courseDescription": "Introduction to automata theory (finite-state automata, push-down automata, Turing machines); formal systems (regular and context-free languages and grammars); computability, Church-Turing thesis.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 3320": {
+    "courseName": "Algorithms and Data Structures",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in MATH 3336, and COSC 2320 or COSC 2436.",
+    "courseDescription": "Algorithm analysis and design, heuristics; advanced tree structures; advanced hashing techniques; sorting and searching; graphs, sets. NP-Completeness, Time and Space complexities.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 3339": {
+    "courseName": "Statistics for the Sciences",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "MATH 2414.",
+    "courseDescription": "Graphical and descriptive methods in statistics, probability, random variables and distributions, sampling, estimation, hypothesis testing, regression, analysis of variance, exploratory and diagnostics, statistical computing.",
+    "courseRepeatability": "Yes",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 3380": {
+    "courseName": "Database Systems",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 2320 or COSC 2436.",
+    "courseDescription": "Declared Computer Science majors and minors, and Computer Engineering majors. Database design with ER model, relational model and normalization up to 3NF/BCNF normal forms. Relational algebra and basic SQL queries combining filters, joins and aggregations. SQL transaction processing. Overview of DBMS internal subsystems including: storage, indexing, query optimizer, locking, recovery manager, security mechanisms. Database application development.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4351": {
+    "courseName": "Fundamentals of Software Engineering",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "COSC majors and minors: A grade of C- or better in COSC 3320 and MATH 3336; CpE majors: A grade of C- or better in COSC 2320 and MATH 3336.",
+    "courseDescription": "Introduction to the concepts of software engineering. Identification of problems related to the development of large software systems. Software project planning, requirements analysis, design, implementation, quality assurance and maintenance.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4353": {
+    "courseName": "Software Design",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 3320, and MATH 3336 or COSC 3336.",
+    "courseDescription": "Object-oriented paradigm, classes, object relationship, software architecture, object modeling technique, design metrics, software development patterns, practices, and principles.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "blank": {
+    "courseName": "",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 3",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "",
+    "courseDescription": "",
+    "courseRepeatability": "Yes",
+    "courseCore": "",
     "courseFee": "Y"
   }
 }
