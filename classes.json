@@ -1,8 +1,8 @@
 {
     "users":[
       {
-          "site":"GeeksforGeeks",
-          "user": "Shobhit"
+          "courseName":"COSC 1336",
+          "title": "Computer Science and Programming"
       }
     ]
   }
