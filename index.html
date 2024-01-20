@@ -16,17 +16,19 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-4">
-        <img id="schoolLogo" src="./UH_Logo.png">
-      </div>
-      <div class="col-4" id="degreeHeading">
-        <h1>COLLEGE OF NATURAL SCIENCES & MATHEMATICS</h1>
-        <h2>Bachelor of Science, Computer Science</h2>
-        <h3>Four-Year Academic Map 2022-2023</h3>
-      </div>
-    </div>
+  <div class="container-fluid p-0">
+    <header>
+      <div class="row">
+        <div class="col-1">
+          <img id="schoolLogo" src="./UH_Logo.png">
+        </div>
+        <div class="col-10" id="degreeHeading">
+          <h1>COLLEGE OF NATURAL SCIENCES & MATHEMATICS</h1>
+          <h2>Bachelor of Science, Computer Science</h2>
+          <h3>Four-Year Academic Map 2022-2023</h3>
+        </div>
+      </div>  
+    </header>
     <div class="row" id="tableSection">
       <h1 class="sideText float-left">YEAR 1</h1>
       <div class="col p-0">
@@ -109,8 +111,12 @@
           </tbody>
         </table>
       </div>
-
     </div>
+    <footer>
+      <label class="switch">
+        <input type="checkbox">
+        <span id="toggleEmoji">☀️</span>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

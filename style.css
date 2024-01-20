@@ -7,14 +7,16 @@ body {
     background-size: cover;
 }
 
-#schoolLogo {
-    width: 150px;
-    height: 125px;
+header {
     margin: 50px;
 }
 
+#schoolLogo {
+    width: 150px;
+    height: 125px;
+}
+
 #degreeHeading {
-    margin: 50px;
     color: white;
     align-items: center;
     text-align: center;
@@ -78,4 +80,23 @@ tr:nth-child(even) {
 
 tfoot {
     border: 1px solid black;
+}
+
+
+.switch {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 50px;
+    padding: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input:checked + #toggleEmoji {
+    background-color: black;
 }
