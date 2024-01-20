@@ -1,16 +1,16 @@
-localStorage.setItem("toggleDark", "false");
-localStorage.setItem("openCourse", "false");
+sessionStorage.setItem("toggleDark", "false");
+sessionStorage.setItem("openCourse", "false");
 
 let toggleDark = document.querySelector("#toggleEmoji");
 let tableData = document.querySelectorAll("td");
 toggleDark.addEventListener("click", function () {
-    if (localStorage.getItem("toggleDark") === "false") {
-        localStorage.setItem("toggleDark", "true")
+    if (sessionStorage.getItem("toggleDark") === "false") {
+        sessionStorage.setItem("toggleDark", "true")
         toggleDark.innerHTML = "🌙";
         toggleFunction();
     }
     else {
-        localStorage.setItem("toggleDark", "false")
+        sessionStorage.setItem("toggleDark", "false")
         toggleDark.innerHTML = "☀️";
         toggleFunction();
     }
@@ -29,7 +29,10 @@ let courseList = document.querySelectorAll("tbody tr");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.querySelector('td:first-child').innerHTML;
-        console.log(`User clicked ${courseNumber}`);
+        if (courseNumber == "") {
+            //alert(this.tagName);
+            return;
+        }
         fetch("classes.json")
             .then(res => res.json())
             .then(json => {
@@ -44,8 +47,8 @@ for (let i = 0; i < courseList.length; i++) {
                 document.querySelector("#courseFee").textContent = json[`${courseNumber}`].courseFee;
                 return json;
             });
-        if (localStorage.getItem("openCourse") === "false") {
-            localStorage.setItem("openCourse", "true");
+        if (sessionStorage.getItem("openCourse") === "false") {
+            sessionStorage.setItem("openCourse", "true");
             courseContainer.classList.toggle("fadeOut");
             courseContainer.classList.toggle("fadeIn");
             courseContainer.style.visibility = "visible";
@@ -55,12 +58,24 @@ for (let i = 0; i < courseList.length; i++) {
 
 let courseClose = document.querySelector("#courseClose");
 courseClose.addEventListener("click", function () {
-    if (localStorage.getItem("openCourse") === "true") {
+    if (sessionStorage.getItem("openCourse") === "true") {
         setTimeout(function () {
             courseContainer.style.visibility = "hidden";
         }, 1000)
         courseContainer.classList.toggle("fadeIn");
         courseContainer.classList.toggle("fadeOut");
-        localStorage.setItem("openCourse", "false");
+        sessionStorage.setItem("openCourse", "false");
     }
 })
+
+let selectOptions = document.querySelectorAll("select");
+for (let i = 0; i < selectOptions.length; i++) {
+    selectOptions[i].addEventListener("change", function() {
+        console.log(`Selected ${this.value}`);
+        if (this.value === "none") {
+            this.parentNode.parentNode.querySelector("td:first-child").textContent = "";
+            return;
+        }
+        this.parentNode.parentNode.querySelector("td:first-child").textContent = this.value;
+    })
+}
