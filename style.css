@@ -153,6 +153,11 @@ tr:nth-child(even) {
     border-right: 1px solid black;
 }
 
+select {
+    width: 75%;
+}
+
+
 tfoot {
     border: 1px solid black;
 }
