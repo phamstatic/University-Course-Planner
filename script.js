@@ -21,16 +21,24 @@ const toDark = function() {
     }
 }
 
+let courseContainer = document.querySelector("#courseContainer");
+
 let courseList = document.querySelectorAll("tbody tr");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function() {
         let courseNumber = this.querySelector('td:first-child').innerHTML;
         console.log(`User clicked ${courseNumber}`);
+        courseContainer.classList.toggle("fadeOut");
+        courseContainer.classList.toggle("fadeIn");
+        courseContainer.style.visibility = "visible";
     })
 }
 
 let courseClose = document.querySelector("#courseClose");
-let courseContainer = document.querySelector("#courseContainer");
 courseClose.addEventListener("click", function() {
-    courseContainer.classList.toggle("fade");
+    setTimeout(function() {
+        courseContainer.style.visibility = "hidden";    
+    }, 1000)
+    courseContainer.classList.toggle("fadeIn");
+    courseContainer.classList.toggle("fadeOut");
 })
