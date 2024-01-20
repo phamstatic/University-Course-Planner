@@ -19,7 +19,8 @@ toggleDark.addEventListener("click", function () {
 const toggleFunction = function () {
     document.querySelector("body").classList.toggle("darkMode");
     for (let i = 0; i < tableData.length; i++) {
-        tableData[i].classList.toggle("darkMode");    }
+        tableData[i].classList.toggle("darkMode");
+    }
 }
 
 let courseContainer = document.querySelector("#courseContainer");

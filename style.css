@@ -127,10 +127,13 @@ td, th {
 
 tbody tr:hover {
     text-shadow: 1px 1px black;
+    text-decoration: underline;
+    text-decoration-color: white;
+    
 }
 
 td.darkMode {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
