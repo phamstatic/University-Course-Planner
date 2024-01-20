@@ -20,7 +20,7 @@ h3 {
 }
 
 header {
-    margin: 50px;
+    margin: 50px 50px 20px 50px;
 }
 
 #schoolLogo {
@@ -33,6 +33,12 @@ header {
     align-items: center;
     text-align: center;
     justify-content: center;
+}
+
+meter {
+    margin-top: 20px;
+    width: 250px;
+    height: 25px;  
 }
 
 #courseClose {
