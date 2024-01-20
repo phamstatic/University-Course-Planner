@@ -2,24 +2,24 @@ localStorage.setItem("toggleDark", "false");
 localStorage.setItem("openCourse", "false");
 
 let toggleDark = document.querySelector("#toggleEmoji");
+let tableData = document.querySelectorAll("td");
 toggleDark.addEventListener("click", function () {
     if (localStorage.getItem("toggleDark") === "false") {
         localStorage.setItem("toggleDark", "true")
         toggleDark.innerHTML = "🌙";
-        toDark();
+        toggleFunction();
     }
     else {
         localStorage.setItem("toggleDark", "false")
         toggleDark.innerHTML = "☀️";
+        toggleFunction();
     }
 })
 
-let tableData = document.querySelectorAll("td");
-const toDark = function () {
+const toggleFunction = function () {
+    document.querySelector("body").classList.toggle("darkMode");
     for (let i = 0; i < tableData.length; i++) {
-        tableData[i].style.backgroundColor = "black";
-        tableData[i].style.color = "white";
-    }
+        tableData[i].classList.toggle("darkMode");    }
 }
 
 let courseContainer = document.querySelector("#courseContainer");
@@ -32,7 +32,6 @@ for (let i = 0; i < courseList.length; i++) {
         fetch("classes.json")
             .then(res => res.json())
             .then(json => {
-                // Do whatever you want
                 console.log(json[`${courseNumber}`].courseName);
                 document.querySelector("#courseName").textContent = `${courseNumber}, ${json[`${courseNumber}`].courseName}`; 
                 document.querySelector("#courseHours").textContent = json[`${courseNumber}`].courseHours; 

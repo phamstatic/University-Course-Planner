@@ -1,10 +1,14 @@
 body {
     font-family: sans-serif, arial;
-    background-image: linear-gradient(180deg, rgb(0, 0, 0.75), rgba(0, 0, 0, 0.35)), url('./UH_Background.jpg');
+    background-image: linear-gradient(180deg, rgb(1, 0, 0), rgba(0, 0, 0, 0.35)), url('./UH_Background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+}
+
+body.darkMode {
+    background-image: linear-gradient(180deg, rgba(96, 0, 0, 0.321), rgba(0, 0, 0, 0.35)), url('./UH_BackgroundDark.jpg');
 }
 
 h1 {
@@ -54,14 +58,17 @@ meter {
 }
 
 #courseContainer {
+    width: 800px;
+    height: 500px;
     z-index: 1;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 25px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.767);
     color: white;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s;
@@ -75,6 +82,10 @@ meter {
     opacity: 1;
 }
 
+
+#courseName {
+    text-shadow: 2px 2px 2px rgb(180, 0, 0);
+}
 
 .courseBody div {
     margin: 10px 0px 10px 0px;
@@ -116,6 +127,11 @@ td, th {
 
 tbody tr:hover {
     text-shadow: 1px 1px black;
+}
+
+td.darkMode {
+    background-color: black;
+    color: white;
 }
 
 tr:nth-child(odd) {
