@@ -1,6 +1,7 @@
-var courseList = document.querySelectorAll('tbody tr');
+let courseList = document.querySelectorAll('tbody tr');
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function() {
-        alert("Clicked a course.");
+        let courseNumber = this.querySelector('td:first-child').innerHTML;
+        console.log(`User clicked ${courseNumber}`);
     })
 }
