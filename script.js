@@ -1,4 +1,5 @@
 localStorage.setItem("toggleDark", "false");
+localStorage.setItem("openCourse", "false");
 
 let toggleDark = document.querySelector("#toggleEmoji");
 toggleDark.addEventListener("click", function () {
@@ -43,17 +44,23 @@ for (let i = 0; i < courseList.length; i++) {
                 document.querySelector("#courseFee").textContent = json[`${courseNumber}`].courseFee;  
                 return json;
             });
-        courseContainer.classList.toggle("fadeOut");
-        courseContainer.classList.toggle("fadeIn");
-        courseContainer.style.visibility = "visible";
+            if (localStorage.getItem("openCourse") === "false") {
+                localStorage.setItem("openCourse", "true");
+                courseContainer.classList.toggle("fadeOut");
+                courseContainer.classList.toggle("fadeIn");
+                courseContainer.style.visibility = "visible";
+            }
     })
 }
 
 let courseClose = document.querySelector("#courseClose");
 courseClose.addEventListener("click", function () {
-    setTimeout(function () {
-        courseContainer.style.visibility = "hidden";
-    }, 1000)
-    courseContainer.classList.toggle("fadeIn");
-    courseContainer.classList.toggle("fadeOut");
+    if (localStorage.getItem("openCourse") === "true") {
+        setTimeout(function () {
+            courseContainer.style.visibility = "hidden";
+        }, 1000)
+        courseContainer.classList.toggle("fadeIn");
+        courseContainer.classList.toggle("fadeOut");
+        localStorage.setItem("openCourse", "false");
+    }
 })
