@@ -349,14 +349,74 @@
     "courseCore": "",
     "courseFee": "Y"
   },
-  "blank": {
+  "DANC 2303": {
+    "courseName": "Introduction to Dance",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302.",
+    "courseDescription": "An introductory class to dance as an art form with an overview of the dance techniques, history, and choreography of major dance genres.",
+    "courseRepeatability": "Yes",
+    "courseCore": "(81) Core-Writing in Discipline WID (50) Core-Creative Arts TCCNS Equivalent: DANC 2303",
+    "courseFee": "Y"
+  },
+  "DANC 2323": {
+    "courseName": "Dance in Film and Cinematic Media",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "None.",
+    "courseDescription": "(50) Core-Creative Arts",
+    "courseRepeatability": "Yes",
+    "courseCore": "This course is a study of dance in cinematic media from early Hollywood movie musicals to contemporary cinema with a specific focus on dance as a non-verbal form of communication to express emotion and develop plot. The curriculum addresses current issues as seen through the lens of dance on film. Such topics include racism in Hollywood, gender and politics, and urban renewal. Assignments include readings, video viewings, scene analysis, group assignments, quizzes, and a video submission.",
+    "courseFee": "Y"
+  },
+  "MUSI 1307": {
+    "courseName": "Listening to Classical Music",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302.",
+    "courseDescription": "An introduction to the masterworks of Western music from Gregorian chant to the present.",
+    "courseRepeatability": "No",
+    "courseCore": "(50) Core-Creative Arts TCCNS Equivalent: MUSI 1307",
+    "courseFee": "Y"
+  },
+  "MUSI 2302": {
+    "courseName": "Listening to Jazz",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302.",
+    "courseDescription": "Introduction to jazz listening and jazz history through the study of specific works in historical and cultural contexts.",
+    "courseRepeatability": "No",
+    "courseCore": "(50) Core-Creative Arts",
+    "courseFee": "Y"
+  },
+  "PHIL 1361": {
+    "courseName": "Philosophy and the Arts",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1301.",
+    "courseDescription": "Introduction to philosophical topics in the visual and performing arts, including criticism, interpretation, moral issues, and cultural contexts.",
+    "courseRepeatability": "No",
+    "courseCore": "(50) Core-Creative Arts",
+    "courseFee": "Y"
+  },
+  "a": {
     "courseName": "",
-    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 1",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
     "coursePrerequisite": "",
     "courseDescription": "",
-    "courseRepeatability": "",
+    "courseRepeatability": "Yes",
     "courseCore": "",
-    "courseFee": ""
+    "courseFee": "Y"
+  },
+  "b": {
+    "courseName": "",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "",
+    "courseDescription": "",
+    "courseRepeatability": "Yes",
+    "courseCore": "",
+    "courseFee": "Y"
   }
 }
