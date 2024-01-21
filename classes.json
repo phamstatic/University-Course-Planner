@@ -439,6 +439,66 @@
     "courseCore": "(81) Core-Writing in Discipline WID",
     "courseFee": "Y"
   },
+  "AAMS 2300": {
+    "courseName": "Introduction to Asian American Studies",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302.",
+    "courseDescription": "Course Description: Introduces students to interdisciplinary analyses of Asian peoples as a “race” and multi-ethnicities in the US. Examines some of the dominant historical experiences and issues that shape Asian American. Explores the diversity and complexity of Asian American histories and experiences within the context of US race and ethnic relations.",
+    "courseRepeatability": "No",
+    "courseCore": "(80) Core-Social & Behavioral Science",
+    "courseFee": "Y"
+  },
+  "ANTH 2301": {
+    "courseName": "Introduction to Physical Anthropology",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "Concurrent enrollment in or completion of ENGL 1301 or equivalent.",
+    "courseDescription": "Physical anthropology emphasizing origins and biological diversity of human populations.",
+    "courseRepeatability": "No",
+    "courseCore": "(80) Core-Social & Behavioral Science TCCNS Equivalent: ANTH 2301",
+    "courseFee": "Y"
+  },
+  "ANTH 2302": {
+    "courseName": "Introduction to Archeology",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "Concurrent enrollment in or completion of ENGL 1301 or equivalent.",
+    "courseDescription": "An introduction to the history, methods, and theory within modern archaeology, including discussion of data collection, analysis, dating techniques, and interpretation.",
+    "courseRepeatability": "No",
+    "courseCore": "(80) Core-Social & Behavioral Science TCCNS Equivalent: ANTH 2302",
+    "courseFee": "Y"
+  },
+  "ECON 2301": {
+    "courseName": "Principles of Macroeconomics",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "MATH 1314 or equivalent or consent of instructor.",
+    "courseDescription": "Aggregate economy, inflation, recession, and economic policy. Economic growth, business cycle theory, and international trade.",
+    "courseRepeatability": "No",
+    "courseCore": "(80) Core-Social & Behavioral Science TCCNS Equivalent: ECON 2301",
+    "courseFee": "Y"
+  },
+  "KIN 1304": {
+    "courseName": "Public Health Issues in Physical Activity and Obesity",
+    "courseHours": "Lecture Contact Hours: 2, Lab Contact Hours: 1",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "",
+    "courseDescription": "Analysis of the effect of obesity and physical activity on disease risk and the effect of aerobic exercise on weight control and health promotion.",
+    "courseRepeatability": "",
+    "courseCore": "(80) Core-Social & Behavioral Science",
+    "courseFee": ""
+  },
+  "SOCI 1301": {
+    "courseName": "Introduction To Sociology",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "",
+    "courseDescription": "Major theories, methods; and findings pertaining to the study of societies, institutions, organizations, and groups. The interrelationships of society, culture, and personality.",
+    "courseRepeatability": "No",
+    "courseCore": "(80) Core-Social & Behavioral Science TCCNS Equivalent: SOCI 1301    ",
+    "courseFee": "Y"
+  },
   "a": {
     "courseName": "",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
