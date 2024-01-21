@@ -29,7 +29,7 @@ let courseList = document.querySelectorAll("tbody tr");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.querySelector('td:first-child').innerHTML;
-        if (courseNumber == "" || courseNumber == "advanced") {
+        if (courseNumber === "" || courseNumber === "COSC XXX") {
             //alert(this.tagName);
             return;
         }
@@ -77,7 +77,8 @@ for (let i = 0; i < selectOptions.length; i++) {
             return;
         }
         else if (this.value === "advanced") {
-            this.parentNode.parentNode.querySelector("td:first-child").textContent = "Advanced Computer Science Elective";
+            this.parentNode.parentNode.querySelector("td:first-child").textContent = "COSC XXX";
+            return;
         }
         this.parentNode.parentNode.querySelector("td:first-child").textContent = this.value;
     })
