@@ -1,6 +1,7 @@
-sessionStorage.setItem("toggleDark", "false");
-sessionStorage.setItem("openCourse", "false");
+sessionStorage.setItem("toggleDark", "false"); // Checks if dark mode is enasbled.
+sessionStorage.setItem("openCourse", "false"); // Checks if the course information display is open.
 
+// Dark Mode Functionality
 let toggleDark = document.querySelector("#toggleEmoji");
 let tableData = document.querySelectorAll("td");
 toggleDark.addEventListener("click", function () {
@@ -23,14 +24,14 @@ const toggleFunction = function () {
     }
 }
 
-let courseContainer = document.querySelector("#courseContainer");
 
+// Course Display Functionality
+let courseContainer = document.querySelector("#courseContainer");
 let courseList = document.querySelectorAll("tbody tr");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.querySelector('td:first-child').innerHTML;
         if (courseNumber === "" || courseNumber === "COSC XXX") {
-            //alert(this.tagName);
             return;
         }
         fetch("classes.json")
@@ -68,9 +69,23 @@ courseClose.addEventListener("click", function () {
     }
 })
 
+// Load Save Options From Local Storage
 let selectOptions = document.querySelectorAll("select");
+function loadOptions() {
+    for (let i = 0; i < selectOptions.length; i++) {
+        if (localStorage.getItem(`${selectOptions[i].id}`) !== null) {
+            console.log(`Loaded ${selectOptions[i].id} with ${localStorage.getItem(`${selectOptions[i].id}`)}`);
+            selectOptions[i].value = localStorage.getItem(`${selectOptions[i].id}`);
+        }
+        //selectOptions[i].value = "none";
+    }
+    console.log("Finished loading!");
+}
+loadOptions();
+
+// Select + Update Options Functionality
 for (let i = 0; i < selectOptions.length; i++) {
-    selectOptions[i].addEventListener("change", function() {
+    selectOptions[i].addEventListener("change", function() { // Updates the table with user's choice
         console.log(`Selected ${this.value}`);
         if (this.value === "none") {
             this.parentNode.parentNode.querySelector("td:first-child").textContent = "";
@@ -81,5 +96,6 @@ for (let i = 0; i < selectOptions.length; i++) {
             return;
         }
         this.parentNode.parentNode.querySelector("td:first-child").textContent = this.value;
+        localStorage.setItem(`${this.id}`, `${this.value}`);
     })
 }

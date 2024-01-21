@@ -162,7 +162,6 @@ select option[value="none"], select option[value="advanced"] {
     font-style: italic;
 }
 
-
 tfoot {
     border: 1px solid black;
 }
