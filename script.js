@@ -1,7 +1,8 @@
-sessionStorage.setItem("toggleDark", "false"); // Handler for Dark Mode
-sessionStorage.setItem("openCourse", "false"); // Handler for Course Display
+// Session handlers for dark mode and the course display user interface.
+sessionStorage.setItem("toggleDark", "false");
+sessionStorage.setItem("openCourse", "false"); 
 
-// Dark Mode Functionality
+// Functionality for the dark mode feature.
 let toggleDark = document.querySelector("#toggleEmoji");
 let tableData = document.querySelectorAll("td");
 toggleDark.addEventListener("click", function () {
@@ -24,8 +25,7 @@ const toggleFunction = function () {
     }
 }
 
-
-// Course Display Functionality
+// Functionality for the course display user interface.
 let courseContainer = document.querySelector("#courseContainer");
 let courseList = document.querySelectorAll("tbody tr");
 for (let i = 0; i < courseList.length; i++) {
@@ -69,7 +69,7 @@ courseClose.addEventListener("click", function () {
     }
 })
 
-// Load Save Options From Local Storage
+// Loads all saved courses from the LocalStorage into the table.
 let selectOptions = document.querySelectorAll("select");
 function loadOptions() {
     for (let i = 0; i < selectOptions.length; i++) {
@@ -88,7 +88,7 @@ function loadOptions() {
 }
 loadOptions();
 
-// Options Handler
+// Places all chosen courses into an array and hides the options in the table.
 const chosenClasses = [];
 const hideTakenOptions = function() {
     for (let i = 0; i < selectOptions.length; i++) {
@@ -105,7 +105,7 @@ const hideTakenOptions = function() {
     }
 }
 
-// Reshows the courses that are no longer chosen
+// Removes non-chosen courses from the array and reshows the options on the table.
 const showUntakenOptions = function(courseValue) {
     let allOptions = document.querySelectorAll(`option[value="${courseValue}"]`);
     for (let i = 0; i < allOptions.length; i++) {
@@ -115,7 +115,7 @@ const showUntakenOptions = function(courseValue) {
     }
 }
 
-// Select + Update Options Functionality
+// Functionality and event listener for course selection.
 for (let i = 0; i < selectOptions.length; i++) {
     selectOptions[i].addEventListener("change", function() { // Updates the table with user's choice
         console.log(`Selected ${this.value}`);
@@ -138,4 +138,5 @@ for (let i = 0; i < selectOptions.length; i++) {
     })
 }
 
+// Clears the LocalStorage.
 localStorage.clear();
