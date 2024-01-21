@@ -76,8 +76,13 @@ function loadOptions() {
         if (localStorage.getItem(`${selectOptions[i].id}`) !== null) {
             console.log(`Loaded ${selectOptions[i].id} with ${localStorage.getItem(`${selectOptions[i].id}`)}`);
             selectOptions[i].value = localStorage.getItem(`${selectOptions[i].id}`);
+            if (localStorage.getItem(`${selectOptions[i].id}`) === "none") {
+                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = "";
+            }
+            else {
+                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = `${localStorage.getItem(`${selectOptions[i].id}`)}`;
+            }
         }
-        //selectOptions[i].value = "none";
     }
     console.log("Finished loading!");
 }
@@ -89,10 +94,12 @@ for (let i = 0; i < selectOptions.length; i++) {
         console.log(`Selected ${this.value}`);
         if (this.value === "none") {
             this.parentNode.parentNode.querySelector("td:first-child").textContent = "";
+            localStorage.setItem(`${this.id}`, `${this.value}`);
             return;
         }
         else if (this.value === "advanced") {
             this.parentNode.parentNode.querySelector("td:first-child").textContent = "COSC XXX";
+            localStorage.setItem(`${this.id}`, `${this.value}`);
             return;
         }
         this.parentNode.parentNode.querySelector("td:first-child").textContent = this.value;
