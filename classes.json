@@ -229,14 +229,134 @@
     "courseCore": "",
     "courseFee": "Y"
   },
-  "blank": {
-    "courseName": "",
-    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 3",
+  "GEOL 1302": {
+    "courseName": "Intro To Global Climate Change",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
     "courseCredits": "Credit Hours: 3",
-    "coursePrerequisite": "",
-    "courseDescription": "",
-    "courseRepeatability": "Yes",
+    "coursePrerequisite": "Credit for, placement out of, or concurrent enrollment in MATH 1314 or MATH 1324 or MATH 1332 (formerly MATH 1310 or MATH 1313, or MATH 1311).",
+    "courseDescription": "Examines how past climate records and models provide a better understanding of possible future climate changes. Greenhouse gases, solar output, Earth’s orbit, and anthropogenic effects.",
+    "courseRepeatability": "No",
+    "courseCore": "(30) Core-Life & Physical Sciences",
+    "courseFee": "Y"
+  },
+  "GEOL 1303": {
+    "courseName": "Physical Geology",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "Credit for, placement out of, or concurrent enrollment in MATH 1314 or MATH 1324 or MATH 1332 (formerly MATH 1310, or MATH 1313, or MATH 1311).",
+    "courseDescription": "Principles of geology; emphasis on surface and internal processes of the earth.",
+    "courseRepeatability": "No",
+    "courseCore": "(30) Core-Life & Physical Sciences TCCNS Equivalent: GEOL 1303",
+    "courseFee": "Y"
+  },
+  "GEOL 1304": {
+    "courseName": "Historical Geology",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "GEOL 1303, and credit for, placement out of, or concurrent enrollment in MATH 1314 or MATH 1324 or MATH 1332 (formerly GEOL 1330, MATH 1310 or MATH 1313 or MATH 1311).",
+    "courseDescription": "Geologic history of the earth; introduction to the uses of geological principles to interpret earth history.",
+    "courseRepeatability": "No",
+    "courseCore": "(30) Core-Life & Physical Sciences TCCNS Equivalent: GEOL 1304",
+    "courseFee": "Y"
+  },
+  "GEOL 1340": {
+    "courseName": "Earth Systems",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "MATH 1314 or MATH 1324 or MATH 1332 (formerly MATH 1310 or MATH 1313, or MATH 1311).",
+    "courseDescription": "Earth’s dynamic systems emphasizing the interactions among the atmosphere, hydrosphere and lithosphere. Includes the processes by which the earth was formed and continues to be modified as well as how humans affect and are affected by those processes.",
+    "courseRepeatability": "No",
+    "courseCore": "(30) Core-Life & Physical Sciences",
+    "courseFee": "Y"
+  },
+  "GEOL 1370": {
+    "courseName": "Natural Disasters",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "MATH 1314 or MATH 1332.",
+    "courseDescription": "The scientific study of the geology, meteorology, oceanography, and climatology of common natural disasters.",
+    "courseRepeatability": "No",
+    "courseCore": "(30) Core-Life & Physical Sciences",
+    "courseFee": "Y"
+  },
+  "PHYS 2325": {
+    "courseName": "University Physics I (lecture)    ",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "Credit for or concurrent enrollment in MATH 2414.",
+    "courseDescription": "First semester of a two part calculus-based course covering mechanics of one- and two-dimensional motion, dynamics, energy, momentum, rotational dynamics and kinematics, statics, gravity, oscillations, waves and fluids.",
+    "courseRepeatability": "No",
+    "courseCore": "(30) Core-Life & Physical Sciences TCCNS Equivalent: PHYS 2325",
+    "courseFee": "Y"
+  },
+  "PHYS 2326": {
+    "courseName": "University Physics II (lecture)",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "PHYS 2325, Credit for or concurrent enrollment in MATH 2415.",
+    "courseDescription": "Second semester of a two part calculus-based course covering thermodynamics, electricity, magnetism, electromagnetic waves, optics, and modern physics.",
+    "courseRepeatability": "No",
+    "courseCore": "(30) Core-Life & Physical Sciences TCCNS Equivalent: PHYS 2326",
+    "courseFee": "Y"
+  },
+  "GEOL 1102": {
+    "courseName": "Introduction to Climate Change Laboratory",
+    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
+    "courseCredits": "Credit Hours: 1",
+    "coursePrerequisite": "Credit for or concurrent enrollment in GEOL 1302.",
+    "courseDescription": "Study of climate change processes through the collection of meteorological and geochemical data and analysis of climate related datasets.",
+    "courseRepeatability": "",
+    "courseCore": "",
+    "courseFee": ""
+  },
+  "GEOL 1103": {
+    "courseName": "Physical Geology Lab",
+    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
+    "courseCredits": "Credit Hours: 1",
+    "coursePrerequisite": "Credit for or concurrent enrollment in GEOL 1303.",
+    "courseDescription": "Supplementary to lecture; study of minerals, rocks, and maps.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": ""
+  },
+  "GEOL 1104": {
+    "courseName": "Historical Geology Lab",
+    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
+    "courseCredits": "Credit Hours: 1",
+    "coursePrerequisite": "GEOL 1103 and credit for or concurrent enrollment in GEOL 1304.",
+    "courseDescription": "Supplementary to lecture; study of rocks, fossils, and maps.",
+    "courseRepeatability": "No",
     "courseCore": "",
     "courseFee": "Y"
+  },
+  "PHYS 2125": {
+    "courseName": "University Physics Laboratory I",
+    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
+    "courseCredits": "Credit Hours: 1",
+    "coursePrerequisite": "Credit for or concurrent enrollment in PHYS 2325.",
+    "courseDescription": "Experiments in mechanics and wave motion.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "PHYS 2126": {
+    "courseName": "University Physics Laboratory II",
+    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
+    "courseCredits": "Credit Hours: 1",
+    "coursePrerequisite": "Credit for or concurrent enrollment in PHYS 2326.",
+    "courseDescription": "Experiments in thermodynamics, electricity, magnetism, and optics.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "blank": {
+    "courseName": "",
+    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
+    "courseCredits": "Credit Hours: 1",
+    "coursePrerequisite": "",
+    "courseDescription": "",
+    "courseRepeatability": "",
+    "courseCore": "",
+    "courseFee": ""
   }
 }
