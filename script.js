@@ -101,7 +101,6 @@ const hideTakenOptions = function() {
     for (let i = 0; i < allOptions.length; i++) {
         if (chosenClasses.includes(allOptions[i].value) && allOptions[i].parentNode.value !== allOptions[i].value) {
             allOptions[i].style.visibility = "hidden";
-            //console.log(`${allOptions[i].value} is in the array`);
         }
     }
 }
@@ -110,6 +109,8 @@ const hideTakenOptions = function() {
 const showUntakenOptions = function(courseValue) {
     let allOptions = document.querySelectorAll(`option[value="${courseValue}"]`);
     for (let i = 0; i < allOptions.length; i++) {
+        const index = chosenClasses.indexOf(`${courseValue}`);
+        chosenClasses.splice(index, 1);
         allOptions[i].style.visibility = "visible";
     }
 }
