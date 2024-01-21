@@ -1,5 +1,5 @@
-sessionStorage.setItem("toggleDark", "false"); // Checks if dark mode is enasbled.
-sessionStorage.setItem("openCourse", "false"); // Checks if the course information display is open.
+sessionStorage.setItem("toggleDark", "false"); // Handler for Dark Mode
+sessionStorage.setItem("openCourse", "false"); // Handler for Course Display
 
 // Dark Mode Functionality
 let toggleDark = document.querySelector("#toggleEmoji");
@@ -88,21 +88,53 @@ function loadOptions() {
 }
 loadOptions();
 
+// Options Handler
+const chosenClasses = [];
+const hideTakenOptions = function() {
+    for (let i = 0; i < selectOptions.length; i++) {
+        if (selectOptions[i].value !== "none" && selectOptions[i].value !== "advanced") {
+            chosenClasses.push(selectOptions[i].value);
+        }
+    }
+    
+    let allOptions = document.querySelectorAll("option");
+    for (let i = 0; i < allOptions.length; i++) {
+        if (chosenClasses.includes(allOptions[i].value) && allOptions[i].parentNode.value !== allOptions[i].value) {
+            allOptions[i].style.visibility = "hidden";
+            //console.log(`${allOptions[i].value} is in the array`);
+        }
+    }
+}
+
+// Reshows the courses that are no longer chosen
+const showUntakenOptions = function(courseValue) {
+    let allOptions = document.querySelectorAll(`option[value="${courseValue}"]`);
+    for (let i = 0; i < allOptions.length; i++) {
+        allOptions[i].style.visibility = "visible";
+    }
+}
+
 // Select + Update Options Functionality
 for (let i = 0; i < selectOptions.length; i++) {
     selectOptions[i].addEventListener("change", function() { // Updates the table with user's choice
         console.log(`Selected ${this.value}`);
         if (this.value === "none") {
             this.parentNode.parentNode.querySelector("td:first-child").textContent = "";
+            showUntakenOptions(localStorage.getItem(`${this.id}`));
             localStorage.setItem(`${this.id}`, `${this.value}`);
             return;
         }
         else if (this.value === "advanced") {
             this.parentNode.parentNode.querySelector("td:first-child").textContent = "COSC XXX";
+            showUntakenOptions(localStorage.getItem(`${this.id}`));
             localStorage.setItem(`${this.id}`, `${this.value}`);
             return;
         }
         this.parentNode.parentNode.querySelector("td:first-child").textContent = this.value;
+        showUntakenOptions(localStorage.getItem(`${this.id}`));
         localStorage.setItem(`${this.id}`, `${this.value}`);
+        hideTakenOptions();
     })
 }
+
+localStorage.clear();
