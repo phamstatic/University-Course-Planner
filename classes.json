@@ -499,7 +499,107 @@
     "courseCore": "(80) Core-Social & Behavioral Science TCCNS Equivalent: SOCI 1301    ",
     "courseFee": "Y"
   },
+  "COSC 3337": {
+    "courseName": "Data Science I",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 2306 or COSC 2436, and MATH 3339 and declared COSC major, COSC minor, or Data Science minor.",
+    "courseDescription": "Data science concepts including exploratory data analysis, data visualization, statistical inference and modeling, machine learning, clustering, post-processing and interpreting results.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 3371": {
+    "courseName": "Cybersecurity",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 3360.",
+    "courseDescription": "Introduction to cybersecurity: theoretical foundations of security, cryptographic algorithms and protocols, widely used security protocols (such as SSL), and practical attack and defense techniques, including software vulnerability exploits and firewalls.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4311": {
+    "courseName": "Computer Scientists and Society",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 3360.",
+    "courseDescription": "Issues of professional responsibility and ethics related to the use of computer technology in complex modern working environments. Emphasis and evaluation on technical writing.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4315": {
+    "courseName": "Programming Languages and Paradigms",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 2320 or COSC 2436.",
+    "courseDescription": "Discussion and comparison of basic programming styles; their underlying paradigms and languages based on these paradigms; such as imperative and functional programming styles.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4331": {
+    "courseName": "Real-Time Systems and Embedded Programming",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 3360.",
+    "courseDescription": "Introduction to real-time and embedded systems; scheduling; programming language and operating systems; support; formal specification, analysis, and verification; embedded programming; power-aware computing.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4354": {
+    "courseName": "Software Development Practices",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 4353.",
+    "courseDescription": "Declared Computer Science majors and minors only. Pragmatics of software development, hands-on iterative, incremental and agile software development team project with emphasis on use of state of the art tools, techniques, principles, and better practices.    ",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4358": {
+    "courseName": "Introduction to Interactive Game Development",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 2436.",
+    "courseDescription": "Team development of interactive video games on state-of-the-art devices.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4368": {
+    "courseName": "Fundamentals of Artificial Intelligence",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in COSC 2320 or COSC 2436.",
+    "courseDescription": "An overview of main topics in the field of artificial intelligence. Topics include search techniques, reasoning with logic, planning, decision making, machine learning, and robotics.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "COSC 4370": {
+    "courseName": "Interactive Computer Graphics",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "A grade of C- or better in MATH 2318, and COSC 2320 or COSC 2430.",
+    "courseDescription": "Introduction to graphics hardware and software; interactive systems to display three-dimensional objects; display and input devices; and alternative algorithms, system configuration, and design trade-offs.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
   "a": {
+    "courseName": "",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "",
+    "courseDescription": "",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "b": {
     "courseName": "",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
     "courseCredits": "Credit Hours: 3",
