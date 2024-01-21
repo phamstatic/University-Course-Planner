@@ -399,23 +399,53 @@
     "courseCore": "(50) Core-Creative Arts",
     "courseFee": "Y"
   },
+  "ANTH 2304": {
+    "courseName": "Intro To Language and Culture",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "Concurrent enrollment in or completion of ENGL 1301 or equivalent.",
+    "courseDescription": "Anthropological perspectives on the relation of language and culture including social use of language, language as behavior, and non-verbal communication.",
+    "courseRepeatability": "No",
+    "courseCore": "(81) Core-Writing in Discipline WID",
+    "courseFee": "Y"
+  },
+  "HDCS 1300": {
+    "courseName": "Human Ecosystems & Tech Change",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302 or equivalent.",
+    "courseDescription": "Introduction to the study of human and consumer needs, values, and goals in relationship to natural, man-made, and behavioral systems within the context of dynamic technological change.",
+    "courseRepeatability": "No",
+    "courseCore": "(81) Core-Writing in Discipline WID",
+    "courseFee": "Y"
+  },
+  "PHIL 1334": {
+    "courseName": "Minds and Machines",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1301.",
+    "courseDescription": "Perspectives on issues from recent sciences of the mind: Is human psychology a product of evolution? Does thought depend on language? Is our visual world constricted by our brains?",
+    "courseRepeatability": "No",
+    "courseCore": "(81) Core-Writing in Discipline WID",
+    "courseFee": "Y"
+  },
+  "HIST 2303": {
+    "courseName": "The Historian's Craft: An Introduction to Historical Methods",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302.",
+    "courseDescription": "Introduction to historical research, writing, and thinking, including the fundamental tools that historians use and the range of work that they do. Students will learn how to analyze a variety of historical sources, will gain exposure to the diverse approaches to historical work, and will build foundational writing and citation skills. Courses will be topical and include hands-on workshops.",
+    "courseRepeatability": "No",
+    "courseCore": "(81) Core-Writing in Discipline WID",
+    "courseFee": "Y"
+  },
   "a": {
     "courseName": "",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
     "courseCredits": "Credit Hours: 3",
     "coursePrerequisite": "",
     "courseDescription": "",
-    "courseRepeatability": "Yes",
-    "courseCore": "",
-    "courseFee": "Y"
-  },
-  "b": {
-    "courseName": "",
-    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
-    "coursePrerequisite": "",
-    "courseDescription": "",
-    "courseRepeatability": "Yes",
+    "courseRepeatability": "No",
     "courseCore": "",
     "courseFee": "Y"
   }
