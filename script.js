@@ -31,7 +31,7 @@ let courseList = document.querySelectorAll("tbody tr");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.querySelector('td:first-child').innerHTML;
-        if (courseNumber === "" || courseNumber === "COSC XXX") {
+        if (courseNumber === "" || courseNumber === "COSC XXX"|| courseNumber === "CORE") {
             return;
         }
         fetch("classes.json")
@@ -79,6 +79,12 @@ function loadOptions() {
             if (localStorage.getItem(`${selectOptions[i].id}`) === "none") {
                 selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = "";
             }
+            else if (localStorage.getItem(`${selectOptions[i].id}`) === "advanced") {
+                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = "COSC";
+            }
+            else if (localStorage.getItem(`${selectOptions[i].id}`) === "core") {
+                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = "CORE";
+            }
             else {
                 selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = `${localStorage.getItem(`${selectOptions[i].id}`)}`;
             }
@@ -92,7 +98,7 @@ loadOptions();
 const chosenClasses = [];
 const hideTakenOptions = function() {
     for (let i = 0; i < selectOptions.length; i++) {
-        if (selectOptions[i].value !== "none" && selectOptions[i].value !== "advanced") {
+        if (selectOptions[i].value !== "none" && selectOptions[i].value !== "advanced" && selectOptions[i].value !== "core") {
             chosenClasses.push(selectOptions[i].value);
         }
     }
@@ -127,6 +133,12 @@ for (let i = 0; i < selectOptions.length; i++) {
         }
         else if (this.value === "advanced") {
             this.parentNode.parentNode.querySelector("td:first-child").textContent = "COSC XXX";
+            showUntakenOptions(localStorage.getItem(`${this.id}`));
+            localStorage.setItem(`${this.id}`, `${this.value}`);
+            return;
+        }
+        else if (this.value === "core") {
+            this.parentNode.parentNode.querySelector("td:first-child").textContent = "CORE";
             showUntakenOptions(localStorage.getItem(`${this.id}`));
             localStorage.setItem(`${this.id}`, `${this.value}`);
             return;
