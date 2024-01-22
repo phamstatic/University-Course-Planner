@@ -151,7 +151,7 @@ select {
     width: 75%;
 }
 
-select option[value="none"], select option[value="advanced"] {
+select option[value="none"], select option[value="advanced"], select option[value="core"] {
     font-style: italic;
 }
 
