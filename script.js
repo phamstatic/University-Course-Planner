@@ -26,6 +26,11 @@ const toggleFunction = function () {
     }
 }
 
+// Functionality for the scroll back to top button.
+document.querySelector("#upButton").addEventListener("click", function() {
+    window.scrollTo({top: 0, behavior: "smooth"});
+})
+
 // Functionality for the course display user interface.
 let courseContainer = document.querySelector("#courseContainer");
 let courseList = document.querySelectorAll("tbody tr");
@@ -150,12 +155,6 @@ for (let i = 0; i < selectOptions.length; i++) {
         hideTakenOptions();
     })
 }
-
-// Functionality for the scroll back to top button.
-document.querySelector("#upButton").addEventListener("click", function() {
-    window.scrollTo({top: 0, behavior: "smooth"});
-})
-
 
 // Clears the LocalStorage.
 //localStorage.clear();
