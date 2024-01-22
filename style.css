@@ -48,7 +48,7 @@ header {
 }
 
 #courseClose:hover {
-    text-shadow: 2px 2px 2px red;
+    text-shadow: 2px 2px 2px #C8102E;
 }
 
 #courseContainer {
@@ -78,7 +78,7 @@ header {
 
 
 #courseName {
-    text-shadow: 2px 2px 2px rgb(180, 0, 0);
+    text-shadow: 2px 2px 2px #C8102E;
 }
 
 .courseBody div {
@@ -111,7 +111,7 @@ table {
 .tableHeader {
     color: white;
     font-size: 25px;
-    background-color: rgb(180, 0, 0);
+    background-color:  #C8102E;
 }
 
 td, th {
@@ -196,7 +196,7 @@ tfoot {
 
 .footerSection {
     color: white;
-    background-color: dimgray;
+    background-color: #888B8D;
     margin: 0;
     padding: 25px 100px 25px 100px;
 }
@@ -220,6 +220,10 @@ tfoot {
 h4 {
     font-size: 16px;
     line-height: 1.5;
+}
+
+h4 a {
+    color: #FFF9D9;
 }
 
 a {
