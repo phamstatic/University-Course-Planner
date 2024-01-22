@@ -139,4 +139,4 @@ for (let i = 0; i < selectOptions.length; i++) {
 }
 
 // Clears the LocalStorage.
-localStorage.clear();
+//localStorage.clear();
