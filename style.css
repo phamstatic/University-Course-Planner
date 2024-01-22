@@ -28,8 +28,8 @@ header {
 }
 
 #schoolLogo {
-    width: 100px;
-    height: 75px;
+    width: 120px;
+    height: 100px;
 }
 
 #degreeHeading {
@@ -37,13 +37,6 @@ header {
     align-items: center;
     text-align: center;
     justify-content: center;
-}
-
-meter {
-    visibility: hidden;
-    margin-top: 20px;
-    width: 250px;
-    height: 25px;  
 }
 
 #courseClose {
@@ -166,6 +159,20 @@ tfoot {
     border: 1px solid black;
 }
 
+#upButton {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    background: none;
+    border: none;
+    margin:auto auto 25px auto;
+    display:block;
+}
+
+#upButton:hover {
+    text-decoration: underline;
+}
+
 #toggleEmoji {
     background: none;
     border: none;
@@ -173,19 +180,24 @@ tfoot {
     position: fixed;
     bottom: 0;
     right: 0;
-    font-size: 50px;
-    padding: 25px;
+    font-size: 40px;
+    margin: 25px;
 }
 
 #toggleEmoji:hover {
-    text-shadow: 2px 2px 2px yellow;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .footerSection {
     color: white;
     background-color: dimgray;
-    margin: 100px 0px 0px 0px;
+    margin: 0;
     padding: 25px 100px 25px 100px;
+}
+
+.footerSection.darkMode {
+    background-color: black;
 }
 
 #schoolLogoSmall {
