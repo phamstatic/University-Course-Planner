@@ -37,7 +37,7 @@ let courseList = document.querySelectorAll("tr td:first-child");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.innerHTML;
-        if (courseNumber === "" || courseNumber === "COSC XXX"|| courseNumber === "CORE") {
+        if (courseNumber === "" || courseNumber === "COSC XXX"|| courseNumber === "CORE" || this.innerHTML === "Semester Hours") {
             return;
         }
         fetch("classes.json")

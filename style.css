@@ -139,7 +139,7 @@ tr:nth-child(even) {
     background-color: rgb(255, 194, 194);
 }
 
-tr td:first-child:hover {
+tbody tr td:first-child:hover {
     cursor: pointer;
 }
 
