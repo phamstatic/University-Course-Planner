@@ -139,6 +139,10 @@ tr:nth-child(even) {
     background-color: rgb(255, 194, 194);
 }
 
+tr td:first-child:hover {
+    cursor: pointer;
+}
+
 .totalCreditHours, .creditHours {
     text-align: right;
 }
