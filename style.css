@@ -52,7 +52,7 @@ header {
 }
 
 #courseContainer {
-    width: 800px;
+    width: 1000px;
     height: 500px;
     z-index: 1;
     position: fixed;
