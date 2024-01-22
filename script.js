@@ -33,10 +33,10 @@ document.querySelector("#upButton").addEventListener("click", function() {
 
 // Functionality for the course display user interface.
 let courseContainer = document.querySelector("#courseContainer");
-let courseList = document.querySelectorAll("tbody tr");
+let courseList = document.querySelectorAll("tr td:first-child");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
-        let courseNumber = this.querySelector('td:first-child').innerHTML;
+        let courseNumber = this.innerHTML;
         if (courseNumber === "" || courseNumber === "COSC XXX"|| courseNumber === "CORE") {
             return;
         }
@@ -157,4 +157,4 @@ for (let i = 0; i < selectOptions.length; i++) {
 }
 
 // Clears the LocalStorage.
-//localStorage.clear();
+localStorage.clear();
