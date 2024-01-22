@@ -165,6 +165,7 @@ tfoot {
     text-shadow: 2px 2px 2px black;
     background: none;
     border: none;
+    outline: none;
     margin:auto auto 25px auto;
     display:block;
 }
