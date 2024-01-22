@@ -589,24 +589,54 @@
     "courseCore": "",
     "courseFee": "Y"
   },
-  "a": {
-    "courseName": "",
+  "AAS 2320": {
+    "courseName": "Intro To African American Stdy",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
     "courseCredits": "Credit Hours: 3",
-    "coursePrerequisite": "",
-    "courseDescription": "",
+    "coursePrerequisite": "ENGL 1301.",
+    "courseDescription": "An introductory analysis of the discipline of African American/African Studies, its mission, key theories and major concerns.",
     "courseRepeatability": "No",
-    "courseCore": "",
+    "courseCore": "(40) Core-Language, Philosophy & Culture",
     "courseFee": "Y"
   },
-  "b": {
-    "courseName": "",
+  "ARTH 1300": {
+    "courseName": "Ways of Seeing: Art and Our Visual World",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
     "courseCredits": "Credit Hours: 3",
-    "coursePrerequisite": "",
-    "courseDescription": "",
+    "coursePrerequisite": "ENGL 1301.",
+    "courseDescription": "Examination of our visual world and the various ways in which that world has been analyzed and valued. May not be applied to a major or minor in art history or art.",
     "courseRepeatability": "No",
-    "courseCore": "",
+    "courseCore": "(40) Core-Language, Philosophy & Culture",
+    "courseFee": "Y"
+  },
+  "CHIN 3344": {
+    "courseName": "Modern and Contemporary Global Chinese Literature",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302.",
+    "courseDescription": "This course introduces students to the canon of Chinese literature, and traces the social-politial and cultural transformation of Chinese societies and the global Chinese diaspora through literature.",
+    "courseRepeatability": "No",
+    "courseCore": "(81) Core-Writing in Discipline WID, (40) Core-Language, Philosophy & Culture",
+    "courseFee": "Y"
+  },
+  "GERM 3369": {
+    "courseName": "World War I in Literature, Visual Arts, and Film",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": "ENGL 1302.",
+    "courseDescription": "Representations of World War I in literature, photography, art, and film; focus on the cultural impact of the war experience, avant-garde movements, and social, political and artistic rupture.",
+    "courseRepeatability": "No",
+    "courseCore": "(40) Core-Language, Philosophy & Culture",
+    "courseFee": "Y"
+  },
+  "PHIL 1305": {
+    "courseName": "Intro To Ethics",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "Credit Hours: 3",
+    "coursePrerequisite": " ENGL 1301.",
+    "courseDescription": "A historical introduction to the main problems and questions of moral philosophy.",
+    "courseRepeatability": "No",
+    "courseCore": "(40) Core-Language, Philosophy & Culture TCCNS Equivalent: PHIL 2306",
     "courseFee": "Y"
   }
 }
