@@ -11,6 +11,10 @@ body.darkMode {
     background-image: linear-gradient(180deg, rgba(96, 0, 0, 0.321), rgba(0, 0, 0, 0.35)), url('./UH_BackgroundDark.jpg');
 }
 
+.row {
+    margin: 0;
+}
+
 h1 {
     font-size: 35px;
 }
@@ -24,15 +28,60 @@ h3 {
 }
 
 header {
-    margin: 50px 50px 20px 50px;
+    margin: 0;
+}
+
+#navBar {
+    margin: 0;
+    background-color:#C8102E;
+}
+
+.navBarButton {
+    color: white !important;
+    transition: 0.3s;
+    padding: 12px;
+}
+
+.navBarButton:hover {
+    background-color: #910d23;
+}
+
+#navBar, #upperNavBar {
+    padding: 0px 200px 0px 200px;
+}
+
+#departmentHeader {
+    padding: 0px 12px 0px 12px;
+    color: white;
+    font-family: "League Gothic";
+    font-size: 50px;
+    margin: 20px 0px 20px 0px;
+}
+
+#upperSideButtons {
+    padding: 12px 200px 0px 200px;
+    justify-content: right;
+}
+
+#upperSideButtons h4 {
+    margin: 0px 12px 0px 12px;
+}
+
+#upperSideButtons:hover {
+    color: white;
+}
+
+#upperNavBar, #upperSideButtons {
+    background-color: dimgray;
 }
 
 #schoolLogo {
-    width: 120px;
-    height: 100px;
+    width: 250px;
+    height: 50px;
 }
 
 #degreeHeading {
+    margin: 50px 0px 50px 0px;
     color: white;
     align-items: center;
     text-align: center;
@@ -75,7 +124,6 @@ header {
 #courseContainer.fadeIn {
     opacity: 1;
 }
-
 
 #courseName {
     text-shadow: 2px 2px 2px #C8102E;
@@ -196,7 +244,7 @@ tfoot {
 
 .footerSection {
     color: white;
-    background-color: #888B8D;
+    background-color: dimgray;
     margin: 0;
     padding: 25px 100px 25px 100px;
 }
@@ -212,9 +260,10 @@ tfoot {
 }
 
 .footHeader {
+    font-size: 30px;
     font-weight: bold;
     margin-top: 20px;
-    font-family: calibri;
+    font-family: "League Gothic";
 }
 
 h4 {
