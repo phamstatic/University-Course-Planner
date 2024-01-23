@@ -82,6 +82,7 @@ header {
 #schoolLogo {
     width: 250px;
     height: 50px;
+    padding: 0px 12px 0px 12px;
 }
 
 #degreeHeading {
