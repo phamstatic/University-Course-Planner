@@ -245,3 +245,15 @@ a:hover {
     margin: 0px;
     padding: 20px;
 }
+
+.linkButton {
+    padding: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #FFF9D9;
+    margin: 5px;
+}
+
+.linkButton:hover {
+    background-color: white;
+}
