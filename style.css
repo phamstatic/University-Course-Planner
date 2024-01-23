@@ -36,6 +36,10 @@ header {
     background-color:#C8102E;
 }
 
+#navBar.darkMode {
+    background-color: black;
+}
+
 .navBarButton {
     color: white !important;
     transition: 0.3s;

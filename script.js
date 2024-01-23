@@ -21,6 +21,7 @@ toggleDark.addEventListener("click", function () {
 const toggleFunction = function () {
     document.querySelector("body").classList.toggle("darkMode");
     document.querySelector(".footerSection").classList.toggle("darkMode");
+    document.querySelector("#navBar").classList.toggle("darkMode");
     for (let i = 0; i < tableData.length; i++) {
         tableData[i].classList.toggle("darkMode");
     }
