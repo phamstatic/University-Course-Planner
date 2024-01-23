@@ -172,6 +172,10 @@ td, th {
     padding: 5px 5px 5px 5px;
 }
 
+td:first-child {
+    width: 25%;
+}
+
 tbody tr:hover {
     text-shadow: 1px 1px black;
     text-decoration: underline;
