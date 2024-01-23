@@ -306,6 +306,7 @@ a:hover {
     display: inline-block;
     background-color: #FFF9D9;
     margin: 5px;
+    transition: 0.3s;
 }
 
 .linkButton:hover {
