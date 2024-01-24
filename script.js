@@ -270,5 +270,30 @@ $("#addButton").on("click", function () {
     }
 })
 
+// Functionality to count the total hours for each semester.
+let updateTotalHours = function() {
+    console.log("updateotalhours called");
+    let totalFallHours = document.querySelectorAll(".fallTotal");
+    for (let i = 0; i < totalFallHours.length; i++) {
+        let totalHours = parseInt("0", 10);
+        let courseHours = totalFallHours[i].parentNode.parentNode.parentNode.querySelectorAll(".fallHours");
+        for (let j = 0; j < courseHours.length; j++) {
+            totalHours += parseInt(courseHours[j].textContent, 10);
+        }
+        totalFallHours[i].textContent = totalHours;
+    }
+    let totalSpringHours = document.querySelectorAll(".springTotal");
+    for (let i = 0; i < totalSpringHours.length; i++) {
+        let totalHours = parseInt("0", 10);
+        let courseHours = totalSpringHours[i].parentNode.parentNode.parentNode.querySelectorAll(".fallHours");
+        for (let j = 0; j < courseHours.length; j++) {
+            totalHours += parseInt(courseHours[j].textContent, 10);
+        }
+        totalSpringHours[i].textContent = totalHours;
+    }
+}
+updateTotalHours();
+document.addEventListener('click', updateTotalHours);
+
 // Clears the LocalStorage.
 //localStorage.clear();
