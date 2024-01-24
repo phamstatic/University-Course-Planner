@@ -1,7 +1,7 @@
 // Session handlers for dark mode and the course display user interface.
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false");
-sessionStorage.setItem("adminScreen", "false");
+sessionStorage.setItem("adminScreen", "true");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
 
@@ -202,7 +202,7 @@ $("#addButton").on("click", function () {
         sessionStorage.setItem("addingCourses", "false");
         this.textContent = "Add";
 
-        let selectedCourses = $('.fallId select');
+        let selectedCourses = $('.fallId select, .springId select');
         for (let i = 0; i < selectedCourses.length; i++) {
             console.log(selectedCourses[i].value);
             selectedCourses[i].parentNode.innerHTML = selectedCourses[i].value;
@@ -211,7 +211,15 @@ $("#addButton").on("click", function () {
     else {
         sessionStorage.setItem("addingCourses", "true");
         this.textContent = "ADDING";
-        const options = ["", "COSC 1336", "COSC 1437", "MATH 2414"];
+        
+        const options = [""];
+        for (let course in json) {
+            if (json.hasOwnProperty(course)) {
+                options.push(course);
+            }
+        }
+        options.sort();
+
         let fallCourses = $(".fallId");
         for (let i = 0; i < fallCourses.length; i++) {
             if (fallCourses[i].textContent === "") {
@@ -225,10 +233,27 @@ $("#addButton").on("click", function () {
                 fallCourses[i].appendChild(selectElement);
                 fallCourses[i].addEventListener("change", function () {
                     fallCourses[i].parentNode.querySelector(".fallCourse").textContent = json[selectElement.value].courseName;
+                    fallCourses[i].parentNode.querySelector(".fallHours").textContent = json[selectElement.value].courseCredits;
                 })
             }
         }
         let springCourses = $(".springId");
+        for (let i = 0; i < springCourses.length; i++) {
+            if (springCourses[i].textContent === "") {
+                const selectElement = document.createElement("select");
+                options.forEach(optionText => {
+                    const option = document.createElement("option");
+                    option.value = optionText;
+                    option.text = optionText;
+                    selectElement.add(option);
+                })
+                springCourses[i].appendChild(selectElement);
+                springCourses[i].addEventListener("change", function () {
+                    springCourses[i].parentNode.querySelector(".springCourse").textContent = json[selectElement.value].courseName;
+                    springCourses[i].parentNode.querySelector(".springHours").textContent = json[selectElement.value].courseCredits;
+                })
+            }
+        }
         for (let i = 0; i < springCourses.length; i++) {
             if (springCourses[i].textContent === "") {
                 const selectElement = document.createElement("select");
