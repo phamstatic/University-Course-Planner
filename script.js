@@ -34,7 +34,7 @@ document.querySelector("#upButton").addEventListener("click", function() {
 
 // Functionality for the course display user interface.
 let courseContainer = document.querySelector("#courseContainer");
-let courseList = document.querySelectorAll("tr td:first-child");
+let courseList = document.querySelectorAll(".springId, .fallId");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.innerHTML;

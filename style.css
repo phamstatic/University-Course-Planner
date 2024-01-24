@@ -172,20 +172,19 @@ td, th {
     padding: 5px 5px 5px 5px;
 }
 
-td:first-child {
-    width: 25%;
-}
-
 tbody tr:hover {
     text-shadow: 1px 1px black;
     text-decoration: underline;
     text-decoration-color: white;
-    
 }
 
 td.darkMode {
     background-color: rgb(0, 0, 0);
     color: white;
+}
+
+.fallHeader, .fallHours, .fallTotal {
+    border-right: 1px solid black;
 }
 
 tr:nth-child(odd) {
@@ -196,7 +195,7 @@ tr:nth-child(even) {
     background-color: rgb(255, 194, 194);
 }
 
-tbody tr td:first-child:hover {
+.fallId:hover, .springId:hover {
     cursor: pointer;
 }
 
