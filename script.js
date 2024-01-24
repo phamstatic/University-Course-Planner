@@ -1,7 +1,7 @@
 // Session handlers for dark mode and the course display user interface.
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false");
-sessionStorage.setItem("adminScreen", "true");
+sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
 
@@ -163,12 +163,30 @@ for (let i = 0; i < selectOptions.length; i++) {
     })
 }
 
+// Functionality for administrative buttons. 
 $("#adminButton").on("click", function () {
     if (sessionStorage.getItem("adminScreen") === "true") { // off
-        sessionStorage.setItem("adminScreen", "false");
+        if (sessionStorage.getItem("addingCourses") === "true") {
+            alert("Finish adding courses first!");
+        }
+        else if (sessionStorage.getItem("editingCourses") === "true") {
+            alert("Finish editing courses first!");
+        }
+        else if (sessionStorage.getItem("removingCourses") === "true") {
+            alert("Finish removing courses first!");
+        }
+        else {
+            sessionStorage.setItem("adminScreen", "false");
+            document.querySelector("#addButton").style.visibility = "hidden";
+            document.querySelector("#editButton").style.visibility = "hidden";
+            document.querySelector("#removeButton").style.visibility = "hidden";
+        }
     }
     else {
         sessionStorage.setItem("adminScreen", "true");  // on
+        document.querySelector("#addButton").style.visibility = "visible";
+        document.querySelector("#editButton").style.visibility = "visible";
+        document.querySelector("#removeButton").style.visibility = "visible";
     }
 })
 
@@ -211,7 +229,7 @@ $("#addButton").on("click", function () {
     else {
         sessionStorage.setItem("addingCourses", "true");
         this.textContent = "ADDING";
-        
+
         const options = [""];
         for (let course in json) {
             if (json.hasOwnProperty(course)) {
@@ -271,7 +289,7 @@ $("#addButton").on("click", function () {
 })
 
 // Functionality to count the total hours for each semester.
-let updateTotalHours = function() {
+let updateTotalHours = function () {
     console.log("updateotalhours called");
     let totalFallHours = document.querySelectorAll(".fallTotal");
     for (let i = 0; i < totalFallHours.length; i++) {

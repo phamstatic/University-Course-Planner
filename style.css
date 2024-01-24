@@ -101,6 +101,10 @@ header {
     margin: 0px 0px 0px 200px;
 }
 
+#addButton, #editButton, #removeButton {
+    visibility: hidden;
+}
+
 #courseClose {
     font-size: 25px;
     float: right;
