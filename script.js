@@ -1,9 +1,17 @@
 // Session handlers for dark mode and the course display user interface.
 sessionStorage.setItem("toggleDark", "false");
-sessionStorage.setItem("openCourse", "false"); 
-sessionStorage.setItem("adminScreen", "true"); 
-sessionStorage.setItem("removingCourses", "false"); 
-sessionStorage.setItem("addingCourses", "false"); 
+sessionStorage.setItem("openCourse", "false");
+sessionStorage.setItem("adminScreen", "true");
+sessionStorage.setItem("removingCourses", "false");
+sessionStorage.setItem("addingCourses", "false");
+
+// jsonFetch
+let json;
+fetch("classes.json")
+    .then(res => res.json())
+    .then(jsonData => {
+        json = jsonData;
+    });
 
 // Functionality for the dark mode feature.
 let toggleDark = document.querySelector("#toggleEmoji");
@@ -31,8 +39,8 @@ const toggleFunction = function () {
 }
 
 // Functionality for the scroll back to top button.
-document.querySelector("#upButton").addEventListener("click", function() {
-    window.scrollTo({top: 0, behavior: "smooth"});
+document.querySelector("#upButton").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
 })
 
 // Functionality for the course display user interface.
@@ -41,23 +49,18 @@ let courseList = document.querySelectorAll(".springId, .fallId");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.innerHTML;
-        if (courseNumber === "" || courseNumber === "COSC XXX"|| courseNumber === "CORE" || this.innerHTML === "Semester Hours" || this.id === "emptyRow" || sessionStorage.getItem("adminScreen") === "true") {
+        if (courseNumber === "" || courseNumber === "COSC XXX" || courseNumber === "CORE" || this.innerHTML === "Semester Hours" || this.id === "emptyRow" || sessionStorage.getItem("adminScreen") === "true") {
             return;
         }
-        fetch("classes.json")
-            .then(res => res.json())
-            .then(json => {
-                console.log(json[`${courseNumber}`].courseName);
-                document.querySelector("#courseName").textContent = `${courseNumber}, ${json[`${courseNumber}`].courseName}`;
-                document.querySelector("#courseHours").textContent = json[`${courseNumber}`].courseHours;
-                document.querySelector("#courseCredits").textContent = json[`${courseNumber}`].courseCredits;
-                document.querySelector("#coursePrerequisite").textContent = json[`${courseNumber}`].coursePrerequisite;
-                document.querySelector("#courseDescription").textContent = json[`${courseNumber}`].courseDescription;
-                document.querySelector("#courseRepeatability").textContent = json[`${courseNumber}`].courseRepeatability;
-                document.querySelector("#courseCore").textContent = json[`${courseNumber}`].courseCore;
-                document.querySelector("#courseFee").textContent = json[`${courseNumber}`].courseFee;
-                return json;
-            });
+        console.log(json[`${courseNumber}`].courseName);
+        document.querySelector("#courseName").textContent = `${courseNumber}, ${json[`${courseNumber}`].courseName}`;
+        document.querySelector("#courseHours").textContent = json[`${courseNumber}`].courseHours;
+        document.querySelector("#courseCredits").textContent = json[`${courseNumber}`].courseCredits;
+        document.querySelector("#coursePrerequisite").textContent = json[`${courseNumber}`].coursePrerequisite;
+        document.querySelector("#courseDescription").textContent = json[`${courseNumber}`].courseDescription;
+        document.querySelector("#courseRepeatability").textContent = json[`${courseNumber}`].courseRepeatability;
+        document.querySelector("#courseCore").textContent = json[`${courseNumber}`].courseCore;
+        document.querySelector("#courseFee").textContent = json[`${courseNumber}`].courseFee;
         if (sessionStorage.getItem("openCourse") === "false") {
             sessionStorage.setItem("openCourse", "true");
             courseContainer.classList.toggle("fadeOut");
@@ -106,13 +109,13 @@ loadOptions();
 
 // Places all chosen courses into an array and hides the options in the table.
 const chosenClasses = [];
-const hideTakenOptions = function() {
+const hideTakenOptions = function () {
     for (let i = 0; i < selectOptions.length; i++) {
         if (selectOptions[i].value !== "none" && selectOptions[i].value !== "advanced" && selectOptions[i].value !== "core") {
             chosenClasses.push(selectOptions[i].value);
         }
     }
-    
+
     let allOptions = document.querySelectorAll("option");
     for (let i = 0; i < allOptions.length; i++) {
         if (chosenClasses.includes(allOptions[i].value) && allOptions[i].parentNode.value !== allOptions[i].value) {
@@ -122,7 +125,7 @@ const hideTakenOptions = function() {
 }
 
 // Removes non-chosen courses from the array and reshows the options on the table.
-const showUntakenOptions = function(courseValue) {
+const showUntakenOptions = function (courseValue) {
     let allOptions = document.querySelectorAll(`option[value="${courseValue}"]`);
     for (let i = 0; i < allOptions.length; i++) {
         const index = chosenClasses.indexOf(`${courseValue}`);
@@ -133,7 +136,7 @@ const showUntakenOptions = function(courseValue) {
 
 // Functionality and event listener for course selection.
 for (let i = 0; i < selectOptions.length; i++) {
-    selectOptions[i].addEventListener("change", function() { // Updates the table with user's choice
+    selectOptions[i].addEventListener("change", function () { // Updates the table with user's choice
         console.log(`Selected ${this.value}`);
         if (this.value === "none") {
             this.parentNode.parentNode.querySelector("td:first-child").textContent = "";
@@ -160,18 +163,18 @@ for (let i = 0; i < selectOptions.length; i++) {
     })
 }
 
-$("#adminButton").on("click", function() {
+$("#adminButton").on("click", function () {
     if (sessionStorage.getItem("adminScreen") === "true") { // off
-        sessionStorage.setItem("adminScreen", "false"); 
+        sessionStorage.setItem("adminScreen", "false");
     }
     else {
         sessionStorage.setItem("adminScreen", "true");  // on
     }
 })
 
-$("#removeButton").on("click", function() {
+$("#removeButton").on("click", function () {
     if (sessionStorage.getItem("removingCourses") === "true") {
-        sessionStorage.setItem("removingCourses", "false"); 
+        sessionStorage.setItem("removingCourses", "false");
         this.textContent = "Remove";
         $(".fallId").off("click");
         $(".springId").off("click");
@@ -179,13 +182,13 @@ $("#removeButton").on("click", function() {
     else {
         sessionStorage.setItem("removingCourses", "true");
         this.textContent = "REMOVING";
-        $(".fallId").on("click", function() {
+        $(".fallId").on("click", function () {
             console.log("course remove");
             this.textContent = "";
             this.parentNode.querySelector(".fallCourse").textContent = "";
             this.parentNode.querySelector(".fallHours").textContent = "0";
         })
-        $(".springId").on("click", function() {
+        $(".springId").on("click", function () {
             console.log("course remove");
             this.textContent = "";
             this.parentNode.querySelector(".springCourse").textContent = "";
@@ -194,9 +197,9 @@ $("#removeButton").on("click", function() {
     }
 })
 
-$("#addButton").on("click", function() {
+$("#addButton").on("click", function () {
     if (sessionStorage.getItem("addingCourses") === "true") {
-        sessionStorage.setItem("addingCourses", "false"); 
+        sessionStorage.setItem("addingCourses", "false");
         this.textContent = "Add";
 
         let selectedCourses = $('.fallId select');
@@ -204,12 +207,11 @@ $("#addButton").on("click", function() {
             console.log(selectedCourses[i].value);
             selectedCourses[i].parentNode.innerHTML = selectedCourses[i].value;
         }
-
     }
     else {
         sessionStorage.setItem("addingCourses", "true");
         this.textContent = "ADDING";
-        const options = ["COSC 1336", "COSC 1437", "MATH 2414"];
+        const options = ["", "COSC 1336", "COSC 1437", "MATH 2414"];
         let fallCourses = $(".fallId");
         for (let i = 0; i < fallCourses.length; i++) {
             if (fallCourses[i].textContent === "") {
@@ -221,6 +223,9 @@ $("#addButton").on("click", function() {
                     selectElement.add(option);
                 })
                 fallCourses[i].appendChild(selectElement);
+                fallCourses[i].addEventListener("change", function () {
+                    fallCourses[i].parentNode.querySelector(".fallCourse").textContent = json[selectElement.value].courseName;
+                })
             }
         }
         let springCourses = $(".springId");
