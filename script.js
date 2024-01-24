@@ -1,6 +1,9 @@
 // Session handlers for dark mode and the course display user interface.
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false"); 
+sessionStorage.setItem("adminScreen", "true"); 
+sessionStorage.setItem("removingCourses", "false"); 
+sessionStorage.setItem("addingCourses", "false"); 
 
 // Functionality for the dark mode feature.
 let toggleDark = document.querySelector("#toggleEmoji");
@@ -38,7 +41,7 @@ let courseList = document.querySelectorAll(".springId, .fallId");
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener('click', function () {
         let courseNumber = this.innerHTML;
-        if (courseNumber === "" || courseNumber === "COSC XXX"|| courseNumber === "CORE" || this.innerHTML === "Semester Hours" || this.id === "emptyRow") {
+        if (courseNumber === "" || courseNumber === "COSC XXX"|| courseNumber === "CORE" || this.innerHTML === "Semester Hours" || this.id === "emptyRow" || sessionStorage.getItem("adminScreen") === "true") {
             return;
         }
         fetch("classes.json")
@@ -156,6 +159,86 @@ for (let i = 0; i < selectOptions.length; i++) {
         hideTakenOptions();
     })
 }
+
+$("#adminButton").on("click", function() {
+    if (sessionStorage.getItem("adminScreen") === "true") { // off
+        sessionStorage.setItem("adminScreen", "false"); 
+    }
+    else {
+        sessionStorage.setItem("adminScreen", "true");  // on
+    }
+})
+
+$("#removeButton").on("click", function() {
+    if (sessionStorage.getItem("removingCourses") === "true") {
+        sessionStorage.setItem("removingCourses", "false"); 
+        this.textContent = "Remove";
+        $(".fallId").off("click");
+        $(".springId").off("click");
+    }
+    else {
+        sessionStorage.setItem("removingCourses", "true");
+        this.textContent = "REMOVING";
+        $(".fallId").on("click", function() {
+            console.log("course remove");
+            this.textContent = "";
+            this.parentNode.querySelector(".fallCourse").textContent = "";
+            this.parentNode.querySelector(".fallHours").textContent = "0";
+        })
+        $(".springId").on("click", function() {
+            console.log("course remove");
+            this.textContent = "";
+            this.parentNode.querySelector(".springCourse").textContent = "";
+            this.parentNode.querySelector(".springHours").textContent = "0";
+        })
+    }
+})
+
+$("#addButton").on("click", function() {
+    if (sessionStorage.getItem("addingCourses") === "true") {
+        sessionStorage.setItem("addingCourses", "false"); 
+        this.textContent = "Add";
+
+        let selectedCourses = $('.fallId select');
+        for (let i = 0; i < selectedCourses.length; i++) {
+            console.log(selectedCourses[i].value);
+            selectedCourses[i].parentNode.innerHTML = selectedCourses[i].value;
+        }
+
+    }
+    else {
+        sessionStorage.setItem("addingCourses", "true");
+        this.textContent = "ADDING";
+        const options = ["COSC 1336", "COSC 1437", "MATH 2414"];
+        let fallCourses = $(".fallId");
+        for (let i = 0; i < fallCourses.length; i++) {
+            if (fallCourses[i].textContent === "") {
+                const selectElement = document.createElement("select");
+                options.forEach(optionText => {
+                    const option = document.createElement("option");
+                    option.value = optionText;
+                    option.text = optionText;
+                    selectElement.add(option);
+                })
+                fallCourses[i].appendChild(selectElement);
+            }
+        }
+        let springCourses = $(".springId");
+        for (let i = 0; i < springCourses.length; i++) {
+            if (springCourses[i].textContent === "") {
+                const selectElement = document.createElement("select");
+                options.forEach(optionText => {
+                    const option = document.createElement("option");
+                    option.value = optionText;
+                    option.text = optionText;
+                    selectElement.add(option);
+                })
+                springCourses[i].appendChild(selectElement);
+            }
+        }
+
+    }
+})
 
 // Clears the LocalStorage.
 //localStorage.clear();
