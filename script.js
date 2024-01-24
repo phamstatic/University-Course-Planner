@@ -1,7 +1,7 @@
 // Session handlers for dark mode and the course display user interface.
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false");
-sessionStorage.setItem("adminScreen", "true");
+sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
 
