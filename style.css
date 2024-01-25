@@ -134,6 +134,41 @@ header {
     transition: opacity 1s;
 }
 
+#newCourseContainer {
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: dimgray;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s;
+}
+
+#newCourseHeader {
+    margin-bottom: 20px;
+}
+
+#newCourseContainer label {
+    font-size: 18px;
+    text-align: right;
+}
+
+#newCourseContainer input {
+    background-color: white;
+    border: 1px solid black;
+}
+
+#newCourseSubmitButton {
+    margin-top: 20px;
+}
+
 #courseContainer.fadeOut {
     opacity: 0;
 }
