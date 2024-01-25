@@ -101,11 +101,11 @@ header {
     margin: 0px 0px 0px 200px;
 }
 
-#addButton, #editButton, #removeButton {
+#addButton, #editButton, #removeButton, #newCourseButton {
     visibility: hidden;
 }
 
-#courseClose {
+#courseClose, #newCourseClose {
     font-size: 25px;
     float: right;
     background: none;
@@ -113,7 +113,7 @@ header {
     outline: none;
 }
 
-#courseClose:hover {
+#courseClose:hover, #newCourseClose:hover {
     text-shadow: 2px 2px 2px #C8102E;
 }
 

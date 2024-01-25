@@ -1,6 +1,7 @@
 // Session handlers for dark mode and the course display user interface.
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false");
+sessionStorage.setItem("newOpenCourse", "true");
 sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
@@ -79,6 +80,17 @@ courseClose.addEventListener("click", function () {
         courseContainer.classList.toggle("fadeIn");
         courseContainer.classList.toggle("fadeOut");
         sessionStorage.setItem("openCourse", "false");
+    }
+})
+
+let newCourseClose = document.querySelector("#newCourseClose");
+let newCourseContainer = document.querySelector("#newCourseContainer");
+newCourseClose.addEventListener("click", function () {
+    if (sessionStorage.getItem("newOpenCourse") === "true") {
+        setTimeout(function () {
+            newCourseContainer.style.visibility = "hidden";
+        }, 1000)
+        sessionStorage.setItem("newOpenCourse", "false");
     }
 })
 
@@ -181,6 +193,7 @@ $("#adminButton").on("click", function () {
             document.querySelector("#addButton").style.visibility = "hidden";
             document.querySelector("#editButton").style.visibility = "hidden";
             document.querySelector("#removeButton").style.visibility = "hidden";
+            document.querySelector("#newCourseButton").style.visibility = "hidden";
         }
     }
     else {
@@ -189,6 +202,7 @@ $("#adminButton").on("click", function () {
         document.querySelector("#addButton").style.visibility = "visible";
         document.querySelector("#editButton").style.visibility = "visible";
         document.querySelector("#removeButton").style.visibility = "visible";
+        document.querySelector("#newCourseButton").style.visibility = "visible";
     }
 })
 
