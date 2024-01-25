@@ -497,15 +497,40 @@ $("#editButton").on("click", function () {
         })
 
         $("#editCourseDeleteButton").on("click", function() {
-            editCourseContainer.classList.toggle("fadeOut");
-            editCourseContainer.classList.toggle("fadeIn");
-            editCourseContainer.style.visibility = "visible";
+            if (sessionStorage.getItem("editingCourses") === "true") {
+                setTimeout(function () {
+                    editCourseContainer.style.visibility = "hidden";
+                }, 1000)
+                editCourseContainer.classList.toggle("fadeIn");
+                editCourseContainer.classList.toggle("fadeOut");
+                sessionStorage.setItem("editingCourses", "false");
+            }
         }) 
 
         $("#editCourseSubmitButton").on("click", function() {
-            editCourseContainer.classList.toggle("fadeOut");
-            editCourseContainer.classList.toggle("fadeIn");
-            editCourseContainer.style.visibility = "visible";
+            if (sessionStorage.getItem("editingCourses") === "true") {
+                setTimeout(function () {
+                    editCourseContainer.style.visibility = "hidden";
+                }, 1000)
+
+                let loadCourseList = JSON.parse(localStorage.getItem("classList"));
+                loadCourseList[`${document.querySelector("#selectCourseToEdit").value}`] = {
+                    "courseName": `${document.querySelector("#editCourseName").value}`,
+                    "courseCredits": `${document.querySelector("#editCourseCredits").value}`,
+                    "coursePrerequisite": `${document.querySelector("#editCoursePrerequisites").value}`,
+                    "courseDescription": `${document.querySelector("#editCourseDescription").textContent}`,
+                    "courseRepeatability": `${document.querySelector("#editCourseRepeatability").value}`,
+                    "courseCore": `${document.querySelector("#editCourseCore").value}`,
+                    "courseFee": `${document.querySelector("#editCourseFee").value}`
+                }
+
+                localStorage.setItem("classList", JSON.stringify(loadCourseList));
+
+                editCourseContainer.classList.toggle("fadeIn");
+                editCourseContainer.classList.toggle("fadeOut");
+                sessionStorage.setItem("editingCourses", "false");
+                loadClassInformation();
+            }
         }) 
 
     }
