@@ -6,6 +6,28 @@ sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
 
+// Functionality to count the total hours for each semester.
+let updateTotalHours = function () {
+    let totalFallHours = document.querySelectorAll(".fallTotal");
+    for (let i = 0; i < totalFallHours.length; i++) {
+        let totalHours = parseInt("0", 10);
+        let courseHours = totalFallHours[i].parentNode.parentNode.parentNode.querySelectorAll(".fallHours");
+        for (let j = 0; j < courseHours.length; j++) {
+            totalHours += parseInt(courseHours[j].textContent, 10);
+        }
+        totalFallHours[i].textContent = totalHours;
+    }
+    let totalSpringHours = document.querySelectorAll(".springTotal");
+    for (let i = 0; i < totalSpringHours.length; i++) {
+        let totalHours = parseInt("0", 10);
+        let courseHours = totalSpringHours[i].parentNode.parentNode.parentNode.querySelectorAll(".springHours");
+        for (let j = 0; j < courseHours.length; j++) {
+            totalHours += parseInt(courseHours[j].textContent, 10);
+        }
+        totalSpringHours[i].textContent = totalHours;
+    }
+}
+
 // jsonFetch
 if (localStorage.getItem("classList") === null) {
     fetch("classes.json")
@@ -17,6 +39,58 @@ if (localStorage.getItem("classList") === null) {
 }
 
 console.log(JSON.parse(localStorage.getItem("classList")));
+
+// Functionality to save course positions.
+let saveCourses = function () {
+
+    localStorage.setItem("Year1Fall1", document.querySelector(".Year1Fall1").textContent);
+    localStorage.setItem("Year1Fall2", document.querySelector(".Year1Fall2").textContent);
+    localStorage.setItem("Year1Fall3", document.querySelector(".Year1Fall3").textContent);
+    localStorage.setItem("Year1Fall4", document.querySelector(".Year1Fall4").textContent);
+    localStorage.setItem("Year1Fall5", document.querySelector(".Year1Fall5").textContent);
+
+    localStorage.setItem("Year1Spring1", document.querySelector(".Year1Spring1").textContent);
+    localStorage.setItem("Year1Spring2", document.querySelector(".Year1Spring2").textContent);
+    localStorage.setItem("Year1Spring3", document.querySelector(".Year1Spring3").textContent);
+    localStorage.setItem("Year1Spring4", document.querySelector(".Year1Spring4").textContent);
+    localStorage.setItem("Year1Spring5", document.querySelector(".Year1Spring5").textContent);
+
+}
+
+let loadClassInformation = function () {
+    let thisCourse = JSON.parse(localStorage.getItem("classList"));
+
+    let selectFallHours = document.querySelectorAll(".fallHours");
+    for (let i = 0; i < selectFallHours.length; i++) {
+        selectFallHours[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseName;
+        selectFallHours[i].textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseCredits;
+    } 
+
+    let selectSpringHours = document.querySelectorAll(".springHours");
+    for (let i = 0; i < selectSpringHours.length; i++) {
+        selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseName;
+        selectSpringHours[i].textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseCredits;
+    } 
+}
+
+let loadCourses = function () {
+    document.querySelector(".Year1Fall1").textContent = localStorage.getItem("Year1Fall1");
+    document.querySelector(".Year1Fall2").textContent = localStorage.getItem("Year1Fall2");
+    document.querySelector(".Year1Fall3").textContent = localStorage.getItem("Year1Fall3");
+    document.querySelector(".Year1Fall4").textContent = localStorage.getItem("Year1Fall4");
+    document.querySelector(".Year1Fall5").textContent = localStorage.getItem("Year1Fall5");
+
+    document.querySelector(".Year1Spring1").textContent = localStorage.getItem("Year1Spring1");
+    document.querySelector(".Year1Spring2").textContent = localStorage.getItem("Year1Spring2");
+    document.querySelector(".Year1Spring3").textContent = localStorage.getItem("Year1Spring3");
+    document.querySelector(".Year1Spring4").textContent = localStorage.getItem("Year1Spring4");
+    document.querySelector(".Year1Spring5").textContent = localStorage.getItem("Year1Spring5");
+
+    loadClassInformation();
+    updateTotalHours();
+}
+
+loadCourses();
 
 // Functionality for the dark mode feature.
 let toggleDark = document.querySelector("#toggleEmoji");
@@ -88,7 +162,7 @@ courseClose.addEventListener("click", function () {
 })
 
 // Functionality to add a new course.
-$("#newCourseSubmitButton").on("click", function() {
+$("#newCourseSubmitButton").on("click", function () {
     let loadCourseList = JSON.parse(localStorage.getItem("classList"));
     loadCourseList[`${document.querySelector("#newCourseId").value}`] = {
         "courseName": `${document.querySelector("#newCourseName").value}`,
@@ -280,6 +354,7 @@ $("#addButton").on("click", function () {
             console.log(selectedCourses[i].value);
             selectedCourses[i].parentNode.innerHTML = selectedCourses[i].value;
         }
+        saveCourses();
     }
     else {
         sessionStorage.setItem("addingCourses", "true");
@@ -306,14 +381,8 @@ $("#addButton").on("click", function () {
 
                 fallCourses[i].appendChild(selectElement);
                 fallCourses[i].addEventListener("change", function () {
-                    if (thisCourse[selectElement.value] === undefined) {
-                        fallCourses[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectElement.value].courseName;
-                        fallCourses[i].parentNode.querySelector(".fallHours").textContent = thisCourse[selectElement.value].courseCredits;
-                    }
-                    else {
-                        fallCourses[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectElement.value].courseName;
-                        fallCourses[i].parentNode.querySelector(".fallHours").textContent = thisCourse[selectElement.value].courseCredits;
-                    }
+                    fallCourses[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectElement.value].courseName;
+                    fallCourses[i].parentNode.querySelector(".fallHours").textContent = thisCourse[selectElement.value].courseCredits;
                 })
             }
         }
@@ -346,31 +415,9 @@ $("#addButton").on("click", function () {
                 springCourses[i].appendChild(selectElement);
             }
         }
-
     }
 })
 
-// Functionality to count the total hours for each semester.
-let updateTotalHours = function () {
-    let totalFallHours = document.querySelectorAll(".fallTotal");
-    for (let i = 0; i < totalFallHours.length; i++) {
-        let totalHours = parseInt("0", 10);
-        let courseHours = totalFallHours[i].parentNode.parentNode.parentNode.querySelectorAll(".fallHours");
-        for (let j = 0; j < courseHours.length; j++) {
-            totalHours += parseInt(courseHours[j].textContent, 10);
-        }
-        totalFallHours[i].textContent = totalHours;
-    }
-    let totalSpringHours = document.querySelectorAll(".springTotal");
-    for (let i = 0; i < totalSpringHours.length; i++) {
-        let totalHours = parseInt("0", 10);
-        let courseHours = totalSpringHours[i].parentNode.parentNode.parentNode.querySelectorAll(".springHours");
-        for (let j = 0; j < courseHours.length; j++) {
-            totalHours += parseInt(courseHours[j].textContent, 10);
-        }
-        totalSpringHours[i].textContent = totalHours;
-    }
-}
 updateTotalHours();
 document.addEventListener('click', updateTotalHours);
 
