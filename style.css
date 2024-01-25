@@ -86,14 +86,26 @@ header {
 }
 
 #degreeHeading {
-    margin: 50px 0px 42px 0px;
+    margin: 50px 0px 0px 0px;
     color: white;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 
-#courseClose {
+#adminButton {
+    margin: 0px 200px 0px 0px;
+}
+
+#adminPowers {
+    margin: 0px 0px 0px 200px;
+}
+
+#addButton, #editButton, #removeButton, #newCourseButton {
+    visibility: hidden;
+}
+
+#courseClose, #newCourseClose {
     font-size: 25px;
     float: right;
     background: none;
@@ -101,7 +113,7 @@ header {
     outline: none;
 }
 
-#courseClose:hover {
+#courseClose:hover, #newCourseClose:hover {
     text-shadow: 2px 2px 2px #C8102E;
 }
 
@@ -114,7 +126,7 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 25px;
-    background-color: rgba(0, 0, 0, 0.767);
+    background-color: dimgray;
     color: white;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
     opacity: 0;
@@ -122,11 +134,46 @@ header {
     transition: opacity 1s;
 }
 
-#courseContainer.fadeOut {
+#newCourseContainer {
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: dimgray;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+#newCourseHeader {
+    margin-bottom: 20px;
+}
+
+#newCourseContainer label {
+    font-size: 18px;
+    text-align: right;
+}
+
+#newCourseContainer input {
+    background-color: white;
+    border: 1px solid black;
+}
+
+#newCourseSubmitButton {
+    margin-top: 20px;
+}
+
+#courseContainer.fadeOut, #newCourseContainer.fadeOut {
     opacity: 0;
 }
 
-#courseContainer.fadeIn {
+#courseContainer.fadeIn, #newCourseContainer.fadeOut {
     opacity: 1;
 }
 
@@ -150,7 +197,7 @@ header {
 }
 
 .tableSection {
-    margin: 0px 200px 25px 200px;
+    margin: 25px 200px 25px 200px;
     visibility: visible;
 }
 
@@ -172,20 +219,32 @@ td, th {
     padding: 5px 5px 5px 5px;
 }
 
-td:first-child {
-    width: 25%;
-}
-
 tbody tr:hover {
     text-shadow: 1px 1px black;
     text-decoration: underline;
     text-decoration-color: white;
-    
 }
+
 
 td.darkMode {
     background-color: rgb(0, 0, 0);
     color: white;
+}
+
+.fallId, .springId {
+    width: 10%;
+}
+
+.fallCourse, .springCourse {
+    width: 25%;
+}
+
+.fallHours, .springHours {
+    width: 5%;
+}
+
+.fallHeader, .fallHours, .fallTotal {
+    border-right: 1px solid black;
 }
 
 tr:nth-child(odd) {
@@ -196,16 +255,12 @@ tr:nth-child(even) {
     background-color: rgb(255, 194, 194);
 }
 
-tbody tr td:first-child:hover {
+.fallId:hover, .springId:hover {
     cursor: pointer;
 }
 
 .totalCreditHours, .creditHours {
     text-align: right;
-}
-
-.rightTable .creditHours {
-    border-right: 1px solid black;
 }
 
 select {

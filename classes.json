@@ -2,7 +2,7 @@
   "COSC 1336": {
     "courseName": "Computer Science Programming",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in MATH 1314 or equivalent.",
     "courseDescription": "Introduction to problem solving through computer programming. Students will learn the fundamental principles of computer science, basic hardware and software components of a computer system, computational thinking, basic algorithms, and programming concepts. Students will get hands-on experience in problem solving by designing, writing, testing and debugging programs in a modern programming language.",
     "courseRepeatability": "No",
@@ -12,7 +12,7 @@
   "ENGL 1301": {
     "courseName": "First Year Writing I",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A TSI placement score of at least 340, and an essay score of at least a 4 on the TSI Writing Assessment; or a placement score of less than 340, and an ABE Diagnostic level of at least 4, and an essay score of at least 5 on the TSI Writing Assessment; and a score ranging from 351 to 390 on the TSI Reading Assessment. Students may exempt the TSI by obtaining satisfactory scores on other accepted standardized tests. See http://www.uh.edu/ussc/tsi/ for details.",
     "courseDescription": "",
     "courseRepeatability": "No",
@@ -22,7 +22,7 @@
   "HIST 1377": {
     "courseName": "The U S To 1877",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "",
     "courseDescription": "The social, economic, and political history of the United States to 1877.",
     "courseRepeatability": "",
@@ -32,7 +32,7 @@
   "GOVT 2306": {
     "courseName": "US and Texas Constitution and Politics",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "",
     "courseDescription": "Introduction to the constitutions and politics of the United States and Texas, emphasizing constitutional structure, federalism, separation of powers, limited government, public opinion, elections, and civil liberties. (Introductory category)",
     "courseRepeatability": "No",
@@ -42,7 +42,7 @@
   "MATH 2413": {
     "courseName": "Calculus I",
     "courseHours": "Lecture Contact Hours: 4, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 4",
+    "courseCredits": "4",
     "coursePrerequisite": "Credit for MATH 2312 with a grade of C- or higher, or a satisfactory score on a placement examination.",
     "courseDescription": "Calculus of rational functions, limits, derivatives, applications of the derivative, antiderivatives, the definite integral with applications, mean value theorem, fundamental theorem of calculus, and numerical integration.",
     "courseRepeatability": "Yes",
@@ -52,7 +52,7 @@
   "COSC 1437": {
     "courseName": "Introduction to Programming",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
-    "courseCredits": "Credit Hours: 4",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 1336, and credit for or concurrent enrollment in MATH 2413.",
     "courseDescription": "Fundamental concepts of structured programming; procedures and elementary data structures with a focus on problem solving strategies and implementation; computer organization, structured procedural programming, C/C++ programming language, and algorithm design.",
     "courseRepeatability": "No",
@@ -62,7 +62,7 @@
   "ENGL 1302": {
     "courseName": "First Year Writing II",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1301 or equivalent.",
     "courseDescription": "Detailed study of the principles of rhetoric as applied to analyzing and writing argumentative and persuasive essays; principles and methods of research, culminating in writing a substantial research paper.",
     "courseRepeatability": "No",
@@ -72,7 +72,7 @@
   "HIST 1378": {
     "courseName": "The U S Since 1877",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "",
     "courseDescription": "The social, economic, and political history of the United States since 1877.",
     "courseRepeatability": "",
@@ -82,7 +82,7 @@
   "GOVT 2305": {
     "courseName": "US Government: Congress, President, & Courts",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "",
     "courseDescription": "Introduction to the institutions of government with an emphasis on the congress, the president, and the federal courts. (Introductory category.)",
     "courseRepeatability": "No",
@@ -92,7 +92,7 @@
   "MATH 2414": {
     "courseName": "Calculus II",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 4",
+    "courseCredits": "4",
     "coursePrerequisite": "Credit for MATH 2413 with a grade of C- or higher.",
     "courseDescription": "Calculus of transcendental functions: additional techniques and applications of integration, indeterminate forms, improper integrals, Taylor’s formula, and infinite series.",
     "courseRepeatability": "Yes",
@@ -102,7 +102,7 @@
   "COSC 2436": {
     "courseName": "Programming and Data Structures",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
-    "courseCredits": "Credit Hours: 4",
+    "courseCredits": "4",
     "coursePrerequisite": "A grade of C- or better in COSC 1437 and credit for or concurrent enrollment in MATH 2414.",
     "courseDescription": "Introduction to fundamental data structures: arrays, lists, stacks, queues, hash tables, trees; sorting and searching; graph algorithms; design, analysis, and comparison of algorithms. Correctness verification techniques such as assertions and invariants. Review program specification, unit testing, and debugging.",
     "courseRepeatability": "No",
@@ -112,7 +112,7 @@
   "COSC 2425": {
     "courseName": "Computer Organization and Architecture",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
-    "courseCredits": "Credit Hours: 4",
+    "courseCredits": "4",
     "coursePrerequisite": "A grade of C- or better in COSC 1437.",
     "courseDescription": "Low-level computer design, basics of digital design, and hardware/software interface; Principles of pipelining and caching, instruction pipelining, SIMD and multiprocessor systems.",
     "courseRepeatability": "No",
@@ -122,7 +122,7 @@
   "MATH 2318": {
     "courseName": "Linear Algebra",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "Credit for or concurrent enrollment in MATH 2414.",
     "courseDescription": "Solutions of systems of linear equations, matrices, vector spaces, linear transformations, similarity, eigenvalues and eigenvectors.",
     "courseRepeatability": "No",
@@ -132,7 +132,7 @@
   "MATH 3321": {
     "courseName": "Engineering Mathematics",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "MATH 2414.",
     "courseDescription": "First order ordinary differential equations and initial value problems; higher order differential equations; vector spaces, matrices, determinants, eigenvectors and eigenvalues; applications to systems of first order equations; Laplace transforms.",
     "courseRepeatability": "No",
@@ -142,7 +142,7 @@
   "COSC 3360": {
     "courseName": "Fundamentals of Operating Systems",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "COSC majors and minors: A grade of C- or better in COSC 2436 and COSC 2425; CpE majors: A grade of C- or better in COSC 2320 AND ECE 5367.",
     "courseDescription": "Operating system; sequential processes, concurrent processes, deadlock, mutual exclusion, semaphores; memory management, processor management, peripheral device management.",
     "courseRepeatability": "No",
@@ -152,7 +152,7 @@
   "MATH 3336": {
     "courseName": "Discrete Mathematics",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "MATH 2318 or equivalent",
     "courseDescription": "Topics selected from logic, set theory, combinatorics, and graph theory.",
     "courseRepeatability": "No",
@@ -162,7 +162,7 @@
   "COSC 3336": {
     "courseName": "Computing Structures",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in MATH 2318 or MATH 3321, and COSC 2425.",
     "courseDescription": "Introduce methods of reasoning used in computer science; logical notation and proof methods; induction and recursion; sets, functions, and relations; graphs; the growth of functions; annotated programs and loop invariants.",
     "courseRepeatability": "No",
@@ -172,7 +172,7 @@
   "COSC 3340": {
     "courseName": "Introduction to Automata and Computability",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in MATH 3336, and COSC 2320 or COSC 2436.",
     "courseDescription": "Introduction to automata theory (finite-state automata, push-down automata, Turing machines); formal systems (regular and context-free languages and grammars); computability, Church-Turing thesis.",
     "courseRepeatability": "No",
@@ -182,7 +182,7 @@
   "COSC 3320": {
     "courseName": "Algorithms and Data Structures",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in MATH 3336, and COSC 2320 or COSC 2436.",
     "courseDescription": "Algorithm analysis and design, heuristics; advanced tree structures; advanced hashing techniques; sorting and searching; graphs, sets. NP-Completeness, Time and Space complexities.",
     "courseRepeatability": "No",
@@ -192,7 +192,7 @@
   "MATH 3339": {
     "courseName": "Statistics for the Sciences",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "MATH 2414.",
     "courseDescription": "Graphical and descriptive methods in statistics, probability, random variables and distributions, sampling, estimation, hypothesis testing, regression, analysis of variance, exploratory and diagnostics, statistical computing.",
     "courseRepeatability": "Yes",
@@ -202,7 +202,7 @@
   "COSC 3380": {
     "courseName": "Database Systems",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 2320 or COSC 2436.",
     "courseDescription": "Declared Computer Science majors and minors, and Computer Engineering majors. Database design with ER model, relational model and normalization up to 3NF/BCNF normal forms. Relational algebra and basic SQL queries combining filters, joins and aggregations. SQL transaction processing. Overview of DBMS internal subsystems including: storage, indexing, query optimizer, locking, recovery manager, security mechanisms. Database application development.",
     "courseRepeatability": "No",
@@ -212,7 +212,7 @@
   "COSC 4351": {
     "courseName": "Fundamentals of Software Engineering",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "COSC majors and minors: A grade of C- or better in COSC 3320 and MATH 3336; CpE majors: A grade of C- or better in COSC 2320 and MATH 3336.",
     "courseDescription": "Introduction to the concepts of software engineering. Identification of problems related to the development of large software systems. Software project planning, requirements analysis, design, implementation, quality assurance and maintenance.",
     "courseRepeatability": "No",
@@ -222,7 +222,7 @@
   "COSC 4353": {
     "courseName": "Software Design",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 3320, and MATH 3336 or COSC 3336.",
     "courseDescription": "Object-oriented paradigm, classes, object relationship, software architecture, object modeling technique, design metrics, software development patterns, practices, and principles.",
     "courseRepeatability": "No",
@@ -232,7 +232,7 @@
   "GEOL 1302": {
     "courseName": "Intro To Global Climate Change",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "Credit for, placement out of, or concurrent enrollment in MATH 1314 or MATH 1324 or MATH 1332 (formerly MATH 1310 or MATH 1313, or MATH 1311).",
     "courseDescription": "Examines how past climate records and models provide a better understanding of possible future climate changes. Greenhouse gases, solar output, Earth’s orbit, and anthropogenic effects.",
     "courseRepeatability": "No",
@@ -242,7 +242,7 @@
   "GEOL 1303": {
     "courseName": "Physical Geology",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "Credit for, placement out of, or concurrent enrollment in MATH 1314 or MATH 1324 or MATH 1332 (formerly MATH 1310, or MATH 1313, or MATH 1311).",
     "courseDescription": "Principles of geology; emphasis on surface and internal processes of the earth.",
     "courseRepeatability": "No",
@@ -252,7 +252,7 @@
   "GEOL 1304": {
     "courseName": "Historical Geology",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "GEOL 1303, and credit for, placement out of, or concurrent enrollment in MATH 1314 or MATH 1324 or MATH 1332 (formerly GEOL 1330, MATH 1310 or MATH 1313 or MATH 1311).",
     "courseDescription": "Geologic history of the earth; introduction to the uses of geological principles to interpret earth history.",
     "courseRepeatability": "No",
@@ -262,7 +262,7 @@
   "GEOL 1340": {
     "courseName": "Earth Systems",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "MATH 1314 or MATH 1324 or MATH 1332 (formerly MATH 1310 or MATH 1313, or MATH 1311).",
     "courseDescription": "Earth’s dynamic systems emphasizing the interactions among the atmosphere, hydrosphere and lithosphere. Includes the processes by which the earth was formed and continues to be modified as well as how humans affect and are affected by those processes.",
     "courseRepeatability": "No",
@@ -272,7 +272,7 @@
   "GEOL 1370": {
     "courseName": "Natural Disasters",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "MATH 1314 or MATH 1332.",
     "courseDescription": "The scientific study of the geology, meteorology, oceanography, and climatology of common natural disasters.",
     "courseRepeatability": "No",
@@ -282,7 +282,7 @@
   "PHYS 2325": {
     "courseName": "University Physics I (lecture)",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "Credit for or concurrent enrollment in MATH 2414.",
     "courseDescription": "First semester of a two part calculus-based course covering mechanics of one- and two-dimensional motion, dynamics, energy, momentum, rotational dynamics and kinematics, statics, gravity, oscillations, waves and fluids.",
     "courseRepeatability": "No",
@@ -292,7 +292,7 @@
   "PHYS 2326": {
     "courseName": "University Physics II (lecture)",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "PHYS 2325, Credit for or concurrent enrollment in MATH 2415.",
     "courseDescription": "Second semester of a two part calculus-based course covering thermodynamics, electricity, magnetism, electromagnetic waves, optics, and modern physics.",
     "courseRepeatability": "No",
@@ -302,7 +302,7 @@
   "GEOL 1102": {
     "courseName": "Introduction to Climate Change Laboratory",
     "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 1",
+    "courseCredits": "1",
     "coursePrerequisite": "Credit for or concurrent enrollment in GEOL 1302.",
     "courseDescription": "Study of climate change processes through the collection of meteorological and geochemical data and analysis of climate related datasets.",
     "courseRepeatability": "",
@@ -312,7 +312,7 @@
   "GEOL 1103": {
     "courseName": "Physical Geology Lab",
     "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 1",
+    "courseCredits": "1",
     "coursePrerequisite": "Credit for or concurrent enrollment in GEOL 1303.",
     "courseDescription": "Supplementary to lecture; study of minerals, rocks, and maps.",
     "courseRepeatability": "No",
@@ -322,7 +322,7 @@
   "GEOL 1104": {
     "courseName": "Historical Geology Lab",
     "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 1",
+    "courseCredits": "1",
     "coursePrerequisite": "GEOL 1103 and credit for or concurrent enrollment in GEOL 1304.",
     "courseDescription": "Supplementary to lecture; study of rocks, fossils, and maps.",
     "courseRepeatability": "No",
@@ -332,7 +332,7 @@
   "PHYS 2125": {
     "courseName": "University Physics Laboratory I",
     "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 1",
+    "courseCredits": "1",
     "coursePrerequisite": "Credit for or concurrent enrollment in PHYS 2325.",
     "courseDescription": "Experiments in mechanics and wave motion.",
     "courseRepeatability": "No",
@@ -342,7 +342,7 @@
   "PHYS 2126": {
     "courseName": "University Physics Laboratory II",
     "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
-    "courseCredits": "Credit Hours: 1",
+    "courseCredits": "1",
     "coursePrerequisite": "Credit for or concurrent enrollment in PHYS 2326.",
     "courseDescription": "Experiments in thermodynamics, electricity, magnetism, and optics.",
     "courseRepeatability": "No",
@@ -352,7 +352,7 @@
   "DANC 2303": {
     "courseName": "Introduction to Dance",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302.",
     "courseDescription": "An introductory class to dance as an art form with an overview of the dance techniques, history, and choreography of major dance genres.",
     "courseRepeatability": "Yes",
@@ -362,7 +362,7 @@
   "DANC 2323": {
     "courseName": "Dance in Film and Cinematic Media",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "None.",
     "courseDescription": "(50) Core-Creative Arts",
     "courseRepeatability": "Yes",
@@ -372,7 +372,7 @@
   "MUSI 1307": {
     "courseName": "Listening to Classical Music",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302.",
     "courseDescription": "An introduction to the masterworks of Western music from Gregorian chant to the present.",
     "courseRepeatability": "No",
@@ -382,7 +382,7 @@
   "MUSI 2302": {
     "courseName": "Listening to Jazz",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302.",
     "courseDescription": "Introduction to jazz listening and jazz history through the study of specific works in historical and cultural contexts.",
     "courseRepeatability": "No",
@@ -392,7 +392,7 @@
   "PHIL 1361": {
     "courseName": "Philosophy and the Arts",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1301.",
     "courseDescription": "Introduction to philosophical topics in the visual and performing arts, including criticism, interpretation, moral issues, and cultural contexts.",
     "courseRepeatability": "No",
@@ -402,7 +402,7 @@
   "ANTH 2304": {
     "courseName": "Intro To Language and Culture",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "Concurrent enrollment in or completion of ENGL 1301 or equivalent.",
     "courseDescription": "Anthropological perspectives on the relation of language and culture including social use of language, language as behavior, and non-verbal communication.",
     "courseRepeatability": "No",
@@ -412,7 +412,7 @@
   "HDCS 1300": {
     "courseName": "Human Ecosystems & Tech Change",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302 or equivalent.",
     "courseDescription": "Introduction to the study of human and consumer needs, values, and goals in relationship to natural, man-made, and behavioral systems within the context of dynamic technological change.",
     "courseRepeatability": "No",
@@ -422,7 +422,7 @@
   "PHIL 1334": {
     "courseName": "Minds and Machines",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1301.",
     "courseDescription": "Perspectives on issues from recent sciences of the mind: Is human psychology a product of evolution? Does thought depend on language? Is our visual world constricted by our brains?",
     "courseRepeatability": "No",
@@ -432,7 +432,7 @@
   "HIST 2303": {
     "courseName": "The Historian's Craft: An Introduction to Historical Methods",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302.",
     "courseDescription": "Introduction to historical research, writing, and thinking, including the fundamental tools that historians use and the range of work that they do. Students will learn how to analyze a variety of historical sources, will gain exposure to the diverse approaches to historical work, and will build foundational writing and citation skills. Courses will be topical and include hands-on workshops.",
     "courseRepeatability": "No",
@@ -442,7 +442,7 @@
   "AAMS 2300": {
     "courseName": "Introduction to Asian American Studies",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302.",
     "courseDescription": "Course Description: Introduces students to interdisciplinary analyses of Asian peoples as a “race” and multi-ethnicities in the US. Examines some of the dominant historical experiences and issues that shape Asian American. Explores the diversity and complexity of Asian American histories and experiences within the context of US race and ethnic relations.",
     "courseRepeatability": "No",
@@ -452,7 +452,7 @@
   "ANTH 2301": {
     "courseName": "Introduction to Physical Anthropology",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "Concurrent enrollment in or completion of ENGL 1301 or equivalent.",
     "courseDescription": "Physical anthropology emphasizing origins and biological diversity of human populations.",
     "courseRepeatability": "No",
@@ -462,7 +462,7 @@
   "ANTH 2302": {
     "courseName": "Introduction to Archeology",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "Concurrent enrollment in or completion of ENGL 1301 or equivalent.",
     "courseDescription": "An introduction to the history, methods, and theory within modern archaeology, including discussion of data collection, analysis, dating techniques, and interpretation.",
     "courseRepeatability": "No",
@@ -472,7 +472,7 @@
   "ECON 2301": {
     "courseName": "Principles of Macroeconomics",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "MATH 1314 or equivalent or consent of instructor.",
     "courseDescription": "Aggregate economy, inflation, recession, and economic policy. Economic growth, business cycle theory, and international trade.",
     "courseRepeatability": "No",
@@ -482,7 +482,7 @@
   "KIN 1304": {
     "courseName": "Public Health Issues in Physical Activity and Obesity",
     "courseHours": "Lecture Contact Hours: 2, Lab Contact Hours: 1",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "",
     "courseDescription": "Analysis of the effect of obesity and physical activity on disease risk and the effect of aerobic exercise on weight control and health promotion.",
     "courseRepeatability": "",
@@ -492,7 +492,7 @@
   "SOCI 1301": {
     "courseName": "Introduction To Sociology",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "",
     "courseDescription": "Major theories, methods; and findings pertaining to the study of societies, institutions, organizations, and groups. The interrelationships of society, culture, and personality.",
     "courseRepeatability": "No",
@@ -502,7 +502,7 @@
   "COSC 3337": {
     "courseName": "Data Science I",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 2306 or COSC 2436, and MATH 3339 and declared COSC major, COSC minor, or Data Science minor.",
     "courseDescription": "Data science concepts including exploratory data analysis, data visualization, statistical inference and modeling, machine learning, clustering, post-processing and interpreting results.",
     "courseRepeatability": "No",
@@ -512,7 +512,7 @@
   "COSC 3371": {
     "courseName": "Cybersecurity",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 3360.",
     "courseDescription": "Introduction to cybersecurity: theoretical foundations of security, cryptographic algorithms and protocols, widely used security protocols (such as SSL), and practical attack and defense techniques, including software vulnerability exploits and firewalls.",
     "courseRepeatability": "No",
@@ -522,7 +522,7 @@
   "COSC 4311": {
     "courseName": "Computer Scientists and Society",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 3360.",
     "courseDescription": "Issues of professional responsibility and ethics related to the use of computer technology in complex modern working environments. Emphasis and evaluation on technical writing.",
     "courseRepeatability": "No",
@@ -532,7 +532,7 @@
   "COSC 4315": {
     "courseName": "Programming Languages and Paradigms",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 2320 or COSC 2436.",
     "courseDescription": "Discussion and comparison of basic programming styles; their underlying paradigms and languages based on these paradigms; such as imperative and functional programming styles.",
     "courseRepeatability": "No",
@@ -542,7 +542,7 @@
   "COSC 4331": {
     "courseName": "Real-Time Systems and Embedded Programming",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 3360.",
     "courseDescription": "Introduction to real-time and embedded systems; scheduling; programming language and operating systems; support; formal specification, analysis, and verification; embedded programming; power-aware computing.",
     "courseRepeatability": "No",
@@ -552,7 +552,7 @@
   "COSC 4354": {
     "courseName": "Software Development Practices",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 4353.",
     "courseDescription": "Declared Computer Science majors and minors only. Pragmatics of software development, hands-on iterative, incremental and agile software development team project with emphasis on use of state of the art tools, techniques, principles, and better practices.    ",
     "courseRepeatability": "No",
@@ -562,7 +562,7 @@
   "COSC 4358": {
     "courseName": "Introduction to Interactive Game Development",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 2436.",
     "courseDescription": "Team development of interactive video games on state-of-the-art devices.",
     "courseRepeatability": "No",
@@ -572,7 +572,7 @@
   "COSC 4368": {
     "courseName": "Fundamentals of Artificial Intelligence",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 2320 or COSC 2436.",
     "courseDescription": "An overview of main topics in the field of artificial intelligence. Topics include search techniques, reasoning with logic, planning, decision making, machine learning, and robotics.",
     "courseRepeatability": "No",
@@ -582,7 +582,7 @@
   "COSC 4370": {
     "courseName": "Interactive Computer Graphics",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in MATH 2318, and COSC 2320 or COSC 2430.",
     "courseDescription": "Introduction to graphics hardware and software; interactive systems to display three-dimensional objects; display and input devices; and alternative algorithms, system configuration, and design trade-offs.",
     "courseRepeatability": "No",
@@ -592,7 +592,7 @@
   "AAS 2320": {
     "courseName": "Intro To African American Stdy",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1301.",
     "courseDescription": "An introductory analysis of the discipline of African American/African Studies, its mission, key theories and major concerns.",
     "courseRepeatability": "No",
@@ -602,7 +602,7 @@
   "ARTH 1300": {
     "courseName": "Ways of Seeing: Art and Our Visual World",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1301.",
     "courseDescription": "Examination of our visual world and the various ways in which that world has been analyzed and valued. May not be applied to a major or minor in art history or art.",
     "courseRepeatability": "No",
@@ -612,7 +612,7 @@
   "CHIN 3344": {
     "courseName": "Modern and Contemporary Global Chinese Literature",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302.",
     "courseDescription": "This course introduces students to the canon of Chinese literature, and traces the social-politial and cultural transformation of Chinese societies and the global Chinese diaspora through literature.",
     "courseRepeatability": "No",
@@ -622,7 +622,7 @@
   "GERM 3369": {
     "courseName": "World War I in Literature, Visual Arts, and Film",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": "ENGL 1302.",
     "courseDescription": "Representations of World War I in literature, photography, art, and film; focus on the cultural impact of the war experience, avant-garde movements, and social, political and artistic rupture.",
     "courseRepeatability": "No",
@@ -632,7 +632,7 @@
   "PHIL 1305": {
     "courseName": "Intro To Ethics",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-    "courseCredits": "Credit Hours: 3",
+    "courseCredits": "3",
     "coursePrerequisite": " ENGL 1301.",
     "courseDescription": "A historical introduction to the main problems and questions of moral philosophy.",
     "courseRepeatability": "No",
