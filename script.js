@@ -62,14 +62,26 @@ let loadClassInformation = function () {
 
     let selectFallHours = document.querySelectorAll(".fallHours");
     for (let i = 0; i < selectFallHours.length; i++) {
-        selectFallHours[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseName;
-        selectFallHours[i].textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseCredits;
+        if (selectFallHours[i].parentNode.querySelector(".fallId").textContent === "") {
+            selectFallHours[i].parentNode.querySelector(".fallCourse").textContent = "";
+            selectFallHours[i].textContent = "0";   
+        }
+        else {
+            selectFallHours[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseName;
+            selectFallHours[i].textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseCredits;    
+        }
     } 
 
     let selectSpringHours = document.querySelectorAll(".springHours");
     for (let i = 0; i < selectSpringHours.length; i++) {
-        selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseName;
-        selectSpringHours[i].textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseCredits;
+        if (selectFallHours[i].parentNode.querySelector(".springId").textContent === "") {
+            selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = "";
+            selectSpringHours[i].textContent = "0";    
+        } 
+        else {
+            selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseName;
+            selectSpringHours[i].textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseCredits;    
+        }
     } 
 }
 
@@ -292,6 +304,7 @@ $("#adminButton").on("click", function () {
             document.querySelector("#editButton").style.visibility = "hidden";
             document.querySelector("#removeButton").style.visibility = "hidden";
             document.querySelector("#newCourseButton").style.visibility = "hidden";
+            saveCourses();
         }
     }
     else {
