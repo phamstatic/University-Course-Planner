@@ -6,13 +6,30 @@ sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
 
+let newCourses = {
+    "ZZZZ1234": {
+        "courseName": "Sleeping 101",
+        "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+        "courseCredits": "3",
+        "coursePrerequisite": "Eyelids.",
+        "courseDescription": "Introduction to sleeping fundamentals.",
+        "courseRepeatability": "No",
+        "courseCore": "",
+        "courseFee": "Y"
+    }
+}
+
 // jsonFetch
-let json;
-fetch("classes.json")
-    .then(res => res.json())
-    .then(jsonData => {
-        json = jsonData;
-    });
+if (localStorage.getItem("classList") === null) {
+    fetch("classes.json")
+        .then(res => res.json())
+        .then(jsonData => {
+            localStorage.setItem("classList", JSON.stringify(jsonData));
+            console.log("saved to localstorage");
+        });
+}
+
+console.log(JSON.parse(localStorage.getItem("classList")));
 
 // Functionality for the dark mode feature.
 let toggleDark = document.querySelector("#toggleEmoji");
@@ -53,15 +70,15 @@ for (let i = 0; i < courseList.length; i++) {
         if (courseNumber === "" || courseNumber === "COSC XXX" || courseNumber === "CORE" || this.innerHTML === "Semester Hours" || this.id === "emptyRow" || sessionStorage.getItem("adminScreen") === "true") {
             return;
         }
-        console.log(json[`${courseNumber}`].courseName);
-        document.querySelector("#courseName").textContent = `${courseNumber}, ${json[`${courseNumber}`].courseName}`;
-        document.querySelector("#courseHours").textContent = json[`${courseNumber}`].courseHours;
-        document.querySelector("#courseCredits").textContent = json[`${courseNumber}`].courseCredits;
-        document.querySelector("#coursePrerequisite").textContent = json[`${courseNumber}`].coursePrerequisite;
-        document.querySelector("#courseDescription").textContent = json[`${courseNumber}`].courseDescription;
-        document.querySelector("#courseRepeatability").textContent = json[`${courseNumber}`].courseRepeatability;
-        document.querySelector("#courseCore").textContent = json[`${courseNumber}`].courseCore;
-        document.querySelector("#courseFee").textContent = json[`${courseNumber}`].courseFee;
+        let thisCourse = JSON.parse(localStorage.getItem("classList"))[`${courseNumber}`];
+        document.querySelector("#courseName").textContent = `${thisCourse.courseName}`;
+        document.querySelector("#courseHours").textContent = thisCourse.courseHours;
+        document.querySelector("#courseCredits").textContent = thisCourse.courseCredits;
+        document.querySelector("#coursePrerequisite").textContent = thisCourse.coursePrerequisite;
+        document.querySelector("#courseDescription").textContent = thisCourse.courseDescription;
+        document.querySelector("#courseRepeatability").textContent = thisCourse.courseRepeatability;
+        document.querySelector("#courseCore").textContent = thisCourse.courseCore;
+        document.querySelector("#courseFee").textContent = thisCourse.courseFee;
         if (sessionStorage.getItem("openCourse") === "false") {
             sessionStorage.setItem("openCourse", "true");
             courseContainer.classList.toggle("fadeOut");
@@ -257,8 +274,9 @@ $("#addButton").on("click", function () {
         sessionStorage.setItem("addingCourses", "true");
         $("#addButton").css("font-weight", "bold");
         const options = [""];
-        for (let course in json) {
-            if (json.hasOwnProperty(course)) {
+        let thisCourse = JSON.parse(localStorage.getItem("classList"));
+        for (let course in thisCourse) {
+            if (thisCourse.hasOwnProperty(course)) {
                 options.push(course);
             }
         }
@@ -274,10 +292,23 @@ $("#addButton").on("click", function () {
                     option.text = optionText;
                     selectElement.add(option);
                 })
+                for (let i = 0; i < Object.keys(newCourses).length; i++) {
+                    const option = document.createElement("option");
+                    option.value = Object.keys(newCourses)[i];
+                    option.text = Object.keys(newCourses)[i];
+                    selectElement.add(option);
+                }
+
                 fallCourses[i].appendChild(selectElement);
                 fallCourses[i].addEventListener("change", function () {
-                    fallCourses[i].parentNode.querySelector(".fallCourse").textContent = json[selectElement.value].courseName;
-                    fallCourses[i].parentNode.querySelector(".fallHours").textContent = json[selectElement.value].courseCredits;
+                    if (thisCourse[selectElement.value] === undefined) {
+                        fallCourses[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectElement.value].courseName;
+                        fallCourses[i].parentNode.querySelector(".fallHours").textContent = thisCourse[selectElement.value].courseCredits;
+                    }
+                    else {
+                        fallCourses[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectElement.value].courseName;
+                        fallCourses[i].parentNode.querySelector(".fallHours").textContent = thisCourse[selectElement.value].courseCredits;
+                    }
                 })
             }
         }
@@ -293,8 +324,8 @@ $("#addButton").on("click", function () {
                 })
                 springCourses[i].appendChild(selectElement);
                 springCourses[i].addEventListener("change", function () {
-                    springCourses[i].parentNode.querySelector(".springCourse").textContent = json[selectElement.value].courseName;
-                    springCourses[i].parentNode.querySelector(".springHours").textContent = json[selectElement.value].courseCredits;
+                    springCourses[i].parentNode.querySelector(".springCourse").textContent = thisCourse[selectElement.value].courseName;
+                    springCourses[i].parentNode.querySelector(".springHours").textContent = thisCourse[selectElement.value].courseCredits;
                 })
             }
         }
