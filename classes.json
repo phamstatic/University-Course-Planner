@@ -52,7 +52,7 @@
   "COSC 1437": {
     "courseName": "Introduction to Programming",
     "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 1",
-    "courseCredits": "4",
+    "courseCredits": "3",
     "coursePrerequisite": "A grade of C- or better in COSC 1336, and credit for or concurrent enrollment in MATH 2413.",
     "courseDescription": "Fundamental concepts of structured programming; procedures and elementary data structures with a focus on problem solving strategies and implementation; computer organization, structured procedural programming, C/C++ programming language, and algorithm design.",
     "courseRepeatability": "No",

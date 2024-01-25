@@ -303,7 +303,7 @@ let updateTotalHours = function () {
     let totalSpringHours = document.querySelectorAll(".springTotal");
     for (let i = 0; i < totalSpringHours.length; i++) {
         let totalHours = parseInt("0", 10);
-        let courseHours = totalSpringHours[i].parentNode.parentNode.parentNode.querySelectorAll(".fallHours");
+        let courseHours = totalSpringHours[i].parentNode.parentNode.parentNode.querySelectorAll(".springHours");
         for (let j = 0; j < courseHours.length; j++) {
             totalHours += parseInt(courseHours[j].textContent, 10);
         }
