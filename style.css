@@ -105,7 +105,7 @@ header {
     visibility: hidden;
 }
 
-#courseClose, #newCourseClose {
+#courseClose, #newCourseClose, #editCourseClose {
     font-size: 25px;
     float: right;
     background: none;
@@ -113,7 +113,7 @@ header {
     outline: none;
 }
 
-#courseClose:hover, #newCourseClose:hover {
+#courseClose:hover, #newCourseClose:hover, #editCourseClose {
     text-shadow: 2px 2px 2px #C8102E;
 }
 
@@ -151,23 +151,39 @@ header {
     transition: opacity 1s;
 }
 
-#newCourseHeader {
+#newCourseHeader, #editCourseHeader {
     margin-bottom: 20px;
 }
 
-#newCourseContainer label {
+#newCourseContainer label, #editCourseContainer label {
     font-size: 18px;
     text-align: right;
 }
 
-#newCourseContainer input {
+#newCourseContainer input, #editCourseContainer input {
     background-color: white;
     border: 1px solid black;
 }
 
-#newCourseSubmitButton {
+#newCourseSubmitButton, #editCourseSubmitButton {
     margin-top: 20px;
 }
+
+#editCourseContainer {
+    width: 1000px;
+    height: 500px;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: dimgray;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    transition: opacity 1s;
+}
+
 
 #courseContainer.fadeOut, #newCourseContainer.fadeOut {
     opacity: 0;

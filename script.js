@@ -87,7 +87,7 @@ if (localStorage.getItem("classList") === null) {
             localStorage.setItem("Year4Spring5", "");
     
         });
-    }
+}
 
 console.log(JSON.parse(localStorage.getItem("classList")));
 
