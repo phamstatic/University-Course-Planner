@@ -2,6 +2,7 @@
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false");
 sessionStorage.setItem("newOpenCourse", "false");
+sessionStorage.setItem("editingCourses", "false");
 sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
@@ -28,13 +29,64 @@ let updateTotalHours = function () {
     }
 }
 
-// jsonFetch
-if (localStorage.getItem("classList") === null) {
+// jsonFetch for first time loading
+if (localStorage.getItem("classList") === null) { 
     fetch("classes.json")
         .then(res => res.json())
         .then(jsonData => {
             localStorage.setItem("classList", JSON.stringify(jsonData));
             console.log("Loaded premade courses and saved to LocalStorage.");
+
+            localStorage.setItem("Year1Fall1", "COSC 1336");
+            localStorage.setItem("Year1Fall2", "ENGL 1301");
+            localStorage.setItem("Year1Fall3", "HIST 1377");
+            localStorage.setItem("Year1Fall4", "GOVT 2306");
+            localStorage.setItem("Year1Fall5", "MATH 2413");
+    
+            localStorage.setItem("Year1Spring1", "COSC 1437");
+            localStorage.setItem("Year1Spring2", "ENGL 1302");
+            localStorage.setItem("Year1Spring3", "HIST 1378");
+            localStorage.setItem("Year1Spring4", "GOVT 2305");
+            localStorage.setItem("Year1Spring5", "MATH 2414");
+    
+            localStorage.setItem("Year2Fall1", "COSC 2436");
+            localStorage.setItem("Year2Fall2", "");
+            localStorage.setItem("Year2Fall3", "");
+            localStorage.setItem("Year2Fall4", "");
+            localStorage.setItem("Year2Fall5", "");
+            localStorage.setItem("Year2Fall6", "");
+    
+            localStorage.setItem("Year2Spring1", "COSC 2425");
+            localStorage.setItem("Year2Spring2", "COSC 3360");
+            localStorage.setItem("Year2Spring3", "");
+            localStorage.setItem("Year2Spring4", "");
+            localStorage.setItem("Year2Spring5", "");
+            localStorage.setItem("Year2Spring6", "");
+    
+            localStorage.setItem("Year3Fall1", "COSC 3340");
+            localStorage.setItem("Year3Fall2", "");
+            localStorage.setItem("Year3Fall3", "MATH 3339");
+            localStorage.setItem("Year3Fall4", "");
+            localStorage.setItem("Year3Fall5", "");
+    
+            localStorage.setItem("Year3Spring1", "COSC 3380");
+            localStorage.setItem("Year3Spring2", "");
+            localStorage.setItem("Year3Spring3", "");
+            localStorage.setItem("Year3Spring4", "");
+            localStorage.setItem("Year3Spring5", "");
+    
+            localStorage.setItem("Year4Fall1", "");
+            localStorage.setItem("Year4Fall2", "");
+            localStorage.setItem("Year4Fall3", "");
+            localStorage.setItem("Year4Fall4", "");
+            localStorage.setItem("Year4Fall5", "");
+    
+            localStorage.setItem("Year4Spring1", "");
+            localStorage.setItem("Year4Spring2", "");
+            localStorage.setItem("Year4Spring3", "");
+            localStorage.setItem("Year4Spring4", "");
+            localStorage.setItem("Year4Spring5", "");
+    
         });
 }
 
@@ -55,6 +107,44 @@ let saveCourses = function () {
     localStorage.setItem("Year1Spring4", document.querySelector(".Year1Spring4").textContent);
     localStorage.setItem("Year1Spring5", document.querySelector(".Year1Spring5").textContent);
 
+    localStorage.setItem("Year2Fall1", document.querySelector(".Year2Fall1").textContent);
+    localStorage.setItem("Year2Fall2", document.querySelector(".Year2Fall2").textContent);
+    localStorage.setItem("Year2Fall3", document.querySelector(".Year2Fall3").textContent);
+    localStorage.setItem("Year2Fall4", document.querySelector(".Year2Fall4").textContent);
+    localStorage.setItem("Year2Fall5", document.querySelector(".Year2Fall5").textContent);
+    localStorage.setItem("Year2Fall6", document.querySelector(".Year2Fall6").textContent);
+
+    localStorage.setItem("Year2Spring1", document.querySelector(".Year2Spring1").textContent);
+    localStorage.setItem("Year2Spring2", document.querySelector(".Year2Spring2").textContent);
+    localStorage.setItem("Year2Spring3", document.querySelector(".Year2Spring3").textContent);
+    localStorage.setItem("Year2Spring4", document.querySelector(".Year2Spring4").textContent);
+    localStorage.setItem("Year2Spring5", document.querySelector(".Year2Spring5").textContent);
+    localStorage.setItem("Year2Spring6", document.querySelector(".Year2Spring6").textContent);
+
+    localStorage.setItem("Year3Fall1", document.querySelector(".Year3Fall1").textContent);
+    localStorage.setItem("Year3Fall2", document.querySelector(".Year3Fall2").textContent);
+    localStorage.setItem("Year3Fall3", document.querySelector(".Year3Fall3").textContent);
+    localStorage.setItem("Year3Fall4", document.querySelector(".Year3Fall4").textContent);
+    localStorage.setItem("Year3Fall5", document.querySelector(".Year3Fall5").textContent);
+
+    localStorage.setItem("Year3Spring1", document.querySelector(".Year3Spring1").textContent);
+    localStorage.setItem("Year3Spring2", document.querySelector(".Year3Spring2").textContent);
+    localStorage.setItem("Year3Spring3", document.querySelector(".Year3Spring3").textContent);
+    localStorage.setItem("Year3Spring4", document.querySelector(".Year3Spring4").textContent);
+    localStorage.setItem("Year3Spring5", document.querySelector(".Year3Spring5").textContent);
+
+    localStorage.setItem("Year4Fall1", document.querySelector(".Year4Fall1").textContent);
+    localStorage.setItem("Year4Fall2", document.querySelector(".Year4Fall2").textContent);
+    localStorage.setItem("Year4Fall3", document.querySelector(".Year4Fall3").textContent);
+    localStorage.setItem("Year4Fall4", document.querySelector(".Year4Fall4").textContent);
+    localStorage.setItem("Year4Fall5", document.querySelector(".Year4Fall5").textContent);
+
+    localStorage.setItem("Year4Spring1", document.querySelector(".Year4Spring1").textContent);
+    localStorage.setItem("Year4Spring2", document.querySelector(".Year4Spring2").textContent);
+    localStorage.setItem("Year4Spring3", document.querySelector(".Year4Spring3").textContent);
+    localStorage.setItem("Year4Spring4", document.querySelector(".Year4Spring4").textContent);
+    localStorage.setItem("Year4Spring5", document.querySelector(".Year4Spring5").textContent);
+
 }
 
 let loadClassInformation = function () {
@@ -74,15 +164,16 @@ let loadClassInformation = function () {
 
     let selectSpringHours = document.querySelectorAll(".springHours");
     for (let i = 0; i < selectSpringHours.length; i++) {
-        if (selectFallHours[i].parentNode.querySelector(".springId").textContent === "") {
+        if (selectSpringHours[i].parentNode.querySelector(".springId").textContent === "") {
             selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = "";
-            selectSpringHours[i].textContent = "0";    
-        } 
+            selectSpringHours[i].textContent = "0";   
+        }
         else {
             selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseName;
             selectSpringHours[i].textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseCredits;    
         }
     } 
+
 }
 
 let loadCourses = function () {
@@ -97,6 +188,44 @@ let loadCourses = function () {
     document.querySelector(".Year1Spring3").textContent = localStorage.getItem("Year1Spring3");
     document.querySelector(".Year1Spring4").textContent = localStorage.getItem("Year1Spring4");
     document.querySelector(".Year1Spring5").textContent = localStorage.getItem("Year1Spring5");
+
+    document.querySelector(".Year2Fall1").textContent = localStorage.getItem("Year2Fall1");
+    document.querySelector(".Year2Fall2").textContent = localStorage.getItem("Year2Fall2");
+    document.querySelector(".Year2Fall3").textContent = localStorage.getItem("Year2Fall3");
+    document.querySelector(".Year2Fall4").textContent = localStorage.getItem("Year2Fall4");
+    document.querySelector(".Year2Fall5").textContent = localStorage.getItem("Year2Fall5");
+    document.querySelector(".Year2Fall6").textContent = localStorage.getItem("Year2Fall5");
+
+    document.querySelector(".Year2Spring1").textContent = localStorage.getItem("Year2Spring1");
+    document.querySelector(".Year2Spring2").textContent = localStorage.getItem("Year2Spring2");
+    document.querySelector(".Year2Spring3").textContent = localStorage.getItem("Year2Spring3");
+    document.querySelector(".Year2Spring4").textContent = localStorage.getItem("Year2Spring4");
+    document.querySelector(".Year2Spring5").textContent = localStorage.getItem("Year2Spring5");
+    document.querySelector(".Year2Spring6").textContent = localStorage.getItem("Year2Spring6");
+
+    document.querySelector(".Year3Fall1").textContent = localStorage.getItem("Year3Fall1");
+    document.querySelector(".Year3Fall2").textContent = localStorage.getItem("Year3Fall2");
+    document.querySelector(".Year3Fall3").textContent = localStorage.getItem("Year3Fall3");
+    document.querySelector(".Year3Fall4").textContent = localStorage.getItem("Year3Fall4");
+    document.querySelector(".Year3Fall5").textContent = localStorage.getItem("Year3Fall5");
+
+    document.querySelector(".Year3Spring1").textContent = localStorage.getItem("Year3Spring1");
+    document.querySelector(".Year3Spring2").textContent = localStorage.getItem("Year3Spring2");
+    document.querySelector(".Year3Spring3").textContent = localStorage.getItem("Year3Spring3");
+    document.querySelector(".Year3Spring4").textContent = localStorage.getItem("Year3Spring4");
+    document.querySelector(".Year3Spring5").textContent = localStorage.getItem("Year3Spring5");
+
+    document.querySelector(".Year4Fall1").textContent = localStorage.getItem("Year4Fall1");
+    document.querySelector(".Year4Fall2").textContent = localStorage.getItem("Year4Fall2");
+    document.querySelector(".Year4Fall3").textContent = localStorage.getItem("Year4Fall3");
+    document.querySelector(".Year4Fall4").textContent = localStorage.getItem("Year4Fall4");
+    document.querySelector(".Year4Fall5").textContent = localStorage.getItem("Year4Fall5");
+
+    document.querySelector(".Year4Spring1").textContent = localStorage.getItem("Year4Spring1");
+    document.querySelector(".Year4Spring2").textContent = localStorage.getItem("Year4Spring2");
+    document.querySelector(".Year4Spring3").textContent = localStorage.getItem("Year4Spring3");
+    document.querySelector(".Year4Spring4").textContent = localStorage.getItem("Year4Spring4");
+    document.querySelector(".Year4Spring5").textContent = localStorage.getItem("Year4Spring5");
 
     loadClassInformation();
     updateTotalHours();
@@ -205,7 +334,7 @@ newCourseClose.addEventListener("click", function () {
 })
 
 // Loads all saved courses from the LocalStorage into the table.
-let selectOptions = document.querySelectorAll("select");
+let selectOptions = document.querySelectorAll("tbody select");
 function loadOptions() {
     for (let i = 0; i < selectOptions.length; i++) {
         if (localStorage.getItem(`${selectOptions[i].id}`) !== null) {
@@ -332,12 +461,106 @@ $("#newCourseButton").on("click", function () {
     }
 })
 
+let editCourseContainer = document.querySelector("#editCourseContainer");
+$("#editButton").on("click", function () {
+    if (sessionStorage.getItem("editingCourses") === "false") {
+        sessionStorage.setItem("editingCourses", "true");
+        editCourseContainer.classList.toggle("fadeOut");
+        editCourseContainer.classList.toggle("fadeIn");
+        editCourseContainer.style.visibility = "visible";
+
+        const options = [""];
+        let thisCourse = JSON.parse(localStorage.getItem("classList"));
+        for (let course in thisCourse) {
+            if (thisCourse.hasOwnProperty(course)) {
+                options.push(course);
+            }
+        }
+        options.sort();
+
+        let selectCourseToEdit = document.querySelector("#selectCourseToEdit");
+        options.forEach(optionText => {
+            const option = document.createElement("option");
+            option.value = optionText;
+            option.text = optionText;
+            selectCourseToEdit.add(option);
+        })
+
+        selectCourseToEdit.addEventListener("change", function () {
+            $("#editCourseName").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseName}`);
+            $("#editCourseCredits").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseCredits}`);
+            $("#editCoursePrerequisites").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].coursePrerequisite}`);
+            $("#editCourseDescription").val(`${JSON.parse(localStorage.getItem("classList"))[this.value].courseDescription}`);
+            $("#editCourseRepeatability").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseRepeatability}`);
+            $("#editCourseCore").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseCore}`);
+            $("#editCourseFee").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseFee}`);
+        })
+
+        $("#editCourseDeleteButton").on("click", function() {
+            if (sessionStorage.getItem("editingCourses") === "true") {
+                setTimeout(function () {
+                    editCourseContainer.style.visibility = "hidden";
+                }, 1000)
+                editCourseContainer.classList.toggle("fadeIn");
+                editCourseContainer.classList.toggle("fadeOut");
+                sessionStorage.setItem("editingCourses", "false");
+            }
+        }) 
+
+        $("#editCourseSubmitButton").on("click", function() {
+            if (sessionStorage.getItem("editingCourses") === "true") {
+                setTimeout(function () {
+                    editCourseContainer.style.visibility = "hidden";
+                }, 1000)
+
+                let loadCourseList = JSON.parse(localStorage.getItem("classList"));
+                loadCourseList[`${document.querySelector("#selectCourseToEdit").value}`] = {
+                    "courseName": `${document.querySelector("#editCourseName").value}`,
+                    "courseCredits": `${document.querySelector("#editCourseCredits").value}`,
+                    "coursePrerequisite": `${document.querySelector("#editCoursePrerequisites").value}`,
+                    "courseDescription": `${document.querySelector("#editCourseDescription").textContent}`,
+                    "courseRepeatability": `${document.querySelector("#editCourseRepeatability").value}`,
+                    "courseCore": `${document.querySelector("#editCourseCore").value}`,
+                    "courseFee": `${document.querySelector("#editCourseFee").value}`
+                }
+
+                localStorage.setItem("classList", JSON.stringify(loadCourseList));
+
+                editCourseContainer.classList.toggle("fadeIn");
+                editCourseContainer.classList.toggle("fadeOut");
+                sessionStorage.setItem("editingCourses", "false");
+                loadClassInformation();
+            }
+        }) 
+
+    }
+    else {
+        sessionStorage.getItem("editingCourses") === "false"
+        editCourseContainer.classList.toggle("fadeOut");
+        editCourseContainer.classList.toggle("fadeIn");
+        editCourseContainer.style.visibility = "visible";
+    }
+})
+
+let editCourseClose = document.querySelector("#editCourseClose");
+editCourseClose.addEventListener("click", function () {
+    if (sessionStorage.getItem("editingCourses") === "true") {
+        setTimeout(function () {
+            editCourseContainer.style.visibility = "hidden";
+        }, 1000)
+        editCourseContainer.classList.toggle("fadeIn");
+        editCourseContainer.classList.toggle("fadeOut");
+        sessionStorage.setItem("editingCourses", "false");
+    }
+})
+
 $("#removeButton").on("click", function () {
     if (sessionStorage.getItem("removingCourses") === "true") {
         sessionStorage.setItem("removingCourses", "false");
         $("#removeButton").css("font-weight", "");
         $(".fallId").off("click");
         $(".springId").off("click");
+        saveCourses();
     }
     else {
         sessionStorage.setItem("removingCourses", "true");
