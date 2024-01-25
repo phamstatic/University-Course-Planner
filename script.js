@@ -18,22 +18,6 @@ if (localStorage.getItem("classList") === null) {
 
 console.log(JSON.parse(localStorage.getItem("classList")));
 
-// Functionality to add a new course.
-$("#newCourseSubmitButton").on("click", function() {
-    let loadCourseList = JSON.parse(localStorage.getItem("classList"));
-    loadCourseList[`${document.querySelector("#newCourseId").value}`] = {
-        "courseName": `${document.querySelector("#newCourseName").value}`,
-        "courseHours": `${document.querySelector("#newCourseId").value}`,
-        "courseCredits": `${document.querySelector("#newCourseCredits").value}`,
-        "coursePrerequisite": `${document.querySelector("#newCoursePrerequisites").value}`,
-        "courseDescription": `${document.querySelector("#newCourseDescription").value}`,
-        "courseRepeatability": `${document.querySelector("#newCourseRepeatability").value}`,
-        "courseCore": `${document.querySelector("#newCourseCore").value}`,
-        "courseFee": `${document.querySelector("#newCourseFee").value}`
-    }
-    localStorage.setItem("classList", JSON.stringify(loadCourseList));
-})
-
 // Functionality for the dark mode feature.
 let toggleDark = document.querySelector("#toggleEmoji");
 let tableData = document.querySelectorAll("td");
@@ -101,6 +85,24 @@ courseClose.addEventListener("click", function () {
         courseContainer.classList.toggle("fadeOut");
         sessionStorage.setItem("openCourse", "false");
     }
+})
+
+// Functionality to add a new course.
+$("#newCourseSubmitButton").on("click", function() {
+    let loadCourseList = JSON.parse(localStorage.getItem("classList"));
+    loadCourseList[`${document.querySelector("#newCourseId").value}`] = {
+        "courseName": `${document.querySelector("#newCourseName").value}`,
+        "courseHours": `${document.querySelector("#newCourseId").value}`,
+        "courseCredits": `${document.querySelector("#newCourseCredits").value}`,
+        "coursePrerequisite": `${document.querySelector("#newCoursePrerequisites").value}`,
+        "courseDescription": `${document.querySelector("#newCourseDescription").value}`,
+        "courseRepeatability": `${document.querySelector("#newCourseRepeatability").value}`,
+        "courseCore": `${document.querySelector("#newCourseCore").value}`,
+        "courseFee": `${document.querySelector("#newCourseFee").value}`
+    }
+    localStorage.setItem("classList", JSON.stringify(loadCourseList));
+    newCourseContainer.classList.toggle("fadeIn");
+    newCourseContainer.classList.toggle("fadeOut");
 })
 
 let newCourseClose = document.querySelector("#newCourseClose");
