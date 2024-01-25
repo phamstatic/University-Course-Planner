@@ -55,6 +55,44 @@ let saveCourses = function () {
     localStorage.setItem("Year1Spring4", document.querySelector(".Year1Spring4").textContent);
     localStorage.setItem("Year1Spring5", document.querySelector(".Year1Spring5").textContent);
 
+    localStorage.setItem("Year2Fall1", document.querySelector(".Year1Fall1").textContent);
+    localStorage.setItem("Year2Fall2", document.querySelector(".Year1Fall2").textContent);
+    localStorage.setItem("Year2Fall3", document.querySelector(".Year1Fall3").textContent);
+    localStorage.setItem("Year2Fall4", document.querySelector(".Year1Fall4").textContent);
+    localStorage.setItem("Year2Fall5", document.querySelector(".Year1Fall5").textContent);
+    localStorage.setItem("Year2Fall6", document.querySelector(".Year1Fall6").textContent);
+
+    localStorage.setItem("Year2Spring1", document.querySelector(".Year2Spring1").textContent);
+    localStorage.setItem("Year2Spring2", document.querySelector(".Year2Spring2").textContent);
+    localStorage.setItem("Year2Spring3", document.querySelector(".Year2Spring3").textContent);
+    localStorage.setItem("Year2Spring4", document.querySelector(".Year2Spring4").textContent);
+    localStorage.setItem("Year2Spring5", document.querySelector(".Year2Spring5").textContent);
+    localStorage.setItem("Year2Spring6", document.querySelector(".Year2Spring6").textContent);
+
+    localStorage.setItem("Year3Fall1", document.querySelector(".Year3Fall1").textContent);
+    localStorage.setItem("Year3Fall2", document.querySelector(".Year3Fall2").textContent);
+    localStorage.setItem("Year3Fall3", document.querySelector(".Year3Fall3").textContent);
+    localStorage.setItem("Year3Fall4", document.querySelector(".Year3Fall4").textContent);
+    localStorage.setItem("Year3Fall5", document.querySelector(".Year3Fall5").textContent);
+
+    localStorage.setItem("Year3Spring1", document.querySelector(".Year3Spring1").textContent);
+    localStorage.setItem("Year3Spring2", document.querySelector(".Year3Spring2").textContent);
+    localStorage.setItem("Year3Spring3", document.querySelector(".Year3Spring3").textContent);
+    localStorage.setItem("Year3Spring4", document.querySelector(".Year3Spring4").textContent);
+    localStorage.setItem("Year3Spring5", document.querySelector(".Year3Spring5").textContent);
+
+    localStorage.setItem("Year4Fall1", document.querySelector(".Year1Fall1").textContent);
+    localStorage.setItem("Year4Fall2", document.querySelector(".Year1Fall2").textContent);
+    localStorage.setItem("Year4Fall3", document.querySelector(".Year1Fall3").textContent);
+    localStorage.setItem("Year4Fall4", document.querySelector(".Year1Fall4").textContent);
+    localStorage.setItem("Year4Fall5", document.querySelector(".Year1Fall5").textContent);
+
+    localStorage.setItem("Year4Spring1", document.querySelector(".Year4Spring1").textContent);
+    localStorage.setItem("Year4Spring2", document.querySelector(".Year4Spring2").textContent);
+    localStorage.setItem("Year4Spring3", document.querySelector(".Year4Spring3").textContent);
+    localStorage.setItem("Year4Spring4", document.querySelector(".Year4Spring4").textContent);
+    localStorage.setItem("Year4Spring5", document.querySelector(".Year4Spring5").textContent);
+
 }
 
 let loadClassInformation = function () {
@@ -97,6 +135,44 @@ let loadCourses = function () {
     document.querySelector(".Year1Spring3").textContent = localStorage.getItem("Year1Spring3");
     document.querySelector(".Year1Spring4").textContent = localStorage.getItem("Year1Spring4");
     document.querySelector(".Year1Spring5").textContent = localStorage.getItem("Year1Spring5");
+
+    document.querySelector(".Year2Fall1").textContent = localStorage.getItem("Year2Fall1");
+    document.querySelector(".Year2Fall2").textContent = localStorage.getItem("Year2Fall2");
+    document.querySelector(".Year2Fall3").textContent = localStorage.getItem("Year2Fall3");
+    document.querySelector(".Year2Fall4").textContent = localStorage.getItem("Year2Fall4");
+    document.querySelector(".Year2Fall5").textContent = localStorage.getItem("Year2Fall5");
+    document.querySelector(".Year2Fall6").textContent = localStorage.getItem("Year2Fall5");
+
+    document.querySelector(".Year2Spring1").textContent = localStorage.getItem("Year2Spring1");
+    document.querySelector(".Year2Spring2").textContent = localStorage.getItem("Year2Spring2");
+    document.querySelector(".Year2Spring3").textContent = localStorage.getItem("Year2Spring3");
+    document.querySelector(".Year2Spring4").textContent = localStorage.getItem("Year2Spring4");
+    document.querySelector(".Year2Spring5").textContent = localStorage.getItem("Year2Spring5");
+    document.querySelector(".Year2Spring6").textContent = localStorage.getItem("Year2Spring5");
+
+    document.querySelector(".Year3Fall1").textContent = localStorage.getItem("Year3Fall1");
+    document.querySelector(".Year3Fall2").textContent = localStorage.getItem("Year3Fall2");
+    document.querySelector(".Year3Fall3").textContent = localStorage.getItem("Year3Fall3");
+    document.querySelector(".Year3Fall4").textContent = localStorage.getItem("Year3Fall4");
+    document.querySelector(".Year3Fall5").textContent = localStorage.getItem("Year3Fall5");
+
+    document.querySelector(".Year3Spring1").textContent = localStorage.getItem("Year3Spring1");
+    document.querySelector(".Year3Spring2").textContent = localStorage.getItem("Year3Spring2");
+    document.querySelector(".Year3Spring3").textContent = localStorage.getItem("Year3Spring3");
+    document.querySelector(".Year3Spring4").textContent = localStorage.getItem("Year3Spring4");
+    document.querySelector(".Year3Spring5").textContent = localStorage.getItem("Year3Spring5");
+
+    document.querySelector(".Year4Fall1").textContent = localStorage.getItem("Year4Fall1");
+    document.querySelector(".Year4Fall2").textContent = localStorage.getItem("Year4Fall2");
+    document.querySelector(".Year4Fall3").textContent = localStorage.getItem("Year4Fall3");
+    document.querySelector(".Year4Fall4").textContent = localStorage.getItem("Year4Fall4");
+    document.querySelector(".Year4Fall5").textContent = localStorage.getItem("Year4Fall5");
+
+    document.querySelector(".Year4Spring1").textContent = localStorage.getItem("Year4Spring1");
+    document.querySelector(".Year4Spring2").textContent = localStorage.getItem("Year4Spring2");
+    document.querySelector(".Year4Spring3").textContent = localStorage.getItem("Year4Spring3");
+    document.querySelector(".Year4Spring4").textContent = localStorage.getItem("Year4Spring4");
+    document.querySelector(".Year4Spring5").textContent = localStorage.getItem("Year4Spring5");
 
     loadClassInformation();
     updateTotalHours();
