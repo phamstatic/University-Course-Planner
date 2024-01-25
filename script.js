@@ -466,6 +466,7 @@ $("#removeButton").on("click", function () {
         $("#removeButton").css("font-weight", "");
         $(".fallId").off("click");
         $(".springId").off("click");
+        saveCourses();
     }
     else {
         sessionStorage.setItem("removingCourses", "true");
