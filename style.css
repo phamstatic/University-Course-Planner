@@ -146,8 +146,8 @@ header {
     background-color: dimgray;
     color: white;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 1s;
 }
 
@@ -169,11 +169,11 @@ header {
     margin-top: 20px;
 }
 
-#courseContainer.fadeOut {
+#courseContainer.fadeOut, #newCourseContainer.fadeOut {
     opacity: 0;
 }
 
-#courseContainer.fadeIn {
+#courseContainer.fadeIn, #newCourseContainer.fadeOut {
     opacity: 1;
 }
 

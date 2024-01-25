@@ -1,7 +1,7 @@
 // Session handlers for dark mode and the course display user interface.
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false");
-sessionStorage.setItem("newOpenCourse", "true");
+sessionStorage.setItem("newOpenCourse", "false");
 sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
@@ -90,6 +90,8 @@ newCourseClose.addEventListener("click", function () {
         setTimeout(function () {
             newCourseContainer.style.visibility = "hidden";
         }, 1000)
+        newCourseContainer.classList.toggle("fadeIn");
+        newCourseContainer.classList.toggle("fadeOut");
         sessionStorage.setItem("newOpenCourse", "false");
     }
 })
@@ -203,6 +205,15 @@ $("#adminButton").on("click", function () {
         document.querySelector("#editButton").style.visibility = "visible";
         document.querySelector("#removeButton").style.visibility = "visible";
         document.querySelector("#newCourseButton").style.visibility = "visible";
+    }
+})
+
+$("#newCourseButton").on("click", function () {
+    if (sessionStorage.getItem("newOpenCourse") === "false") {
+        sessionStorage.setItem("newOpenCourse", "true");
+        newCourseContainer.classList.toggle("fadeOut");
+        newCourseContainer.classList.toggle("fadeIn");
+        newCourseContainer.style.visibility = "visible";
     }
 })
 
