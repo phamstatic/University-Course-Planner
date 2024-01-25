@@ -180,16 +180,18 @@ header {
     padding: 25px;
     background-color: dimgray;
     color: white;
+    opacity: 0;
+    visibility: hidden;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
     transition: opacity 1s;
 }
 
 
-#courseContainer.fadeOut, #newCourseContainer.fadeOut {
+#courseContainer.fadeOut, #newCourseContainer.fadeOut, #editCourseContainer.fadeOut {
     opacity: 0;
 }
 
-#courseContainer.fadeIn, #newCourseContainer.fadeOut {
+#courseContainer.fadeIn, #newCourseContainer.fadeIn, #editCourseContainer.fadeIn {
     opacity: 1;
 }
 

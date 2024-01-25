@@ -2,6 +2,7 @@
 sessionStorage.setItem("toggleDark", "false");
 sessionStorage.setItem("openCourse", "false");
 sessionStorage.setItem("newOpenCourse", "false");
+sessionStorage.setItem("editingCourses", "false");
 sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
@@ -457,6 +458,34 @@ $("#newCourseButton").on("click", function () {
         newCourseContainer.classList.toggle("fadeOut");
         newCourseContainer.classList.toggle("fadeIn");
         newCourseContainer.style.visibility = "visible";
+    }
+})
+
+let editCourseContainer = document.querySelector("#editCourseContainer");
+$("#editButton").on("click", function () {
+    if (sessionStorage.getItem("editingCourses") === "false") {
+        sessionStorage.setItem("editingCourses", "true");
+        editCourseContainer.classList.toggle("fadeOut");
+        editCourseContainer.classList.toggle("fadeIn");
+        editCourseContainer.style.visibility = "visible";
+    }
+    else {
+        sessionStorage.getItem("editingCourses") === "false"
+        editCourseContainer.classList.toggle("fadeOut");
+        editCourseContainer.classList.toggle("fadeIn");
+        editCourseContainer.style.visibility = "visible";
+    }
+})
+
+let editCourseClose = document.querySelector("#editCourseClose");
+editCourseClose.addEventListener("click", function () {
+    if (sessionStorage.getItem("editingCourses") === "true") {
+        setTimeout(function () {
+            editCourseContainer.style.visibility = "hidden";
+        }, 1000)
+        editCourseContainer.classList.toggle("fadeIn");
+        editCourseContainer.classList.toggle("fadeOut");
+        sessionStorage.setItem("editingCourses", "false");
     }
 })
 
