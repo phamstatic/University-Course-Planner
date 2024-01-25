@@ -160,18 +160,23 @@ header {
     text-align: right;
 }
 
-#newCourseContainer input, #editCourseContainer input {
+#newCourseContainer input, #editCourseContainer input, #editCourseDescription {
     background-color: white;
     border: 1px solid black;
+    padding-left: 10px;
 }
 
-#newCourseSubmitButton, #editCourseSubmitButton {
+#editCourseDescription {
+    margin-bottom: 2px;
+}
+
+#newCourseSubmitButton, #editCourseSubmitButton, #editCourseDeleteButton {
     margin-top: 20px;
 }
 
 #editCourseContainer {
     width: 1000px;
-    height: 500px;
+    height: 550px;
     z-index: 1;
     position: fixed;
     left: 50%;

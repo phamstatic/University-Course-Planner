@@ -334,7 +334,7 @@ newCourseClose.addEventListener("click", function () {
 })
 
 // Loads all saved courses from the LocalStorage into the table.
-let selectOptions = document.querySelectorAll("select");
+let selectOptions = document.querySelectorAll("tbody select");
 function loadOptions() {
     for (let i = 0; i < selectOptions.length; i++) {
         if (localStorage.getItem(`${selectOptions[i].id}`) !== null) {
@@ -468,6 +468,46 @@ $("#editButton").on("click", function () {
         editCourseContainer.classList.toggle("fadeOut");
         editCourseContainer.classList.toggle("fadeIn");
         editCourseContainer.style.visibility = "visible";
+
+        const options = [""];
+        let thisCourse = JSON.parse(localStorage.getItem("classList"));
+        for (let course in thisCourse) {
+            if (thisCourse.hasOwnProperty(course)) {
+                options.push(course);
+            }
+        }
+        options.sort();
+
+        let selectCourseToEdit = document.querySelector("#selectCourseToEdit");
+        options.forEach(optionText => {
+            const option = document.createElement("option");
+            option.value = optionText;
+            option.text = optionText;
+            selectCourseToEdit.add(option);
+        })
+
+        selectCourseToEdit.addEventListener("change", function () {
+            $("#editCourseName").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseName}`);
+            $("#editCourseCredits").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseCredits}`);
+            $("#editCoursePrerequisites").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].coursePrerequisite}`);
+            $("#editCourseDescription").val(`${JSON.parse(localStorage.getItem("classList"))[this.value].courseDescription}`);
+            $("#editCourseRepeatability").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseRepeatability}`);
+            $("#editCourseCore").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseCore}`);
+            $("#editCourseFee").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseFee}`);
+        })
+
+        $("#editCourseDeleteButton").on("click", function() {
+            editCourseContainer.classList.toggle("fadeOut");
+            editCourseContainer.classList.toggle("fadeIn");
+            editCourseContainer.style.visibility = "visible";
+        }) 
+
+        $("#editCourseSubmitButton").on("click", function() {
+            editCourseContainer.classList.toggle("fadeOut");
+            editCourseContainer.classList.toggle("fadeIn");
+            editCourseContainer.style.visibility = "visible";
+        }) 
+
     }
     else {
         sessionStorage.getItem("editingCourses") === "false"
