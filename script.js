@@ -6,8 +6,22 @@ sessionStorage.setItem("adminScreen", "false");
 sessionStorage.setItem("removingCourses", "false");
 sessionStorage.setItem("addingCourses", "false");
 
-let newCourses = {
-    "ZZZZ1234": {
+// jsonFetch
+if (localStorage.getItem("classList") === null) {
+    fetch("classes.json")
+        .then(res => res.json())
+        .then(jsonData => {
+            localStorage.setItem("classList", JSON.stringify(jsonData));
+            console.log("Loaded premade courses and saved to LocalStorage.");
+        });
+}
+
+console.log(JSON.parse(localStorage.getItem("classList")));
+
+// Functionality to add a new course.
+$("#newCourseSubmitButton").on("click", function() {
+    let loadCourseList = JSON.parse(localStorage.getItem("classList"));
+    loadCourseList["ZZZZ1234"] = {
         "courseName": "Sleeping 101",
         "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
         "courseCredits": "3",
@@ -17,19 +31,8 @@ let newCourses = {
         "courseCore": "",
         "courseFee": "Y"
     }
-}
-
-// jsonFetch
-if (localStorage.getItem("classList") === null) {
-    fetch("classes.json")
-        .then(res => res.json())
-        .then(jsonData => {
-            localStorage.setItem("classList", JSON.stringify(jsonData));
-            console.log("saved to localstorage");
-        });
-}
-
-console.log(JSON.parse(localStorage.getItem("classList")));
+    localStorage.setItem("classList", JSON.stringify(loadCourseList));
+})
 
 // Functionality for the dark mode feature.
 let toggleDark = document.querySelector("#toggleEmoji");
@@ -292,12 +295,6 @@ $("#addButton").on("click", function () {
                     option.text = optionText;
                     selectElement.add(option);
                 })
-                for (let i = 0; i < Object.keys(newCourses).length; i++) {
-                    const option = document.createElement("option");
-                    option.value = Object.keys(newCourses)[i];
-                    option.text = Object.keys(newCourses)[i];
-                    selectElement.add(option);
-                }
 
                 fallCourses[i].appendChild(selectElement);
                 fallCourses[i].addEventListener("change", function () {
