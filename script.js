@@ -237,6 +237,12 @@ $("#newCourseButton").on("click", function () {
         newCourseContainer.classList.toggle("fadeIn");
         newCourseContainer.style.visibility = "visible";
     }
+    else {
+        sessionStorage.getItem("newOpenCourse") === "false"
+        newCourseContainer.classList.toggle("fadeOut");
+        newCourseContainer.classList.toggle("fadeIn");
+        newCourseContainer.style.visibility = "visible";
+    }
 })
 
 $("#removeButton").on("click", function () {
@@ -346,7 +352,6 @@ $("#addButton").on("click", function () {
 
 // Functionality to count the total hours for each semester.
 let updateTotalHours = function () {
-    console.log("updateotalhours called");
     let totalFallHours = document.querySelectorAll(".fallTotal");
     for (let i = 0; i < totalFallHours.length; i++) {
         let totalHours = parseInt("0", 10);
