@@ -177,6 +177,7 @@ $("#adminButton").on("click", function () {
         }
         else {
             sessionStorage.setItem("adminScreen", "false");
+            $("#adminButton").css("font-weight", "");
             document.querySelector("#addButton").style.visibility = "hidden";
             document.querySelector("#editButton").style.visibility = "hidden";
             document.querySelector("#removeButton").style.visibility = "hidden";
@@ -184,6 +185,7 @@ $("#adminButton").on("click", function () {
     }
     else {
         sessionStorage.setItem("adminScreen", "true");  // on
+        $("#adminButton").css("font-weight", "bold");
         document.querySelector("#addButton").style.visibility = "visible";
         document.querySelector("#editButton").style.visibility = "visible";
         document.querySelector("#removeButton").style.visibility = "visible";
@@ -193,13 +195,13 @@ $("#adminButton").on("click", function () {
 $("#removeButton").on("click", function () {
     if (sessionStorage.getItem("removingCourses") === "true") {
         sessionStorage.setItem("removingCourses", "false");
-        this.textContent = "Remove";
+        $("#removeButton").css("font-weight", "");
         $(".fallId").off("click");
         $(".springId").off("click");
     }
     else {
         sessionStorage.setItem("removingCourses", "true");
-        this.textContent = "REMOVING";
+        $("#removeButton").css("font-weight", "bold");
         $(".fallId").on("click", function () {
             console.log("course remove");
             this.textContent = "";
@@ -218,7 +220,7 @@ $("#removeButton").on("click", function () {
 $("#addButton").on("click", function () {
     if (sessionStorage.getItem("addingCourses") === "true") {
         sessionStorage.setItem("addingCourses", "false");
-        this.textContent = "Add";
+        $("#addButton").css("font-weight", "");
 
         let selectedCourses = $('.fallId select, .springId select');
         for (let i = 0; i < selectedCourses.length; i++) {
@@ -228,8 +230,7 @@ $("#addButton").on("click", function () {
     }
     else {
         sessionStorage.setItem("addingCourses", "true");
-        this.textContent = "ADDING";
-
+        $("#addButton").css("font-weight", "bold");
         const options = [""];
         for (let course in json) {
             if (json.hasOwnProperty(course)) {
