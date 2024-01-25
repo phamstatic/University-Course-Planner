@@ -21,15 +21,15 @@ console.log(JSON.parse(localStorage.getItem("classList")));
 // Functionality to add a new course.
 $("#newCourseSubmitButton").on("click", function() {
     let loadCourseList = JSON.parse(localStorage.getItem("classList"));
-    loadCourseList["ZZZZ1234"] = {
-        "courseName": "Sleeping 101",
-        "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
-        "courseCredits": "3",
-        "coursePrerequisite": "Eyelids.",
-        "courseDescription": "Introduction to sleeping fundamentals.",
-        "courseRepeatability": "No",
-        "courseCore": "",
-        "courseFee": "Y"
+    loadCourseList[`${document.querySelector("#newCourseId").value}`] = {
+        "courseName": `${document.querySelector("#newCourseName").value}`,
+        "courseHours": `${document.querySelector("#newCourseId").value}`,
+        "courseCredits": `${document.querySelector("#newCourseCredits").value}`,
+        "coursePrerequisite": `${document.querySelector("#newCoursePrerequisites").value}`,
+        "courseDescription": `${document.querySelector("#newCourseDescription").value}`,
+        "courseRepeatability": `${document.querySelector("#newCourseRepeatability").value}`,
+        "courseCore": `${document.querySelector("#newCourseCore").value}`,
+        "courseFee": `${document.querySelector("#newCourseFee").value}`
     }
     localStorage.setItem("classList", JSON.stringify(loadCourseList));
 })
