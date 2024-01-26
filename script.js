@@ -312,6 +312,7 @@ $("#courseClose").on("click", function () {
 })
 
 // Functionality to add a new course.
+let newCourseContainer = document.querySelector("#newCourseContainer");
 $("#newCourseSubmitButton").on("click", function () {
     let loadCourseList = JSON.parse(localStorage.getItem("classList"));
     loadCourseList[`${document.querySelector("#newCourseId").value}`] = {
@@ -325,11 +326,14 @@ $("#newCourseSubmitButton").on("click", function () {
         "courseFee": `${document.querySelector("#newCourseFee").value}`
     }
     localStorage.setItem("classList", JSON.stringify(loadCourseList));
-    newCourseContainer.classList.toggle("fadeIn");
-    newCourseContainer.classList.toggle("fadeOut");
+        setTimeout(function () {
+            newCourseContainer.style.visibility = "hidden";
+        }, 1000)
+        newCourseContainer.classList.toggle("fadeIn");
+        newCourseContainer.classList.toggle("fadeOut");
+        sessionStorage.setItem("newOpenCourse", "false");
 })
 
-let newCourseContainer = document.querySelector("#newCourseContainer");
 $("#newCourseClose").on("click", function () {
     if (sessionStorage.getItem("newOpenCourse") === "true") {
         setTimeout(function () {
@@ -385,10 +389,12 @@ $("#newCourseButton").on("click", function () {
         newCourseContainer.style.visibility = "visible";
     }
     else {
-        sessionStorage.getItem("newOpenCourse") === "false"
-        newCourseContainer.classList.toggle("fadeOut");
+        setTimeout(function () {
+            newCourseContainer.style.visibility = "hidden";
+        }, 1000)
         newCourseContainer.classList.toggle("fadeIn");
-        newCourseContainer.style.visibility = "visible";
+        newCourseContainer.classList.toggle("fadeOut");
+        sessionStorage.setItem("newOpenCourse", "false");
     }
 })
 
@@ -470,7 +476,7 @@ $("#editButton").on("click", function () {
 
     }
     else {
-        sessionStorage.getItem("editingCourses") === "false"
+        sessionStorage.setItem("editingCourses") = "true"
         editCourseContainer.classList.toggle("fadeOut");
         editCourseContainer.classList.toggle("fadeIn");
         editCourseContainer.style.visibility = "visible";
