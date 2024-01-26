@@ -290,8 +290,7 @@ for (let i = 0; i < courseList.length; i++) {
     })
 }
 
-let courseClose = document.querySelector("#courseClose");
-courseClose.addEventListener("click", function () {
+$("#courseClose").on("click", function () {
     if (sessionStorage.getItem("openCourse") === "true") {
         setTimeout(function () {
             courseContainer.style.visibility = "hidden";
@@ -320,9 +319,8 @@ $("#newCourseSubmitButton").on("click", function () {
     newCourseContainer.classList.toggle("fadeOut");
 })
 
-let newCourseClose = document.querySelector("#newCourseClose");
 let newCourseContainer = document.querySelector("#newCourseContainer");
-newCourseClose.addEventListener("click", function () {
+$("#newCourseClose").on("click", function () {
     if (sessionStorage.getItem("newOpenCourse") === "true") {
         setTimeout(function () {
             newCourseContainer.style.visibility = "hidden";
@@ -332,87 +330,6 @@ newCourseClose.addEventListener("click", function () {
         sessionStorage.setItem("newOpenCourse", "false");
     }
 })
-
-// Loads all saved courses from the LocalStorage into the table.
-let selectOptions = document.querySelectorAll("tbody select");
-function loadOptions() {
-    for (let i = 0; i < selectOptions.length; i++) {
-        if (localStorage.getItem(`${selectOptions[i].id}`) !== null) {
-            console.log(`Loaded ${selectOptions[i].id} with ${localStorage.getItem(`${selectOptions[i].id}`)}`);
-            selectOptions[i].value = localStorage.getItem(`${selectOptions[i].id}`);
-            if (localStorage.getItem(`${selectOptions[i].id}`) === "none") {
-                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = "";
-            }
-            else if (localStorage.getItem(`${selectOptions[i].id}`) === "advanced") {
-                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = "COSC";
-            }
-            else if (localStorage.getItem(`${selectOptions[i].id}`) === "core") {
-                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = "CORE";
-            }
-            else {
-                selectOptions[i].parentNode.parentNode.querySelector("td:first-child").textContent = `${localStorage.getItem(`${selectOptions[i].id}`)}`;
-            }
-        }
-    }
-    console.log("Finished loading!");
-}
-loadOptions();
-
-// Places all chosen courses into an array and hides the options in the table.
-const chosenClasses = [];
-const hideTakenOptions = function () {
-    for (let i = 0; i < selectOptions.length; i++) {
-        if (selectOptions[i].value !== "none" && selectOptions[i].value !== "advanced" && selectOptions[i].value !== "core") {
-            chosenClasses.push(selectOptions[i].value);
-        }
-    }
-
-    let allOptions = document.querySelectorAll("option");
-    for (let i = 0; i < allOptions.length; i++) {
-        if (chosenClasses.includes(allOptions[i].value) && allOptions[i].parentNode.value !== allOptions[i].value) {
-            allOptions[i].style.visibility = "hidden";
-        }
-    }
-}
-
-// Removes non-chosen courses from the array and reshows the options on the table.
-const showUntakenOptions = function (courseValue) {
-    let allOptions = document.querySelectorAll(`option[value="${courseValue}"]`);
-    for (let i = 0; i < allOptions.length; i++) {
-        const index = chosenClasses.indexOf(`${courseValue}`);
-        chosenClasses.splice(index, 1);
-        allOptions[i].style.visibility = "visible";
-    }
-}
-
-// Functionality and event listener for course selection.
-for (let i = 0; i < selectOptions.length; i++) {
-    selectOptions[i].addEventListener("change", function () { // Updates the table with user's choice
-        console.log(`Selected ${this.value}`);
-        if (this.value === "none") {
-            this.parentNode.parentNode.querySelector("td:first-child").textContent = "";
-            showUntakenOptions(localStorage.getItem(`${this.id}`));
-            localStorage.setItem(`${this.id}`, `${this.value}`);
-            return;
-        }
-        else if (this.value === "advanced") {
-            this.parentNode.parentNode.querySelector("td:first-child").textContent = "COSC XXX";
-            showUntakenOptions(localStorage.getItem(`${this.id}`));
-            localStorage.setItem(`${this.id}`, `${this.value}`);
-            return;
-        }
-        else if (this.value === "core") {
-            this.parentNode.parentNode.querySelector("td:first-child").textContent = "CORE";
-            showUntakenOptions(localStorage.getItem(`${this.id}`));
-            localStorage.setItem(`${this.id}`, `${this.value}`);
-            return;
-        }
-        this.parentNode.parentNode.querySelector("td:first-child").textContent = this.value;
-        showUntakenOptions(localStorage.getItem(`${this.id}`));
-        localStorage.setItem(`${this.id}`, `${this.value}`);
-        hideTakenOptions();
-    })
-}
 
 // Functionality for administrative buttons. 
 $("#adminButton").on("click", function () {
@@ -542,8 +459,7 @@ $("#editButton").on("click", function () {
     }
 })
 
-let editCourseClose = document.querySelector("#editCourseClose");
-editCourseClose.addEventListener("click", function () {
+$("#editCourseClose").on("click", function () {
     if (sessionStorage.getItem("editingCourses") === "true") {
         setTimeout(function () {
             editCourseContainer.style.visibility = "hidden";
@@ -654,8 +570,8 @@ $("#addButton").on("click", function () {
     }
 })
 
-updateTotalHours();
-document.addEventListener('click', updateTotalHours);
-
 // Clears the LocalStorage.
 //localStorage.clear();
+
+updateTotalHours();
+document.addEventListener('click', updateTotalHours);
