@@ -17,6 +17,12 @@ let updateTotalHours = function () {
             totalHours += parseInt(courseHours[j].textContent, 10);
         }
         totalFallHours[i].textContent = totalHours;
+        if (totalHours > 18) {
+            totalFallHours[i].style.color = "red";
+        }
+        else {
+            totalFallHours[i].style.color = "black";
+        }
     }
     let totalSpringHours = document.querySelectorAll(".springTotal");
     for (let i = 0; i < totalSpringHours.length; i++) {
@@ -26,6 +32,12 @@ let updateTotalHours = function () {
             totalHours += parseInt(courseHours[j].textContent, 10);
         }
         totalSpringHours[i].textContent = totalHours;
+        if (totalHours > 18) {
+            totalSpringHours[i].style.color = "red";
+        }
+        else {
+            totalSpringHours[i].style.color = "black";
+        }
     }
 }
 
