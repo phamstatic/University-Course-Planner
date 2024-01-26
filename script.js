@@ -365,6 +365,10 @@ $("#adminButton").on("click", function () {
 
 $("#newCourseButton").on("click", function () {
     if (sessionStorage.getItem("newOpenCourse") === "false") {
+        if (sessionStorage.getItem("editingCourses") === "true" || sessionStorage.getItem("removingCourses") === "true" || sessionStorage.getItem("addingCourses") === "true") {
+            alert("Finish your other activities first!");
+            return;
+        }
         sessionStorage.setItem("newOpenCourse", "true");
         newCourseContainer.classList.toggle("fadeOut");
         newCourseContainer.classList.toggle("fadeIn");
@@ -381,6 +385,10 @@ $("#newCourseButton").on("click", function () {
 let editCourseContainer = document.querySelector("#editCourseContainer");
 $("#editButton").on("click", function () {
     if (sessionStorage.getItem("editingCourses") === "false") {
+        if (sessionStorage.getItem("newOpenCourse") === "true" || sessionStorage.getItem("removingCourses") === "true" || sessionStorage.getItem("addingCourses") === "true") {
+            alert("Finish your other activities first!");
+            return;
+        }
         sessionStorage.setItem("editingCourses", "true");
         editCourseContainer.classList.toggle("fadeOut");
         editCourseContainer.classList.toggle("fadeIn");
@@ -479,6 +487,10 @@ $("#removeButton").on("click", function () {
         saveCourses();
     }
     else {
+        if (sessionStorage.getItem("editingCourses") === "true" || sessionStorage.getItem("addingCourses") === "true" || sessionStorage.getItem("newOpenCourse") === "true") {
+            alert("Finish your other activities first!");
+            return;
+        }
         sessionStorage.setItem("removingCourses", "true");
         $("#removeButton").css("font-weight", "bold");
         $(".fallId").on("click", function () {
@@ -509,6 +521,10 @@ $("#addButton").on("click", function () {
         saveCourses();
     }
     else {
+        if (sessionStorage.getItem("editingCourses") === "true" || sessionStorage.getItem("removingCourses") === "true" || sessionStorage.getItem("newOpenCourse") === "true") {
+            alert("Finish your other activities first!");
+            return;
+        }
         sessionStorage.setItem("addingCourses", "true");
         $("#addButton").css("font-weight", "bold");
         const options = [""];
