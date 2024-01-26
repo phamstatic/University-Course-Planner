@@ -42,7 +42,7 @@ let updateTotalHours = function () {
 }
 
 // jsonFetch for first time loading
-if (localStorage.getItem("classList") === null) { 
+if (localStorage.getItem("classList") === null) {
     fetch("classes.json")
         .then(res => res.json())
         .then(jsonData => {
@@ -54,51 +54,51 @@ if (localStorage.getItem("classList") === null) {
             localStorage.setItem("Year1Fall3", "HIST 1377");
             localStorage.setItem("Year1Fall4", "GOVT 2306");
             localStorage.setItem("Year1Fall5", "MATH 2413");
-    
+
             localStorage.setItem("Year1Spring1", "COSC 1437");
             localStorage.setItem("Year1Spring2", "ENGL 1302");
             localStorage.setItem("Year1Spring3", "HIST 1378");
             localStorage.setItem("Year1Spring4", "GOVT 2305");
             localStorage.setItem("Year1Spring5", "MATH 2414");
-    
+
             localStorage.setItem("Year2Fall1", "COSC 2436");
             localStorage.setItem("Year2Fall2", "");
             localStorage.setItem("Year2Fall3", "");
             localStorage.setItem("Year2Fall4", "");
             localStorage.setItem("Year2Fall5", "");
             localStorage.setItem("Year2Fall6", "");
-    
+
             localStorage.setItem("Year2Spring1", "COSC 2425");
             localStorage.setItem("Year2Spring2", "COSC 3360");
             localStorage.setItem("Year2Spring3", "");
             localStorage.setItem("Year2Spring4", "");
             localStorage.setItem("Year2Spring5", "");
             localStorage.setItem("Year2Spring6", "");
-    
+
             localStorage.setItem("Year3Fall1", "COSC 3340");
             localStorage.setItem("Year3Fall2", "");
             localStorage.setItem("Year3Fall3", "MATH 3339");
             localStorage.setItem("Year3Fall4", "");
             localStorage.setItem("Year3Fall5", "");
-    
+
             localStorage.setItem("Year3Spring1", "COSC 3380");
             localStorage.setItem("Year3Spring2", "");
             localStorage.setItem("Year3Spring3", "");
             localStorage.setItem("Year3Spring4", "");
             localStorage.setItem("Year3Spring5", "");
-    
+
             localStorage.setItem("Year4Fall1", "");
             localStorage.setItem("Year4Fall2", "");
             localStorage.setItem("Year4Fall3", "");
             localStorage.setItem("Year4Fall4", "");
             localStorage.setItem("Year4Fall5", "");
-    
+
             localStorage.setItem("Year4Spring1", "");
             localStorage.setItem("Year4Spring2", "");
             localStorage.setItem("Year4Spring3", "");
             localStorage.setItem("Year4Spring4", "");
             localStorage.setItem("Year4Spring5", "");
-    
+
         });
 }
 
@@ -164,25 +164,25 @@ let loadClassInformation = function () {
     for (let i = 0; i < selectFallHours.length; i++) {
         if (selectFallHours[i].parentNode.querySelector(".fallId").textContent === "") {
             selectFallHours[i].parentNode.querySelector(".fallCourse").textContent = "";
-            selectFallHours[i].textContent = "0";   
+            selectFallHours[i].textContent = "0";
         }
         else {
             selectFallHours[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseName;
-            selectFallHours[i].textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseCredits;    
+            selectFallHours[i].textContent = thisCourse[selectFallHours[i].parentNode.querySelector(".fallId").textContent].courseCredits;
         }
-    } 
+    }
 
     let selectSpringHours = document.querySelectorAll(".springHours");
     for (let i = 0; i < selectSpringHours.length; i++) {
         if (selectSpringHours[i].parentNode.querySelector(".springId").textContent === "") {
             selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = "";
-            selectSpringHours[i].textContent = "0";   
+            selectSpringHours[i].textContent = "0";
         }
         else {
             selectSpringHours[i].parentNode.querySelector(".springCourse").textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseName;
-            selectSpringHours[i].textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseCredits;    
+            selectSpringHours[i].textContent = thisCourse[selectSpringHours[i].parentNode.querySelector(".springId").textContent].courseCredits;
         }
-    } 
+    }
 
 }
 
@@ -326,12 +326,12 @@ $("#newCourseSubmitButton").on("click", function () {
         "courseFee": `${document.querySelector("#newCourseFee").value}`
     }
     localStorage.setItem("classList", JSON.stringify(loadCourseList));
-        setTimeout(function () {
-            newCourseContainer.style.visibility = "hidden";
-        }, 1000)
-        newCourseContainer.classList.toggle("fadeIn");
-        newCourseContainer.classList.toggle("fadeOut");
-        sessionStorage.setItem("newOpenCourse", "false");
+    setTimeout(function () {
+        newCourseContainer.style.visibility = "hidden";
+    }, 1000)
+    newCourseContainer.classList.toggle("fadeIn");
+    newCourseContainer.classList.toggle("fadeOut");
+    sessionStorage.setItem("newOpenCourse", "false");
 })
 
 $("#newCourseClose").on("click", function () {
@@ -437,18 +437,7 @@ $("#editButton").on("click", function () {
             $("#editCourseFee").attr("value", `${JSON.parse(localStorage.getItem("classList"))[this.value].courseFee}`);
         })
 
-        $("#editCourseDeleteButton").on("click", function() {
-            if (sessionStorage.getItem("editingCourses") === "true") {
-                setTimeout(function () {
-                    editCourseContainer.style.visibility = "hidden";
-                }, 1000)
-                editCourseContainer.classList.toggle("fadeIn");
-                editCourseContainer.classList.toggle("fadeOut");
-                sessionStorage.setItem("editingCourses", "false");
-            }
-        }) 
-
-        $("#editCourseSubmitButton").on("click", function() {
+        $("#editCourseSubmitButton").on("click", function () {
             if (sessionStorage.getItem("editingCourses") === "true") {
                 setTimeout(function () {
                     editCourseContainer.style.visibility = "hidden";
@@ -472,7 +461,34 @@ $("#editButton").on("click", function () {
                 sessionStorage.setItem("editingCourses", "false");
                 loadClassInformation();
             }
-        }) 
+        })
+
+
+        $("#editCourseDeleteButton").on("click", function () {
+            if (sessionStorage.getItem("editingCourses") === "true") {
+                let courseToDelete = document.querySelector("#selectCourseToEdit").value;
+                let allData = document.querySelectorAll("td");
+                for (let i = 0; i < allData.length; i++) {
+                    if (allData[i].textContent === courseToDelete) {
+                        alert("You cannot delete a course that is already on the table!")
+                        return;
+                    }
+                }
+                
+                setTimeout(function () {
+                    editCourseContainer.style.visibility = "hidden";
+                }, 1000)
+                let loadCourseList = JSON.parse(localStorage.getItem("classList"));
+                delete loadCourseList[courseToDelete];
+                localStorage.setItem("classList", JSON.stringify(loadCourseList));
+            
+                editCourseContainer.classList.toggle("fadeIn");
+                editCourseContainer.classList.toggle("fadeOut");
+                sessionStorage.setItem("editingCourses", "false");
+                loadClassInformation();
+            }
+        })
+
 
     }
     else {
