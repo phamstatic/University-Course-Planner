@@ -102,8 +102,6 @@ if (localStorage.getItem("classList") === null) {
         });
 }
 
-console.log(JSON.parse(localStorage.getItem("classList")));
-
 // Functionality to save course positions.
 let saveCourses = function () {
 
