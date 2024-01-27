@@ -1,0 +1,118 @@
+{
+    "Computer Science": {
+        "Header": {
+            "College": "COLLEGE OF NATURAL SCIENCES & MATHEMATICS",
+            "Bachelors": "Bachelor of Science"
+        },
+        "Table": {
+            "Year 1": {
+                "Fall1": "COSC 1336",
+                "Fall2": "ENGL 1301",
+                "Fall3": "HIST 1377",
+                "Fall4": "GOVT 2306",
+                "Fall5": "MATH 2413",
+                "Spring1": "COSC 1437",
+                "Spring2": "ENGL 1302",
+                "Spring3": "HIST 1378",
+                "Spring4": "GOVT 2305",
+                "Spring5": "MATH 2414"
+            },
+            "Year 2": {
+                "Fall1": "COSC 2436",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Fall6": "",
+                "Spring1": "COSC 2425",
+                "Spring2": "COSC 3360",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": "",
+                "Spring6": ""
+            },
+            "Year 3": {
+                "Fall1": "COSC 3340",
+                "Fall2": "",
+                "Fall3": "MATH 3339",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "COSC 3380",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            },
+            "Year 4": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            }
+        }
+    },
+    "Barbeque Grilling": {
+        "Header": {
+            "College": "COLLEGE OF CULINARY ARTS",
+            "Bachelors": "Bachelor of Arts"
+        },
+        "Table": {
+            "Year 1": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            },
+            "Year 2": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Fall6": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": "",
+                "Spring6": ""
+            },
+            "Year 3": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            },
+            "Year 4": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            }
+        }
+    }
+}

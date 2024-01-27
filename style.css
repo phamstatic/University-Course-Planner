@@ -1,14 +1,10 @@
 body {
     font-family: sans-serif, arial;
-    background-image: linear-gradient(180deg, rgb(1, 0, 0), rgba(0, 0, 0, 0)), url("./media/UH_Background.jpg");
+    background-color: #FFF9D9;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-}
-
-body.darkMode {
-    background-image: linear-gradient(180deg, rgba(96, 0, 0, 0.321), rgba(0, 0, 0, 0.35)), url("./media/UH_BackgroundDark.jpg");
 }
 
 .row {
@@ -219,9 +215,20 @@ header {
     margin: 0;
 }
 
-.tableSection {
+.tableSection, section {
     margin: 25px 200px 25px 200px;
+    padding-bottom: 150px;
     visibility: visible;
+}
+
+section h1 {
+    font-size: 50px;
+    font-family: "League Gothic";
+}
+
+section p {
+    font-size: 20px;
+    font-family: "calibri";
 }
 
 table {
@@ -353,12 +360,12 @@ tfoot {
     font-family: "League Gothic";
 }
 
-h4 {
+h4, .dropdown-menu {
     font-size: 16px;
     line-height: 1.5;
 }
 
-h4 a {
+h4 a, .dropdown-menu {
     color: #FFF9D9;
 }
 
