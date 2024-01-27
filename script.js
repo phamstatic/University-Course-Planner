@@ -1,39 +1,55 @@
-$(function() {
+$(function () {
     // First Time Loading
     $(".tableSection").hide();
     $("#degreeHeading").hide();
 
     if (localStorage.getItem("degreesList") === null) {
         fetch("degreesList.json")
-        .then(res => res.json())
-        .then(jsonData => {
-            localStorage.setItem("degreesList", JSON.stringify(jsonData));
-            console.log("degreesList.json was loaded for the first time.");
-            console.log(jsonData);
-            location.reload();
-        });
+            .then(res => res.json())
+            .then(jsonData => {
+                localStorage.setItem("degreesList", JSON.stringify(jsonData));
+                console.log("degreesList.json was loaded for the first time.");
+                console.log(jsonData);
+                location.reload();
+            });
     }
     if (localStorage.getItem("classList") === null) {
         fetch("classList.json")
-        .then(res => res.json())
-        .then(jsonData => {
-            localStorage.setItem("classList", JSON.stringify(jsonData));
-            console.log("classList.json was loaded for the first time.");
-            console.log(jsonData);
-            location.reload();
-        });
+            .then(res => res.json())
+            .then(jsonData => {
+                localStorage.setItem("classList", JSON.stringify(jsonData));
+                console.log("classList.json was loaded for the first time.");
+                console.log(jsonData);
+                location.reload();
+            });
     }
+    loadMapSelection();
 })
 
 let degreesList = JSON.parse(localStorage.getItem("degreesList"));
 let classList = JSON.parse(localStorage.getItem("classList"));
 
-$("li a").on("click", function() {
-    if ($(this).text() === "Create New Map") {
-        return;
+function loadMapSelection() {
+    // Clear any maps that may have been in the dropdown.
+    document.querySelector(".dropdown-menu").innerHTML = "";
+    // Iterate through all degree plans and add it to the dropdown.
+    for (let key in degreesList) {
+        if (degreesList.hasOwnProperty(key)) {
+            let listItem = `<li><a class="dropdown-item bg-danger text-white">${key}</a></li>`;
+            $(".dropdown-menu").append(listItem);
+        }
     }
-    loadDegree($(this).text());
-})
+    // Add the divider and create new map button.
+    $(".dropdown-menu").append(`<li><hr class="dropdown-divider"></li>`);
+    $(".dropdown-menu").append(`<li><a class="dropdown-item bg-danger text-white">Create New Map</a></li>`);
+    // Event listeners for the map options.
+    $("li a").on("click", function () {
+        if ($(this).text() === "Create New Map") {
+            return;
+        }
+        loadDegree($(this).text());
+    })
+}
 
 function loadDegree(degreeName) {
     if (degreesList[degreeName] !== null) {
@@ -87,7 +103,7 @@ function loadCourseInformation() {
             let courseName = classList[fallIds[i].textContent]["courseName"];
             let courseCredits = classList[fallIds[i].textContent]["courseCredits"];
             fallIds[i].parentNode.querySelector(".fallCourse").textContent = courseName;
-            fallIds[i].parentNode.querySelector(".fallHours").textContent = courseCredits;    
+            fallIds[i].parentNode.querySelector(".fallHours").textContent = courseCredits;
         }
     }
     let springIds = document.querySelectorAll(".springId");
@@ -99,7 +115,7 @@ function loadCourseInformation() {
             let courseName = classList[springIds[i].textContent]["courseName"];
             let courseCredits = classList[springIds[i].textContent]["courseCredits"];
             springIds[i].parentNode.querySelector(".springCourse").textContent = courseName;
-            springIds[i].parentNode.querySelector(".springHours").textContent = courseCredits;    
+            springIds[i].parentNode.querySelector(".springHours").textContent = courseCredits;
         }
     }
 }
