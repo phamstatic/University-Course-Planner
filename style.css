@@ -101,7 +101,7 @@ header {
     visibility: hidden;
 }
 
-#courseClose, #newCourseClose, #editCourseClose {
+#courseClose, #newCourseClose, #editCourseClose, #newDegreeClose {
     font-size: 25px;
     float: right;
     background: none;
@@ -130,6 +130,21 @@ header {
     transition: opacity 1s;
 }
 
+#newDegreeContainer {
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: dimgray;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    transition: opacity 1s;
+}
+
 #newCourseContainer {
     width: 500px;
     height: 500px;
@@ -147,16 +162,16 @@ header {
     transition: opacity 1s;
 }
 
-#newCourseHeader, #editCourseHeader {
+#newCourseHeader, #editCourseHeader, #newDegreeHeader {
     margin-bottom: 20px;
 }
 
-#newCourseContainer label, #editCourseContainer label {
+#newCourseContainer label, #editCourseContainer label, #newDegreeContainer label {
     font-size: 18px;
     text-align: right;
 }
 
-#newCourseContainer input, #editCourseContainer input, #editCourseDescription {
+#newCourseContainer input, #editCourseContainer input, #editCourseDescription, #newDegreeContainer input {
     background-color: white;
     border: 1px solid black;
     padding-left: 10px;
@@ -166,7 +181,7 @@ header {
     margin-bottom: 2px;
 }
 
-#newCourseSubmitButton, #editCourseSubmitButton, #editCourseDeleteButton {
+#newCourseSubmitButton, #editCourseSubmitButton, #editCourseDeleteButton, #newDegreeSubmitButton {
     margin-top: 20px;
 }
 
