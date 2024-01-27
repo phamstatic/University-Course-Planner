@@ -204,7 +204,7 @@ let loadCourses = function () {
     document.querySelector(".Year2Fall3").textContent = localStorage.getItem("Year2Fall3");
     document.querySelector(".Year2Fall4").textContent = localStorage.getItem("Year2Fall4");
     document.querySelector(".Year2Fall5").textContent = localStorage.getItem("Year2Fall5");
-    document.querySelector(".Year2Fall6").textContent = localStorage.getItem("Year2Fall5");
+    document.querySelector(".Year2Fall6").textContent = localStorage.getItem("Year2Fall6");
 
     document.querySelector(".Year2Spring1").textContent = localStorage.getItem("Year2Spring1");
     document.querySelector(".Year2Spring2").textContent = localStorage.getItem("Year2Spring2");
