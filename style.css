@@ -353,12 +353,12 @@ tfoot {
     font-family: "League Gothic";
 }
 
-h4 {
+h4, .dropdown-menu {
     font-size: 16px;
     line-height: 1.5;
 }
 
-h4 a {
+h4 a, .dropdown-menu {
     color: #FFF9D9;
 }
 
