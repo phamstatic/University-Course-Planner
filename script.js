@@ -25,6 +25,9 @@ $(function() {
     }
 })
 
+let degreesList = JSON.parse(localStorage.getItem("degreesList"));
+let classList = JSON.parse(localStorage.getItem("classList"));
+
 $("li a").on("click", function() {
     if ($(this).text() === "Create New Map") {
         return;
@@ -32,10 +35,10 @@ $("li a").on("click", function() {
     loadDegree($(this).text());
 })
 
-let degreesList = JSON.parse(localStorage.getItem("degreesList"));
-
 function loadDegree(degreeName) {
     if (degreesList[degreeName] !== null) {
+        // Clear the table in case another degree was opened.
+        clearTable();
         // Declare variables for parsed JSON keys.
         let degreeHeader = degreesList[degreeName]["Header"];
         let tableYear1 = degreesList[degreeName]["Table"]["Year 1"];
@@ -66,9 +69,42 @@ function loadDegree(degreeName) {
             $(`.Year4Fall${i}`).text(tableYear4[`Fall${i}`]);
             $(`.Year4Spring${i}`).text(tableYear4[`Spring${i}`]);
         }
+        // Load the information of the corresponding courses.
+        loadCourseInformation();
     }
     else {
         alert("Exception! Could not load degree.");
     }
 }
 
+function loadCourseInformation() {
+    let fallIds = document.querySelectorAll(".fallId");
+    for (let i = 0; i < fallIds.length; i++) {
+        if (fallIds[i].textContent === "") {
+            fallIds[i].parentNode.querySelector(".fallHours").textContent = "0";
+        }
+        else {
+            let courseName = classList[fallIds[i].textContent]["courseName"];
+            let courseCredits = classList[fallIds[i].textContent]["courseCredits"];
+            fallIds[i].parentNode.querySelector(".fallCourse").textContent = courseName;
+            fallIds[i].parentNode.querySelector(".fallHours").textContent = courseCredits;    
+        }
+    }
+    let springIds = document.querySelectorAll(".springId");
+    for (let i = 0; i < springIds.length; i++) {
+        if (springIds[i].textContent === "") {
+            springIds[i].parentNode.querySelector(".springHours").textContent = "0";
+        }
+        else {
+            let courseName = classList[springIds[i].textContent]["courseName"];
+            let courseCredits = classList[springIds[i].textContent]["courseCredits"];
+            springIds[i].parentNode.querySelector(".springCourse").textContent = courseName;
+            springIds[i].parentNode.querySelector(".springHours").textContent = courseCredits;    
+        }
+    }
+}
+
+function clearTable() {
+    $(".fallId, .fallCourse, .springId, .springCourse").text("");
+    $(".creditHours").text("0");
+}
