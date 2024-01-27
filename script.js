@@ -1,3 +1,12 @@
+// Session handlers for dark mode and the course display user interface.
+sessionStorage.setItem("toggleDark", "false");
+sessionStorage.setItem("openCourse", "false");
+sessionStorage.setItem("newOpenCourse", "false");
+sessionStorage.setItem("editingCourses", "false");
+sessionStorage.setItem("adminScreen", "false");
+sessionStorage.setItem("removingCourses", "false");
+sessionStorage.setItem("addingCourses", "false");
+
 $(function () {
     // First Time Loading
     $(".tableSection").hide();
@@ -25,6 +34,40 @@ $(function () {
     }
     loadMapSelection();
 })
+
+// Functionality to count the total hours for each semester.
+let updateTotalHours = function () {
+    let totalFallHours = document.querySelectorAll(".fallTotal");
+    for (let i = 0; i < totalFallHours.length; i++) {
+        let totalHours = parseInt("0", 10);
+        let courseHours = totalFallHours[i].parentNode.parentNode.parentNode.querySelectorAll(".fallHours");
+        for (let j = 0; j < courseHours.length; j++) {
+            totalHours += parseInt(courseHours[j].textContent, 10);
+        }
+        totalFallHours[i].textContent = totalHours;
+        if (totalHours > 18) {
+            totalFallHours[i].style.color = "red";
+        }
+        else {
+            totalFallHours[i].style.color = "black";
+        }
+    }
+    let totalSpringHours = document.querySelectorAll(".springTotal");
+    for (let i = 0; i < totalSpringHours.length; i++) {
+        let totalHours = parseInt("0", 10);
+        let courseHours = totalSpringHours[i].parentNode.parentNode.parentNode.querySelectorAll(".springHours");
+        for (let j = 0; j < courseHours.length; j++) {
+            totalHours += parseInt(courseHours[j].textContent, 10);
+        }
+        totalSpringHours[i].textContent = totalHours;
+        if (totalHours > 18) {
+            totalSpringHours[i].style.color = "red";
+        }
+        else {
+            totalSpringHours[i].style.color = "black";
+        }
+    }
+}
 
 let degreesList = JSON.parse(localStorage.getItem("degreesList"));
 let classList = JSON.parse(localStorage.getItem("classList"));
@@ -118,9 +161,52 @@ function loadCourseInformation() {
             springIds[i].parentNode.querySelector(".springHours").textContent = courseCredits;
         }
     }
+    updateTotalHours();
 }
+
+// Functionality for the course display user interface.
+let courseContainer = document.querySelector("#courseContainer");
+let courseList = document.querySelectorAll(".springId, .fallId");
+for (let i = 0; i < courseList.length; i++) {
+    courseList[i].addEventListener('click', function () {
+        let courseNumber = this.innerHTML;
+        if (courseNumber === "" || courseNumber === "COSC XXX" || courseNumber === "CORE" || this.innerHTML === "Semester Hours" || this.id === "emptyRow" || sessionStorage.getItem("adminScreen") === "true") {
+            return;
+        }
+        let thisCourse = JSON.parse(localStorage.getItem("classList"))[`${courseNumber}`];
+        document.querySelector("#courseName").textContent = `${thisCourse.courseName}`;
+        document.querySelector("#courseHours").textContent = thisCourse.courseHours;
+        document.querySelector("#courseCredits").textContent = thisCourse.courseCredits;
+        document.querySelector("#coursePrerequisite").textContent = thisCourse.coursePrerequisite;
+        document.querySelector("#courseDescription").textContent = thisCourse.courseDescription;
+        document.querySelector("#courseRepeatability").textContent = thisCourse.courseRepeatability;
+        document.querySelector("#courseCore").textContent = thisCourse.courseCore;
+        document.querySelector("#courseFee").textContent = thisCourse.courseFee;
+        if (sessionStorage.getItem("openCourse") === "false") {
+            sessionStorage.setItem("openCourse", "true");
+            courseContainer.classList.toggle("fadeOut");
+            courseContainer.classList.toggle("fadeIn");
+            courseContainer.style.visibility = "visible";
+        }
+    })
+}
+
+$("#courseClose").on("click", function () {
+    if (sessionStorage.getItem("openCourse") === "true") {
+        setTimeout(function () {
+            courseContainer.style.visibility = "hidden";
+        }, 1000)
+        courseContainer.classList.toggle("fadeIn");
+        courseContainer.classList.toggle("fadeOut");
+        sessionStorage.setItem("openCourse", "false");
+    }
+})
 
 function clearTable() {
     $(".fallId, .fallCourse, .springId, .springCourse").text("");
     $(".creditHours").text("0");
 }
+
+$("#homeButton").on("click", function() {
+    location.reload();
+})
