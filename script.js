@@ -19,3 +19,8 @@ $(function() {
         });
     }
 })
+
+$("li a").on("click", function() {
+    $("section").css("visibility", "hidden");
+})
+
