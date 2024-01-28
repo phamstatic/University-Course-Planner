@@ -286,6 +286,11 @@ td.darkMode {
     width: 10%;
 }
 
+.fallId.Delete, .springId.Delete {
+    color: red;
+    font-weight: bold;
+}
+
 .fallCourse, .springCourse {
     width: 25%;
 }

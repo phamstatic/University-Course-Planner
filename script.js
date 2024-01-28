@@ -338,3 +338,111 @@ $("#adminButton").on("click", function () {
         document.querySelector("#newCourseButton").style.visibility = "visible";
     }
 })
+
+$("#addButton").on("click", function () {
+    if (sessionStorage.getItem("addingCourses") === "true") {
+        sessionStorage.setItem("addingCourses", "false");
+        $("#addButton").css("font-weight", "");
+
+        let selectedCourses = $('.fallId select, .springId select');
+        for (let i = 0; i < selectedCourses.length; i++) {
+            console.log(selectedCourses[i].value);
+            selectedCourses[i].parentNode.innerHTML = selectedCourses[i].value;
+        }
+        //saveCourses();
+    }
+    else {
+        if (sessionStorage.getItem("editingCourses") === "true" || sessionStorage.getItem("removingCourses") === "true" || sessionStorage.getItem("newOpenCourse") === "true") {
+            alert("Finish your other activities first!");
+            return;
+        }
+        sessionStorage.setItem("addingCourses", "true");
+        $("#addButton").css("font-weight", "bold");
+        const options = [""];
+        let thisCourse = JSON.parse(localStorage.getItem("classList"));
+        for (let course in thisCourse) {
+            if (thisCourse.hasOwnProperty(course)) {
+                options.push(course);
+            }
+        }
+        options.sort();
+
+        let fallCourses = $(".fallId");
+        for (let i = 0; i < fallCourses.length; i++) {
+            if (fallCourses[i].textContent === "") {
+                const selectElement = document.createElement("select");
+                options.forEach(optionText => {
+                    const option = document.createElement("option");
+                    option.value = optionText;
+                    option.text = optionText;
+                    selectElement.add(option);
+                })
+
+                fallCourses[i].appendChild(selectElement);
+                fallCourses[i].addEventListener("change", function () {
+                    fallCourses[i].parentNode.querySelector(".fallCourse").textContent = thisCourse[selectElement.value].courseName;
+                    fallCourses[i].parentNode.querySelector(".fallHours").textContent = thisCourse[selectElement.value].courseCredits;
+                })
+            }
+        }
+        let springCourses = $(".springId");
+        for (let i = 0; i < springCourses.length; i++) {
+            if (springCourses[i].textContent === "") {
+                const selectElement = document.createElement("select");
+                options.forEach(optionText => {
+                    const option = document.createElement("option");
+                    option.value = optionText;
+                    option.text = optionText;
+                    selectElement.add(option);
+                })
+                springCourses[i].appendChild(selectElement);
+                springCourses[i].addEventListener("change", function () {
+                    springCourses[i].parentNode.querySelector(".springCourse").textContent = thisCourse[selectElement.value].courseName;
+                    springCourses[i].parentNode.querySelector(".springHours").textContent = thisCourse[selectElement.value].courseCredits;
+                })
+            }
+        }
+        for (let i = 0; i < springCourses.length; i++) {
+            if (springCourses[i].textContent === "") {
+                const selectElement = document.createElement("select");
+                options.forEach(optionText => {
+                    const option = document.createElement("option");
+                    option.value = optionText;
+                    option.text = optionText;
+                    selectElement.add(option);
+                })
+                springCourses[i].appendChild(selectElement);
+            }
+        }
+    }
+})
+
+$("#removeButton").on("click", function () {
+    if (sessionStorage.getItem("removingCourses") === "true") {
+        sessionStorage.setItem("removingCourses", "false");
+        $("#removeButton").css("font-weight", "");
+        $(".fallId").off("click");
+        $(".springId").off("click");
+        $(".fallId, .springId").toggleClass("Delete");
+        //saveCourses();
+    }
+    else {
+        if (sessionStorage.getItem("editingCourses") === "true" || sessionStorage.getItem("addingCourses") === "true" || sessionStorage.getItem("newOpenCourse") === "true") {
+            alert("Finish your other activities first!");
+            return;
+        }
+        sessionStorage.setItem("removingCourses", "true");
+        $(".fallId, .springId").toggleClass("Delete");
+        $("#removeButton").css("font-weight", "bold");
+        $(".fallId").on("click", function () {
+            this.textContent = "";
+            this.parentNode.querySelector(".fallCourse").textContent = "";
+            this.parentNode.querySelector(".fallHours").textContent = "0";
+        })
+        $(".springId").on("click", function () {
+            this.textContent = "";
+            this.parentNode.querySelector(".springCourse").textContent = "";
+            this.parentNode.querySelector(".springHours").textContent = "0";
+        })
+    }
+})
