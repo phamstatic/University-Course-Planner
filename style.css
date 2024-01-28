@@ -141,6 +141,8 @@ header {
     padding: 25px;
     background-color: dimgray;
     color: white;
+    opacity: 0;
+    visibility: hidden;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
     transition: opacity 1s;
 }
@@ -203,11 +205,11 @@ header {
 }
 
 
-#courseContainer.fadeOut, #newCourseContainer.fadeOut, #editCourseContainer.fadeOut {
+#courseContainer.fadeOut, #newCourseContainer.fadeOut, #editCourseContainer.fadeOut, #newDegreeContainer.fadeOut {
     opacity: 0;
 }
 
-#courseContainer.fadeIn, #newCourseContainer.fadeIn, #editCourseContainer.fadeIn {
+#courseContainer.fadeIn, #newCourseContainer.fadeIn, #editCourseContainer.fadeIn, #newDegreeContainer.fadeIn {
     opacity: 1;
 }
 

@@ -1,5 +1,5 @@
 // Session handlers for dark mode and the course display user interface.
-sessionStorage.setItem("toggleDark", "false");
+sessionStorage.setItem("newDegree", "false");
 sessionStorage.setItem("openCourse", "false");
 sessionStorage.setItem("newOpenCourse", "false");
 sessionStorage.setItem("editingCourses", "false");
@@ -69,7 +69,7 @@ let updateTotalHours = function () {
     }
 }
 
-$("#homeButton").on("click", function() {
+$("#homeButton").on("click", function () {
     location.reload();
 })
 
@@ -92,6 +92,12 @@ function loadMapSelection() {
     // Event listeners for the map options.
     $("li a").on("click", function () {
         if ($(this).text() === "Create New Map") {
+            if (sessionStorage.getItem("newDegree") === "false") {
+                sessionStorage.setItem("newDegree", "true");
+                document.querySelector("#newDegreeContainer").classList.toggle("fadeOut");
+                document.querySelector("#newDegreeContainer").classList.toggle("fadeIn");
+                document.querySelector("#newDegreeContainer").style.visibility = "visible";
+            }
             return;
         }
         loadDegree($(this).text());
@@ -141,7 +147,7 @@ function loadDegree(degreeName) {
 }
 
 // Functionality to create a new degree.
-$("#newDegreeSubmitButton").on("click", function() {
+$("#newDegreeSubmitButton").on("click", function () {
     let newDegreeName = $("#newDegreeName").val();
     let newCollegeName = $("#newCollegeName").val();
     let newBachelorName = $("#newBachelorName").val();
@@ -206,6 +212,18 @@ $("#newDegreeSubmitButton").on("click", function() {
     console.log(degreesList);
     loadMapSelection();
 })
+$("#newDegreeClose").on("click", function () {
+    if (sessionStorage.getItem("newDegree") === "true") {
+        let newDegreeContainer = document.querySelector("#newDegreeContainer");
+        setTimeout(function () {
+            newDegreeContainer.style.visibility = "hidden";
+        }, 1000)
+        newDegreeContainer.classList.toggle("fadeIn");
+        newDegreeContainer.classList.toggle("fadeOut");
+        sessionStorage.setItem("newDegree", "false");
+    }
+})
+
 
 function loadCourseInformation() {
     let fallIds = document.querySelectorAll(".fallId");
