@@ -638,5 +638,75 @@
     "courseRepeatability": "No",
     "courseCore": "(40) Core-Language, Philosophy & Culture TCCNS Equivalent: PHIL 2306",
     "courseFee": "Y"
+  },
+  "MATH 2131": {
+    "courseName": "Linear Algebra Labs with MATLAB",
+    "courseHours": "Lecture Contact Hours: 0, Lab Contact Hours: 3",
+    "courseCredits": "1",
+    "coursePrerequisite": "Credit for, or concurrent enrollment in, MATH 2318.",
+    "courseDescription": "This course is intended for Math majors. These labs reinforce key concepts of linear algebra using a variety of class-tested MATLAB exercises. No prior knowledge of, or experience with, MATLAB is required. MATLAB commands will be introduced gradually.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "N"
+  },
+  "MATH 3325": {
+    "courseName": "Transition to Advanced Mathematics",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "3",
+    "coursePrerequisite": "Credit for MATH 1451 or MATH 2415 or MATH 2318 or MATH 3321 with a grade of C- or higher.",
+    "courseDescription": "An introduction to proof in mathematics: logic, sets, relations, functions and cardinality, a first look at epsilon-delta methods of proof. Writing and communication of mathematical ideas will be emphasized.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 3331": {
+    "courseName": "Differential Equations",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "3",
+    "coursePrerequisite": "MATH 2415 and MATH 2318.",
+    "courseDescription": "Systems of ordinary differential equations; existence, uniqueness and stability of solutions; initial value problems; bifurcation theory; Jordan form; higher order equations; Laplace transforms. Computer assignments are required.    ",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 3330": {
+    "courseName": "Abstract Algebra",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "3",
+    "coursePrerequisite": "MATH 2318 and MATH 3325.",
+    "courseDescription": "An introduction to groups and rings: groups, subgroups, quotients, products, homomorphisms and isomorphisms, ideals, integral domains and division rings.    ",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 3333": {
+    "courseName": "Intermediate Analysis",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "3",
+    "coursePrerequisite": "MATH 2415 and MATH 3325.",
+    "courseDescription": "A rigorous treatment of single variable calculus: topological properties of the real numbers, limits, continuity, differentiation, Riemann integration, the fundamental theorems of calculus, sequences and series",
+    "courseRepeatability": "Yes",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 4389": {
+    "courseName": "Survey of Undergraduate Mathematics",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 0",
+    "courseCredits": "3",
+    "coursePrerequisite": "MATH 3331, 3333, and three hours of 4000-level Mathematics.",
+    "courseDescription": "A review of some of the most important topics in the undergraduate mathematics curriculum.",
+    "courseRepeatability": "No",
+    "courseCore": "",
+    "courseFee": "Y"
+  },
+  "MATH 2415": {
+    "courseName": "Calculus III",
+    "courseHours": "Lecture Contact Hours: 3, Lab Contact Hours: 3",
+    "courseCredits": "4",
+    "coursePrerequisite": "MATH 2414.",
+    "courseDescription": "Calculus of functions of several variables: calculus of vector-valued functions, partial differentiation, multiple integrals.    ",
+    "courseRepeatability": "Yes",
+    "courseCore": "",
+    "courseFee": "Y"
   }
 }

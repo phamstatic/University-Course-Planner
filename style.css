@@ -83,7 +83,7 @@ header {
 
 #degreeHeading {
     margin: 50px 0px 0px 0px;
-    color: white;
+    color: black;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -91,17 +91,18 @@ header {
 
 #adminButton {
     margin: 0px 200px 0px 0px;
+    visibility: hidden;
 }
 
 #adminPowers {
-    margin: 0px 0px 0px 200px;
+    margin: 20px 0px 0px 200px;
 }
 
 #addButton, #editButton, #removeButton, #newCourseButton {
     visibility: hidden;
 }
 
-#courseClose, #newCourseClose, #editCourseClose {
+#courseClose, #newCourseClose, #editCourseClose, #newDegreeClose {
     font-size: 25px;
     float: right;
     background: none;
@@ -130,6 +131,23 @@ header {
     transition: opacity 1s;
 }
 
+#newDegreeContainer {
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: dimgray;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    transition: opacity 1s;
+}
+
 #newCourseContainer {
     width: 500px;
     height: 500px;
@@ -147,16 +165,16 @@ header {
     transition: opacity 1s;
 }
 
-#newCourseHeader, #editCourseHeader {
+#newCourseHeader, #editCourseHeader, #newDegreeHeader {
     margin-bottom: 20px;
 }
 
-#newCourseContainer label, #editCourseContainer label {
+#newCourseContainer label, #editCourseContainer label, #newDegreeContainer label {
     font-size: 18px;
     text-align: right;
 }
 
-#newCourseContainer input, #editCourseContainer input, #editCourseDescription {
+#newCourseContainer input, #editCourseContainer input, #editCourseDescription, #newDegreeContainer input {
     background-color: white;
     border: 1px solid black;
     padding-left: 10px;
@@ -166,7 +184,7 @@ header {
     margin-bottom: 2px;
 }
 
-#newCourseSubmitButton, #editCourseSubmitButton, #editCourseDeleteButton {
+#newCourseSubmitButton, #editCourseSubmitButton, #editCourseDeleteButton, #newDegreeSubmitButton {
     margin-top: 20px;
 }
 
@@ -188,11 +206,11 @@ header {
 }
 
 
-#courseContainer.fadeOut, #newCourseContainer.fadeOut, #editCourseContainer.fadeOut {
+#courseContainer.fadeOut, #newCourseContainer.fadeOut, #editCourseContainer.fadeOut, #newDegreeContainer.fadeOut {
     opacity: 0;
 }
 
-#courseContainer.fadeIn, #newCourseContainer.fadeIn, #editCourseContainer.fadeIn {
+#courseContainer.fadeIn, #newCourseContainer.fadeIn, #editCourseContainer.fadeIn, #newDegreeContainer.fadeIn {
     opacity: 1;
 }
 
@@ -215,10 +233,13 @@ header {
     margin: 0;
 }
 
-.tableSection, section {
+.tableSection {
+    margin: 25px 200px 25px 200px;
+}
+
+section {
     margin: 25px 200px 25px 200px;
     padding-bottom: 150px;
-    visibility: visible;
 }
 
 section h1 {
@@ -263,6 +284,11 @@ td.darkMode {
 
 .fallId, .springId {
     width: 10%;
+}
+
+.fallId.Delete, .springId.Delete {
+    color: red;
+    font-weight: bold;
 }
 
 .fallCourse, .springCourse {

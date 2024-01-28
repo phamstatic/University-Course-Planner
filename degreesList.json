@@ -1,8 +1,8 @@
 {
     "Computer Science": {
         "Header": {
-            "College": "COLLEGE OF NATURAL SCIENCES & MATHEMATICS",
-            "Bachelors": "Bachelor of Science"
+            "College": "Natural Sciences & Mathematics",
+            "Bachelors": "Science"
         },
         "Table": {
             "Year 1": {
@@ -57,41 +57,41 @@
             }
         }
     },
-    "Barbeque Grilling": {
+    "Math": {
         "Header": {
-            "College": "COLLEGE OF CULINARY ARTS",
-            "Bachelors": "Bachelor of Arts"
+            "College": "Natural Sciences & Mathematics",
+            "Bachelors": "Science"
         },
         "Table": {
             "Year 1": {
-                "Fall1": "",
-                "Fall2": "",
+                "Fall1": "ENGL 1301",
+                "Fall2": "MATH 2413",
                 "Fall3": "",
                 "Fall4": "",
                 "Fall5": "",
-                "Spring1": "",
-                "Spring2": "",
+                "Spring1": "ENGL 1302",
+                "Spring2": "MATH 2414",
                 "Spring3": "",
                 "Spring4": "",
                 "Spring5": ""
             },
             "Year 2": {
-                "Fall1": "",
-                "Fall2": "",
-                "Fall3": "",
-                "Fall4": "",
+                "Fall1": "MATH 2318",
+                "Fall2": "MATH 2131",
+                "Fall3": "MATH 2415",
+                "Fall4": "GOVT 2306",
                 "Fall5": "",
                 "Fall6": "",
-                "Spring1": "",
-                "Spring2": "",
-                "Spring3": "",
+                "Spring1": "MATH 3325",
+                "Spring2": "MATH 3331",
+                "Spring3": "GOVT 2305",
                 "Spring4": "",
                 "Spring5": "",
                 "Spring6": ""
             },
             "Year 3": {
-                "Fall1": "",
-                "Fall2": "",
+                "Fall1": "MATH 3330",
+                "Fall2": "MATH 3333",
                 "Fall3": "",
                 "Fall4": "",
                 "Fall5": "",
@@ -107,7 +107,7 @@
                 "Fall3": "",
                 "Fall4": "",
                 "Fall5": "",
-                "Spring1": "",
+                "Spring1": "MATH 4389",
                 "Spring2": "",
                 "Spring3": "",
                 "Spring4": "",
