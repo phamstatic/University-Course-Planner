@@ -77,7 +77,6 @@ $("#homeButton").on("click", function () {
 })
 
 let degreesList = JSON.parse(localStorage.getItem("degreesList"));
-let classList = JSON.parse(localStorage.getItem("classList"));
 
 function loadMapSelection() {
     // Clear any maps that may have been in the dropdown.
@@ -240,6 +239,7 @@ $("#newDegreeClose").on("click", function () {
 })
 
 function loadCourseInformation() {
+    let classList = JSON.parse(localStorage.getItem("classList"));
     let fallIds = document.querySelectorAll(".fallId");
     for (let i = 0; i < fallIds.length; i++) {
         if (fallIds[i].textContent === "") {
@@ -543,6 +543,7 @@ $("#editButton").on("click", function () {
                 editCourseContainer.classList.toggle("fadeIn");
                 editCourseContainer.classList.toggle("fadeOut");
                 sessionStorage.setItem("editingCourses", "false");
+                loadDegree(sessionStorage.getItem("selectedDegree"));
                 loadCourseInformation();
             }
         })
