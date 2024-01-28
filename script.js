@@ -151,6 +151,10 @@ $("#newDegreeSubmitButton").on("click", function () {
     let newDegreeName = $("#newDegreeName").val();
     let newCollegeName = $("#newCollegeName").val();
     let newBachelorName = $("#newBachelorName").val();
+    if (degreesList[newDegreeName] !== undefined) {
+        alert("This degree already exists!");
+        return;
+    }
     degreesList[newDegreeName] = {
         "Header": {
             "College": newCollegeName,
@@ -209,7 +213,8 @@ $("#newDegreeSubmitButton").on("click", function () {
             }
         }
     }
-    console.log(degreesList);
+    // Save the new degree to Local Storage.
+    localStorage.setItem("degreesList", JSON.stringify(degreesList));
     loadMapSelection();
 })
 $("#newDegreeClose").on("click", function () {
