@@ -69,6 +69,10 @@ let updateTotalHours = function () {
     }
 }
 
+$("#homeButton").on("click", function() {
+    location.reload();
+})
+
 let degreesList = JSON.parse(localStorage.getItem("degreesList"));
 let classList = JSON.parse(localStorage.getItem("classList"));
 
@@ -109,8 +113,8 @@ function loadDegree(degreeName) {
         $(".tableSection").show();
         $("#degreeHeading").show();
         // Update the degree heading.
-        $("#degreeHeading h1").text(degreeHeader["College"]);
-        $("#degreeHeading h2").text(degreeHeader["Bachelors"]);
+        $("#degreeHeading h1").text(`College of ${degreeHeader["College"]}`);
+        $("#degreeHeading h2").text(`Bachelor of ${degreeHeader["Bachelors"]} in ${degreeName}`);
         // Load the courses into their respective positions.
         for (let i = 1; i <= 5; i++) {
             $(`.Year1Fall${i}`).text(tableYear1[`Fall${i}`]);
@@ -135,6 +139,73 @@ function loadDegree(degreeName) {
         alert("Exception! Could not load degree.");
     }
 }
+
+// Functionality to create a new degree.
+$("#newDegreeSubmitButton").on("click", function() {
+    let newDegreeName = $("#newDegreeName").val();
+    let newCollegeName = $("#newCollegeName").val();
+    let newBachelorName = $("#newBachelorName").val();
+    degreesList[newDegreeName] = {
+        "Header": {
+            "College": newCollegeName,
+            "Bachelors": newBachelorName
+        },
+        "Table": {
+            "Year 1": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            },
+            "Year 2": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Fall6": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": "",
+                "Spring6": ""
+            },
+            "Year 3": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            },
+            "Year 4": {
+                "Fall1": "",
+                "Fall2": "",
+                "Fall3": "",
+                "Fall4": "",
+                "Fall5": "",
+                "Spring1": "",
+                "Spring2": "",
+                "Spring3": "",
+                "Spring4": "",
+                "Spring5": ""
+            }
+        }
+    }
+    console.log(degreesList);
+    loadMapSelection();
+})
 
 function loadCourseInformation() {
     let fallIds = document.querySelectorAll(".fallId");
@@ -190,7 +261,6 @@ for (let i = 0; i < courseList.length; i++) {
         }
     })
 }
-
 $("#courseClose").on("click", function () {
     if (sessionStorage.getItem("openCourse") === "true") {
         setTimeout(function () {
@@ -206,7 +276,3 @@ function clearTable() {
     $(".fallId, .fallCourse, .springId, .springCourse").text("");
     $(".creditHours").text("0");
 }
-
-$("#homeButton").on("click", function() {
-    location.reload();
-})

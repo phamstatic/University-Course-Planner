@@ -1,8 +1,8 @@
 {
     "Computer Science": {
         "Header": {
-            "College": "COLLEGE OF NATURAL SCIENCES & MATHEMATICS",
-            "Bachelors": "Bachelor of Science in Computer Science"
+            "College": "Natural Sciences & Mathematics",
+            "Bachelors": "Science"
         },
         "Table": {
             "Year 1": {
@@ -59,8 +59,8 @@
     },
     "Barbecue Grilling": {
         "Header": {
-            "College": "COLLEGE OF CULINARY ARTS",
-            "Bachelors": "Bachelor of Arts"
+            "College": "Culinary Arts",
+            "Bachelors": "Arts"
         },
         "Table": {
             "Year 1": {
