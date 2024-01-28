@@ -1,4 +1,5 @@
 // Session handlers for dark mode and the course display user interface.
+sessionStorage.setItem("selectedDegree", "none");
 sessionStorage.setItem("newDegree", "false");
 sessionStorage.setItem("openCourse", "false");
 sessionStorage.setItem("newOpenCourse", "false");
@@ -106,6 +107,8 @@ function loadMapSelection() {
 
 function loadDegree(degreeName) {
     if (degreesList[degreeName] !== null) {
+        localStorage.setItem("selectedDegree", degreeName);
+        console.log(`Degree Selected: ${degreeName}`);
         // Clear the table in case another degree was opened.
         clearTable();
         // Declare variables for parsed JSON keys.
@@ -114,6 +117,8 @@ function loadDegree(degreeName) {
         let tableYear2 = degreesList[degreeName]["Table"]["Year 2"];
         let tableYear3 = degreesList[degreeName]["Table"]["Year 3"];
         let tableYear4 = degreesList[degreeName]["Table"]["Year 4"];
+        // Show the admin button.
+        $("#adminButton").css("visibility", "visible");
         // Hide the welcome page and show the tables.
         $("section").hide();
         $(".tableSection").show();
@@ -147,6 +152,7 @@ function loadDegree(degreeName) {
 }
 
 // Functionality to create a new degree.
+let newDegreeContainer = document.querySelector("#newDegreeContainer");
 $("#newDegreeSubmitButton").on("click", function () {
     let newDegreeName = $("#newDegreeName").val();
     let newCollegeName = $("#newCollegeName").val();
@@ -216,10 +222,12 @@ $("#newDegreeSubmitButton").on("click", function () {
     // Save the new degree to Local Storage.
     localStorage.setItem("degreesList", JSON.stringify(degreesList));
     loadMapSelection();
+    newDegreeContainer.classList.toggle("fadeIn");
+    newDegreeContainer.classList.toggle("fadeOut");
+    sessionStorage.setItem("newDegree", "false");
 })
 $("#newDegreeClose").on("click", function () {
     if (sessionStorage.getItem("newDegree") === "true") {
-        let newDegreeContainer = document.querySelector("#newDegreeContainer");
         setTimeout(function () {
             newDegreeContainer.style.visibility = "hidden";
         }, 1000)
@@ -228,7 +236,6 @@ $("#newDegreeClose").on("click", function () {
         sessionStorage.setItem("newDegree", "false");
     }
 })
-
 
 function loadCourseInformation() {
     let fallIds = document.querySelectorAll(".fallId");
@@ -299,3 +306,35 @@ function clearTable() {
     $(".fallId, .fallCourse, .springId, .springCourse").text("");
     $(".creditHours").text("0");
 }
+
+// Functionality for administrative buttons. 
+$("#adminButton").on("click", function () {
+    if (sessionStorage.getItem("adminScreen") === "true") { // off
+        if (sessionStorage.getItem("addingCourses") === "true") {
+            alert("Finish adding courses first!");
+        }
+        else if (sessionStorage.getItem("editingCourses") === "true") {
+            alert("Finish editing courses first!");
+        }
+        else if (sessionStorage.getItem("removingCourses") === "true") {
+            alert("Finish removing courses first!");
+        }
+        else {
+            sessionStorage.setItem("adminScreen", "false");
+            $("#adminButton").css("font-weight", "");
+            document.querySelector("#addButton").style.visibility = "hidden";
+            document.querySelector("#editButton").style.visibility = "hidden";
+            document.querySelector("#removeButton").style.visibility = "hidden";
+            document.querySelector("#newCourseButton").style.visibility = "hidden";
+            //saveCourses();
+        }
+    }
+    else {
+        sessionStorage.setItem("adminScreen", "true");  // on
+        $("#adminButton").css("font-weight", "bold");
+        document.querySelector("#addButton").style.visibility = "visible";
+        document.querySelector("#editButton").style.visibility = "visible";
+        document.querySelector("#removeButton").style.visibility = "visible";
+        document.querySelector("#newCourseButton").style.visibility = "visible";
+    }
+})

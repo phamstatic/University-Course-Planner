@@ -91,10 +91,11 @@ header {
 
 #adminButton {
     margin: 0px 200px 0px 0px;
+    visibility: hidden;
 }
 
 #adminPowers {
-    margin: 0px 0px 0px 200px;
+    margin: 20px 0px 0px 200px;
 }
 
 #addButton, #editButton, #removeButton, #newCourseButton {
