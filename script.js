@@ -70,6 +70,8 @@ let updateTotalHours = function () {
     }
 }
 
+document.addEventListener("click", updateTotalHours);
+
 $("#homeButton").on("click", function () {
     location.reload();
 })
@@ -107,7 +109,7 @@ function loadMapSelection() {
 
 function loadDegree(degreeName) {
     if (degreesList[degreeName] !== null) {
-        localStorage.setItem("selectedDegree", degreeName);
+        sessionStorage.setItem("selectedDegree", degreeName);
         console.log(`Degree Selected: ${degreeName}`);
         // Clear the table in case another degree was opened.
         clearTable();
@@ -359,7 +361,7 @@ $("#adminButton").on("click", function () {
             document.querySelector("#editButton").style.visibility = "hidden";
             document.querySelector("#removeButton").style.visibility = "hidden";
             document.querySelector("#newCourseButton").style.visibility = "hidden";
-            //saveCourses();
+            saveCourses();
         }
     }
     else {
@@ -556,14 +558,14 @@ $("#editButton").on("click", function () {
                         return;
                     }
                 }
-                
+
                 setTimeout(function () {
                     editCourseContainer.style.visibility = "hidden";
                 }, 1000)
                 let loadCourseList = JSON.parse(localStorage.getItem("classList"));
                 delete loadCourseList[courseToDelete];
                 localStorage.setItem("classList", JSON.stringify(loadCourseList));
-            
+
                 editCourseContainer.classList.toggle("fadeIn");
                 editCourseContainer.classList.toggle("fadeOut");
                 sessionStorage.setItem("editingCourses", "false");
@@ -612,3 +614,74 @@ $("#newCourseButton").on("click", function () {
         sessionStorage.setItem("newOpenCourse", "false");
     }
 })
+
+// Functionality to save courses.
+let saveCourses = function () {
+    /*
+    let degreesList = JSON.parse(localStorage.getItem("degreesList"));
+    let classList = JSON.parse(localStorage.getItem("classList"));
+    */
+    let thisDegree = sessionStorage.getItem("selectedDegree");
+    let degreeCollege = degreesList[thisDegree]["Header"]["College"];
+    let degreeBachelors = degreesList[thisDegree]["Header"]["Bachelors"];
+    degreesList[thisDegree] = {
+        "Header": {
+            "College": degreeCollege,
+            "Bachelors": degreeBachelors
+        },
+        "Table": {
+            "Year 1": {
+                "Fall1": `${document.querySelector(".Year1Fall1").textContent}`,
+                "Fall2": `${document.querySelector(".Year1Fall2").textContent}`,
+                "Fall3": `${document.querySelector(".Year1Fall3").textContent}`,
+                "Fall4": `${document.querySelector(".Year1Fall4").textContent}`,
+                "Fall5": `${document.querySelector(".Year1Fall5").textContent}`,
+                "Spring1": `${document.querySelector(".Year1Spring1").textContent}`,
+                "Spring2": `${document.querySelector(".Year1Spring2").textContent}`,
+                "Spring3": `${document.querySelector(".Year1Spring3").textContent}`,
+                "Spring4": `${document.querySelector(".Year1Spring4").textContent}`,
+                "Spring5": `${document.querySelector(".Year1Spring5").textContent}`
+            },
+            "Year 2": {
+                "Fall1": `${document.querySelector(".Year2Fall1").textContent}`,
+                "Fall2": `${document.querySelector(".Year2Fall2").textContent}`,
+                "Fall3": `${document.querySelector(".Year2Fall3").textContent}`,
+                "Fall4": `${document.querySelector(".Year2Fall4").textContent}`,
+                "Fall5": `${document.querySelector(".Year2Fall5").textContent}`,
+                "Fall6": `${document.querySelector(".Year2Fall6").textContent}`,
+                "Spring1": `${document.querySelector(".Year2Spring1").textContent}`,
+                "Spring2": `${document.querySelector(".Year2Spring2").textContent}`,
+                "Spring3": `${document.querySelector(".Year2Spring3").textContent}`,
+                "Spring4": `${document.querySelector(".Year2Spring4").textContent}`,
+                "Spring5": `${document.querySelector(".Year2Spring5").textContent}`,
+                "Spring6": `${document.querySelector(".Year2Spring6").textContent}`
+            },
+            "Year 3": {
+                "Fall1": `${document.querySelector(".Year3Fall1").textContent}`,
+                "Fall2": `${document.querySelector(".Year3Fall2").textContent}`,
+                "Fall3": `${document.querySelector(".Year3Fall3").textContent}`,
+                "Fall4": `${document.querySelector(".Year3Fall4").textContent}`,
+                "Fall5": `${document.querySelector(".Year3Fall5").textContent}`,
+                "Spring1": `${document.querySelector(".Year3Spring1").textContent}`,
+                "Spring2": `${document.querySelector(".Year3Spring2").textContent}`,
+                "Spring3": `${document.querySelector(".Year3Spring3").textContent}`,
+                "Spring4": `${document.querySelector(".Year3Spring4").textContent}`,
+                "Spring5": `${document.querySelector(".Year3Spring5").textContent}`
+            },
+            "Year 4": {
+                "Fall1": `${document.querySelector(".Year4Fall1").textContent}`,
+                "Fall2": `${document.querySelector(".Year4Fall2").textContent}`,
+                "Fall3": `${document.querySelector(".Year4Fall3").textContent}`,
+                "Fall4": `${document.querySelector(".Year4Fall4").textContent}`,
+                "Fall5": `${document.querySelector(".Year4Fall5").textContent}`,
+                "Spring1": `${document.querySelector(".Year4Spring1").textContent}`,
+                "Spring2": `${document.querySelector(".Year4Spring2").textContent}`,
+                "Spring3": `${document.querySelector(".Year4Spring3").textContent}`,
+                "Spring4": `${document.querySelector(".Year4Spring4").textContent}`,
+                "Spring5": `${document.querySelector(".Year4Spring5").textContent}`
+            }
+        }
+    }
+    localStorage.setItem("degreesList", JSON.stringify(degreesList));
+    loadCourseInformation();
+}
