@@ -18,8 +18,6 @@ $(function () {
             .then(res => res.json())
             .then(jsonData => {
                 localStorage.setItem("degreesList", JSON.stringify(jsonData));
-                console.log("degreesList.json was loaded for the first time.");
-                console.log(jsonData);
                 location.reload();
             });
     }
@@ -28,8 +26,6 @@ $(function () {
             .then(res => res.json())
             .then(jsonData => {
                 localStorage.setItem("classList", JSON.stringify(jsonData));
-                console.log("classList.json was loaded for the first time.");
-                console.log(jsonData);
                 location.reload();
             });
     }
@@ -381,7 +377,6 @@ $("#addButton").on("click", function () {
 
         let selectedCourses = $('.fallId select, .springId select');
         for (let i = 0; i < selectedCourses.length; i++) {
-            console.log(selectedCourses[i].value);
             selectedCourses[i].parentNode.innerHTML = selectedCourses[i].value;
         }
         //saveCourses();
