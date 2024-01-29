@@ -532,7 +532,7 @@ $("#editButton").on("click", function () {
                     "courseName": `${document.querySelector("#editCourseName").value}`,
                     "courseCredits": `${document.querySelector("#editCourseCredits").value}`,
                     "coursePrerequisite": `${document.querySelector("#editCoursePrerequisites").value}`,
-                    "courseDescription": `${document.querySelector("#editCourseDescription").textContent}`,
+                    "courseDescription": `${document.querySelector("#editCourseDescription").value}`,
                     "courseRepeatability": `${document.querySelector("#editCourseRepeatability").value}`,
                     "courseCore": `${document.querySelector("#editCourseCore").value}`,
                     "courseFee": `${document.querySelector("#editCourseFee").value}`
