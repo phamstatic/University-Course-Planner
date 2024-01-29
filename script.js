@@ -18,8 +18,6 @@ $(function () {
             .then(res => res.json())
             .then(jsonData => {
                 localStorage.setItem("degreesList", JSON.stringify(jsonData));
-                console.log("degreesList.json was loaded for the first time.");
-                console.log(jsonData);
                 location.reload();
             });
     }
@@ -28,8 +26,6 @@ $(function () {
             .then(res => res.json())
             .then(jsonData => {
                 localStorage.setItem("classList", JSON.stringify(jsonData));
-                console.log("classList.json was loaded for the first time.");
-                console.log(jsonData);
                 location.reload();
             });
     }
@@ -381,7 +377,6 @@ $("#addButton").on("click", function () {
 
         let selectedCourses = $('.fallId select, .springId select');
         for (let i = 0; i < selectedCourses.length; i++) {
-            console.log(selectedCourses[i].value);
             selectedCourses[i].parentNode.innerHTML = selectedCourses[i].value;
         }
         //saveCourses();
@@ -532,7 +527,7 @@ $("#editButton").on("click", function () {
                     "courseName": `${document.querySelector("#editCourseName").value}`,
                     "courseCredits": `${document.querySelector("#editCourseCredits").value}`,
                     "coursePrerequisite": `${document.querySelector("#editCoursePrerequisites").value}`,
-                    "courseDescription": `${document.querySelector("#editCourseDescription").textContent}`,
+                    "courseDescription": `${document.querySelector("#editCourseDescription").value}`,
                     "courseRepeatability": `${document.querySelector("#editCourseRepeatability").value}`,
                     "courseCore": `${document.querySelector("#editCourseCore").value}`,
                     "courseFee": `${document.querySelector("#editCourseFee").value}`
