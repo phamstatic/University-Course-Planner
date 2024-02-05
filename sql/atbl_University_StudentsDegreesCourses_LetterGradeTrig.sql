@@ -1,4 +1,4 @@
-CREATE TRIGGER trg_ConvertToLetterGrade
+CREATE TRIGGER atbl_University_StudentsDegreesCourses_LetterGradeTrig
 ON atbl_University_StudentsDegreesCourses
 AFTER INSERT
 AS
@@ -9,7 +9,7 @@ BEGIN
 	UPDATE atbl_University_StudentsDegreesCourses 
 	SET LetterGrade = CASE
 	WHEN @NumericalGrade >= 95 THEN 'A' 
-	WHEN @NumericalGrade <= 90 AND @NumericalGrade >= 85 THEN 'A-'
+	WHEN @NumericalGrade <= 94 AND @NumericalGrade >= 85 THEN 'A-'
 	WHEN @NumericalGrade <= 84 AND @NumericalGrade >= 80 THEN 'B'
 	WHEN @NumericalGrade <= 79 AND @NumericalGrade >= 75 THEN 'B-'
 	WHEN @NumericalGrade <= 74 AND @NumericalGrade >= 70 THEN 'C'

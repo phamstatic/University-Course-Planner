@@ -1,4 +1,4 @@
-CREATE TRIGGER trg_MoreThanThreeAttempts
+CREATE TRIGGER atbl_University_StudentsDegreesCourses_ThreeAttemptsTrig
 ON atbl_University_StudentsDegreesCourses
 AFTER INSERT
 AS
