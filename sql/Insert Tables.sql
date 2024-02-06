@@ -8,10 +8,10 @@ DROP TABLE IF EXISTS atbl_University_StudentsDegreesCourses;
 DROP TABLE IF EXISTS atbl_University_Students;
 
 CREATE TABLE atbl_University_Degrees (
-	DegreeName NVARCHAR(256) NOT NULL
+	DegreeId NVARCHAR(256) NOT NULL
 );
 
-ALTER TABLE atbl_University_Degrees ADD CONSTRAINT PK_atbl_University_Degrees_DegreeName PRIMARY KEY (DegreeName);
+ALTER TABLE atbl_University_Degrees ADD CONSTRAINT PK_atbl_University_Degrees_DegreeName PRIMARY KEY (DegreeId);
 
 CREATE TABLE atbl_University_Courses (
 	CourseId NVARCHAR(8) NOT NULL, 
@@ -23,11 +23,11 @@ CREATE TABLE atbl_University_Courses (
 ALTER TABLE atbl_University_Courses ADD CONSTRAINT PK_atbl_University_Courses_CourseId PRIMARY KEY (CourseId);
 
 CREATE TABLE atbl_University_DegreesCourses (
-	DegreeName NVARCHAR(256) NOT NULL,
+	DegreeId NVARCHAR(256) NOT NULL,
 	CourseId NVARCHAR(8) NOT NULL
 );
 
-ALTER TABLE atbl_University_DegreesCourses ADD CONSTRAINT FK_atbl_University_DegreesCourses_DegreeName FOREIGN KEY (DegreeName) REFERENCES atbl_University_Degrees (DegreeName);
+ALTER TABLE atbl_University_DegreesCourses ADD CONSTRAINT FK_atbl_University_DegreesCourses_DegreeId FOREIGN KEY (DegreeId) REFERENCES atbl_University_Degrees (DegreeId);
 ALTER TABLE atbl_University_DegreesCourses ADD CONSTRAINT FK_atbl_University_DegreesCourses_CourseId FOREIGN KEY (CourseId) REFERENCES atbl_University_Courses (CourseId);
 
 CREATE TABLE atbl_University_Students (
@@ -55,13 +55,16 @@ ALTER TABLE atbl_University_StudentsContacts ADD CONSTRAINT FK_atbl_University_S
 
 CREATE TABLE atbl_University_StudentsDegrees (
 	StudentId INT,
-	DegreeName NVARCHAR(256) NOT NULL,
+	DegreeId NVARCHAR(256) NOT NULL,
 	DegreeType NVARCHAR(25) NOT NULL CHECK (DegreeType IN ('Major', 'Minor'))
 );
 
 ALTER TABLE atbl_University_StudentsDegrees ADD CONSTRAINT FK_atbl_University_Degrees_StudentId FOREIGN KEY (StudentId) REFERENCES atbl_University_Students (StudentId);
 
+ALTER TABLE atbl_University_StudentsDegrees ADD CONSTRAINT FK_atbl_University_Degrees_DegreeId FOREIGN KEY (DegreeId) REFERENCES atbl_University_Degrees (DegreeId);
+
 CREATE TABLE atbl_University_StudentsDegreesCourses (
+	DegreeId NVARCHAR(256) NOT NULL,
 	StudentId INT NOT NULL,
 	CourseId NVARCHAR(8) NOT NULL,
 	EnrollmentDate DATE DEFAULT '2024-01-01',
@@ -78,6 +81,7 @@ CREATE TABLE atbl_University_StudentsDegreesCourses (
 	CONSTRAINT CannotTakeTheSameClassInASemester UNIQUE (StudentId, CourseId, Semester)
 );
 
+ALTER TABLE atbl_University_StudentsDegreesCourses ADD CONSTRAINT FK_atbl_University_StudentsDegreesCourses_DegreeId FOREIGN KEY (DegreeId) REFERENCES atbl_University_Degrees (DegreeId);
 ALTER TABLE atbl_University_StudentsDegreesCourses ADD CONSTRAINT FK_University_Students_DegreesCourses_StudentId FOREIGN KEY (StudentId) REFERENCES atbl_University_Students (StudentId);
 ALTER TABLE atbl_University_StudentsDegreesCourses ADD CONSTRAINT FK_University_Students_DegreesCourses_CourseId FOREIGN KEY (CourseId) REFERENCES atbl_University_Courses (CourseId);
 -------------------------

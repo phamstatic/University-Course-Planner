@@ -1,10 +1,10 @@
 --------------------- Adding Degrees
-INSERT INTO atbl_University_Degrees (DegreeName) SELECT 'Computer Science';
-INSERT INTO atbl_University_Degrees (DegreeName) SELECT 'Computer Engineering';
-INSERT INTO atbl_University_Degrees (DegreeName) SELECT 'Computer Information Systems';
-INSERT INTO atbl_University_Degrees (DegreeName) SELECT 'Digital Media';
-INSERT INTO atbl_University_Degrees (DegreeName) SELECT 'Mathematics';
-INSERT INTO atbl_University_Degrees (DegreeName) SELECT 'Management Information Systems';
+INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Computer Science';
+INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Computer Engineering';
+INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Computer Information Systems';
+INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Digital Media';
+INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Mathematics';
+INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Management Information Systems';
 
 --------------------- Adding Courses
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
