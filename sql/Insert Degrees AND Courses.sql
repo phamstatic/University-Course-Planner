@@ -1,27 +1,9 @@
 --------------------- Adding Degrees
 INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Computer Science';
-INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Computer Engineering';
-INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Computer Information Systems';
 INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Digital Media';
 INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Mathematics';
-INSERT INTO atbl_University_Degrees (DegreeId) SELECT 'Management Information Systems';
 
 --------------------- Adding Courses
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('CIS1300', 'Problem Solving Using Computers', 3, 'Introduction to programming for business related applications. Emphasis on approaches to problem solving using computer programming. Hardware, software, number systems, basic computer organization, and structured programming.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('CIS2332', 'Information Technology Hardware and Systems Software', 3, 'A conceptual and technological survey of the structure of distributed information systems architectures, operating systems, network operating systems, data management systems, application development environments, peripheral technology, and user interfaces.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('CIS2334', 'Information Systems Applications', 3, 'Concepts and production skills relating to information systems technologies, procedures, and resources.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('CIS2336', 'Internet Application Development', 3, 'Internet and World Wide Web Technologies. Development and maintenance of Web sites and Web Applications.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('CIS3320', 'Information Visualization', 3, '');
-
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
 VALUES ('CHEM1331', 'Fundamentals of Chemistry', 3, '');
 
@@ -78,15 +60,6 @@ INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, Course
 VALUES ('DIGM1300', 'Introduction to Digital Media', 3, '');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('ECE2201', 'Circuit Analysis I', 2, 'Analysis of resistive circuits, including node voltage and mesh current methods, and Thevenin and Norton equivalent circuits.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('ECE3331', 'Programming Applications in Electical and Computer Engineering', 3, 'Procedural programming in C and C++, with applications in electrical and computer engineering.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('ECE3364', 'Circuits and Systems', 3, 'Three-phase circuits, self inductance, mutual inductance single-phase transformers, three-phase transformers, Laplace transform circuit analysis, analysis and design of frequency-selective circuits, control system characteristics and stability.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
 VALUES ('ENGL1301', 'First Year Writing I', 3, '');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
@@ -127,12 +100,3 @@ VALUES ('MATH2413', 'Calculus I', 4, 'Calculus of rational functions, limits, de
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
 VALUES ('MATH2414', 'Calculus II', 4, 'Calculus of transcendental functions: additional techniques and applications of integration, indeterminate forms, improper integrals, Taylor’s formula, and infinite series.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('MIS3360', 'Systems Analysis and Design', 3, 'Methods for analyzing information needs and designing, evaluating, and implementing computer-based information systems. Structures and adaptive techniques for analysis and design.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('MIS3370', 'Information Systems Development Tools', 3, 'Survey of development options in commercial application systems, including structured methods and programming tools.');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('MIS4374', 'Information Technology Project Management', 3, 'Management of information technology projects.');
