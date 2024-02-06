@@ -12,7 +12,6 @@ BEGIN
     SELECT @StudentId = StudentId, @DegreeId = DegreeId, @CourseId = CourseId
     FROM inserted;
 
-    -- Check if the student is in the degree
     IF NOT EXISTS (
         SELECT 1
         FROM atbl_University_StudentsDegrees sd
@@ -25,7 +24,6 @@ BEGIN
         RETURN;
     END;
 
-    -- Check if the course is in the degree plan
     IF NOT EXISTS (
         SELECT 1
         FROM atbl_University_DegreesCourses dc
