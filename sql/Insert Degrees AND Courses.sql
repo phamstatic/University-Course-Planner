@@ -11,6 +11,9 @@ INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, Course
 VALUES ('CHEM2133', 'Inorganic Chemistry Laboratory I', 1, '');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
+VALUES ('CIS3320', 'Data Visualization & Analysis', 3, '');
+
+INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
 VALUES ('COSC1336', 'Computer Science Programming', 3, 'Introduction to problem solving through computer programming. Students will learn the fundamental principles of computer science, basic hardware and software components of a computer system, computational thinking, basic algorithms, and programming concepts. Students will get hands-on experience in problem solving by designing, writing, testing and debugging programs in a modern programming language.');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)

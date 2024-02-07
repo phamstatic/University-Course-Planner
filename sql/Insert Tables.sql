@@ -75,7 +75,7 @@ CREATE TABLE atbl_University_StudentsDegreesCourses (
         CASE
             WHEN MONTH(EnrollmentDate) BETWEEN 8 AND 12 THEN 'Fall ' + CAST(YEAR(EnrollmentDate) AS NVARCHAR(4))
             WHEN MONTH(EnrollmentDate) BETWEEN 1 AND 4 THEN 'Spring ' + CAST(YEAR(EnrollmentDate) AS NVARCHAR(4))
-            ELSE 'Summer ' + CAST(YEAR(EnrollmentDate) AS NVARCHAR(4))
+            ELSE NULL
         END
     ) PERSISTED,
 	CONSTRAINT CannotTakeTheSameClassInASemester UNIQUE (StudentId, CourseId, Semester)

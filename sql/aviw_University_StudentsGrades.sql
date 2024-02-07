@@ -21,7 +21,18 @@ SELECT
         WHEN SUM(Student.NumericalGrade * Course.CourseCredits) / SUM(Course.CourseCredits) >= 67 AND SUM(Student.NumericalGrade * Course.CourseCredits) / SUM(Course.CourseCredits) <= 68 THEN 1.6
         WHEN SUM(Student.NumericalGrade * Course.CourseCredits) / SUM(Course.CourseCredits) >= 65 AND SUM(Student.NumericalGrade * Course.CourseCredits) / SUM(Course.CourseCredits) <= 66 THEN 1.2
         ELSE 1.0
-    END AS GPA
+    END AS GPA,
+	(
+	SELECT
+		CASE
+			WHEN EnrollmentStatus = 'FT'
+			THEN 
+			(120 - SUM(Course.CourseCredits))
+			ELSE (120 - SUM(Course.CourseCredits))
+		END
+	FROM atbl_University_Students 
+	WHERE StudentId = Student.StudentId
+	) AS ExpectedGraduation
 FROM 
     atbl_University_StudentsDegreesCourses Student
 JOIN 

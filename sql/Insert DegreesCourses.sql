@@ -41,6 +41,8 @@ INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Computer Science', 'MATH2414');
 -- Digital Media
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
+VALUES('Digital Media', 'CIS3320');
+INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'DIGM1300');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'DIGM1350');
