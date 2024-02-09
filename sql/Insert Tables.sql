@@ -82,7 +82,9 @@ CREATE TABLE atbl_University_StudentsDegreesCourses (
 );
 
 ALTER TABLE atbl_University_StudentsDegreesCourses ADD CONSTRAINT FK_atbl_University_StudentsDegreesCourses_DegreeId FOREIGN KEY (DegreeId) REFERENCES atbl_University_Degrees (DegreeId);
+
 ALTER TABLE atbl_University_StudentsDegreesCourses ADD CONSTRAINT FK_University_Students_DegreesCourses_StudentId FOREIGN KEY (StudentId) REFERENCES atbl_University_Students (StudentId);
+
 ALTER TABLE atbl_University_StudentsDegreesCourses ADD CONSTRAINT FK_University_Students_DegreesCourses_CourseId FOREIGN KEY (CourseId) REFERENCES atbl_University_Courses (CourseId);
 -------------------------
 SELECT * FROM atbl_University_Students;
