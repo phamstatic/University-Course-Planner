@@ -70,6 +70,7 @@ CREATE TABLE atbl_University_StudentsExamsAnswers (
 	Semester NVARCHAR(14) NOT NULL,
 	ExamId INT NOT NULL,
 	QuestionId INT NOT NULL,
+	QuestionOrder INT,
 	AnswerId INT
 );
 
@@ -88,7 +89,9 @@ VALUES ('COSC1336', 1, 'Python Introduction Quiz')
 
 INSERT INTO atbl_University_ExamsQuestions (ExamId, Question) VALUES
 (1, 'How do you print "Hello World!" in Python?'),
-(1, 'Does Python require a semicolon to end a statement?')
+(1, 'Does Python require a semicolon to end a statement?'),
+(1, 'What file type is a Python script?'),
+(1, 'What is the correct way to create a function in Python?')
 
 INSERT INTO atbl_University_ExamsQuestionsAnswers (QuestionId, Correct, Answer) VALUES 
 (1, 0, 'console.log("Hello World!")'),
@@ -96,8 +99,17 @@ INSERT INTO atbl_University_ExamsQuestionsAnswers (QuestionId, Correct, Answer) 
 (1, 0, 'System.out.println("Hello World!");'),
 (1, 1, 'print("Hello World!")'),
 (2, 0, 'Yes'),
-(2, 1, 'No')
+(2, 1, 'No'),
+(3, 0, '.cpp'),
+(3, 0, '.js'),
+(3, 0, '.html'),
+(3, 1, '.py'),
+(4, 0, 'function()'),
+(4, 0, 'create function()'),
+(4, 1, 'def function()'),
+(4, 0, 'const function()')
 
+SELECT * FROM atbl_University_Students;
 SELECT * FROM atbl_University_StudentsExams;
 SELECT * FROM atbl_University_StudentsExamsAnswers;
 SELECT * FROM atbl_University_Exams;
@@ -113,3 +125,56 @@ ORDER BY e.ExamId, eq.QuestionId, ea.AnswerId;
 
 SELECT * FROM atbl_University_StudentsDegreesCourses
 */
+
+EXEC StudentExam
+@StudentId = 20000,
+@DegreeId = 'Computer Science',
+@Semester = 'Spring 2024',
+@CourseId = 'COSC1336',
+@ExamId = 1
+
+EXEC StudentExam
+@StudentId = 20000,
+@DegreeId = 'Computer Science',
+@Semester = 'Fall 2024',
+@CourseId = 'COSC1336',
+@ExamId = 1
+
+EXEC StudentExamGrade
+@StudentId = 20000,
+@Semester ='Spring 2024',
+@CourseId = 'COSC1336',
+@ExamId = 1
+
+EXEC StudentExamGrade
+@StudentId = 20000,
+@Semester ='Spring 2024',
+@CourseId = 'COSC1336',
+@ExamId = 1
+
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 1
+WHERE StudentId = 20000 AND Semester = 'Spring 2024' AND ExamId = 1 AND QuestionOrder = 1;
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 6
+WHERE StudentId = 20000 AND Semester = 'Spring 2024' AND ExamId = 1 AND QuestionOrder = 2;
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 13
+WHERE StudentId = 20000 AND Semester = 'Spring 2024' AND ExamId = 1 AND QuestionOrder = 3;
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 10
+WHERE StudentId = 20000 AND Semester = 'Spring 2024' AND ExamId = 1 AND QuestionOrder = 4;
+
+
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 3
+WHERE StudentId = 20000 AND Semester = 'Fall 2024' AND ExamId = 1 AND QuestionOrder = 1;
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 5
+WHERE StudentId = 20000 AND Semester = 'Fall 2024' AND ExamId = 1 AND QuestionOrder = 2;
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 10
+WHERE StudentId = 20000 AND Semester = 'Fall 2024' AND ExamId = 1 AND QuestionOrder = 3;
+UPDATE atbl_University_StudentsExamsAnswers SET AnswerId = 14
+WHERE StudentId = 20000 AND Semester = 'Fall 2024' AND ExamId = 1 AND QuestionOrder = 4;
+
+
+SELECT * FROM atbl_University_StudentsExamsAnswers
+
+SELECT * FROM atbl_University_ExamsQuestions
+WHERE ExamId = 1
+
+SELECT * FROM atbl_University_ExamsQuestionsAnswers
