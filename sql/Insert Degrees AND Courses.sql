@@ -17,7 +17,7 @@ INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, Course
 VALUES ('COSC1336', 'Computer Science Programming', 3, 'Introduction to problem solving through computer programming. Students will learn the fundamental principles of computer science, basic hardware and software components of a computer system, computational thinking, basic algorithms, and programming concepts. Students will get hands-on experience in problem solving by designing, writing, testing and debugging programs in a modern programming language.');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('COSC1437', 'Introduction to Programming', 3,
+VALUES ('COSC1437', 'Introduction to Programming', 4,
 'Fundamental concepts of structured programming; procedures and elementary data structures with a focus on problem solving strategies and implementation; computer organization, structured procedural programming, C/C++ programming language, and algorithm design.');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
@@ -55,9 +55,6 @@ VALUES ('DIGM2352', 'Digital Photography', 3, '');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
 VALUES ('DIGM2353', 'Page Layout and Design', 3, '');
-
-INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
-VALUES ('DIGM1300', 'Introduction to Digital Media', 3, '');
 
 INSERT INTO atbl_University_Courses (CourseId, CourseName, CourseCredits, CourseDescription)
 VALUES ('DIGM1300', 'Introduction to Digital Media', 3, '');
@@ -125,6 +122,8 @@ VALUES('Computer Science', 'ENGL1301');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Computer Science', 'ENGL1302');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
+VALUES('Computer Science', 'ENGL2340');
+INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Computer Science', 'CHEM1331');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Computer Science', 'CHEM2133');
@@ -142,6 +141,10 @@ INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Computer Science', 'HIST1301');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Computer Science', 'HIST1302');
+INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
+VALUES('Computer Science', 'MATH1311');
+INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
+VALUES('Computer Science', 'MATH1313');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Computer Science', 'MATH2413');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
@@ -168,6 +171,8 @@ VALUES('Digital Media', 'ENGL1301');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'ENGL1302');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
+VALUES('Digital Media', 'ENGL2340');
+INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'CHEM1331');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'CHEM2133');
@@ -185,6 +190,10 @@ INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'HIST1301');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'HIST1302');
+INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
+VALUES('Digital Media', 'MATH1311');
+INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
+VALUES('Digital Media', 'MATH1313');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)
 VALUES('Digital Media', 'MATH2413');
 INSERT INTO atbl_University_DegreesCourses (DegreeId, CourseId)

@@ -1,8 +1,10 @@
-CREATE PROCEDURE StudentExamGrade
+CREATE FUNCTION CalculateGrade (
     @StudentId INT,
-	@Semester NVARCHAR(14),
+    @Semester NVARCHAR(14),
     @CourseId NVARCHAR(8),
     @ExamId INT
+)
+RETURNS DECIMAL(5, 2)
 AS
 BEGIN
     DECLARE @TotalQuestions INT;
@@ -21,7 +23,6 @@ BEGIN
     ELSE
         SET @Score = 0;
 
-    UPDATE atbl_University_StudentsExams
-    SET Score = @Score
-    WHERE StudentId = @StudentId AND CourseId = @CourseId AND ExamId = @ExamId AND Semester = @Semester;
+    RETURN @Score;
 END;
+GO

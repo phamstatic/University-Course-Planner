@@ -30,8 +30,7 @@ INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseI
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'CHEM2133', '2021-09-01', '65');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'CHEM2133', '2022-01-01', '70');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'CHEM2133', '2022-09-01', '80');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'CIS3320', '2022-01-01', '75');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, DropDate, NumericalGrade) VALUES ('Digital Media', '10010', 'CIS3320', '2020-09-01', '2022-09-30', '50');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, DropDate, NumericalGrade) VALUES ('Digital Media', '10010', 'CIS3320', '2020-09-01', '2022-09-01', '50');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'CIS3320', '2022-01-01', '98');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'COSC1336', '2020-09-01', '98');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'COSC1437', '2021-01-01', '97');
@@ -39,24 +38,25 @@ INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseI
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'COSC2436', '2021-09-01', '87');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'COSC3336', '2022-01-01', '78');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'COSC3360', '2022-01-01', '87');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM1300', '2020-09-01', '80');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'DIGM1300', '2020-09-01', '95');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM1350', '2021-01-01', '77');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'DIGM1350', '2021-01-01', '90');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM1376', '2021-01-01', '82');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'DIGM1376', '2021-01-01', '93');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'ENGL1301', '2020-09-01', '95');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'ENGL1302', '2021-01-01', '95');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'ENGL2340', '2022-01-01', '80');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'GEOL1102', '2022-01-01', '85');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'GEOL1302', '2022-01-01', '85');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'CIS3320', '2022-01-01', '75');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM1300', '2020-09-01', '80');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM1350', '2021-01-01', '77');
+INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM1376', '2021-01-01', '82');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM2325', '2022-01-01', '93');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM2351', '2022-09-01', '88');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM2352', '2022-01-01', '86');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'DIGM2353', '2021-09-01', '87');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'ENGL1301', '2020-09-01', '88');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'ENGL1301', '2020-09-01', '95');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'ENGL1302', '2021-01-01', '87');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10010', 'ENGL1302', '2021-01-01', '95');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'ENGL2340', '2022-09-01', '78');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'ENGL2340', '2022-01-01', '80');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'GEOL1102', '2022-01-01', '85');
-INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Computer Science', '10010', 'GEOL1302', '2022-01-01', '85');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'GOVT2305', '2022-09-01', '90');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'GOVT2306', '2021-09-01', '93');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'HDCS1300', '2022-01-01', '95');
@@ -64,3 +64,4 @@ INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseI
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'HIST1302', '2021-09-01', '87');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'MATH1311', '2020-09-01', '88');
 INSERT INTO atbl_University_StudentsDegreesCourses (DegreeId, StudentId, CourseId, EnrollmentDate, NumericalGrade) VALUES ('Digital Media', '10011', 'MATH1313', '2021-01-01', '83');
+-- 75 + 80 + 77 + 82 + 93 + 88 + 86 + 87+ 88+87+78+90+93+95+97+87+88+83 )/ 18
