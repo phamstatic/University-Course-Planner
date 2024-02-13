@@ -14,9 +14,12 @@ BEGIN
     SET @TotalQuestions = (SELECT COUNT(*) FROM atbl_University_ExamsQuestions WHERE ExamId = @ExamId);
 
     SELECT @CorrectAnswers = COUNT(*)
-    FROM atbl_University_StudentsExamsQuestions sea
-    JOIN atbl_University_ExamsQuestionsAnswers eqa ON sea.QuestionId = eqa.QuestionId AND sea.AnswerId = eqa.AnswerId
-    WHERE sea.StudentId = @StudentId AND sea.ExamId = @ExamId AND eqa.Correct = 1 AND Semester = @Semester;
+	FROM atbl_University_StudentsExamsQuestions eq
+	JOIN atbl_University_StudentsExamsQuestionsAnswers seqa ON eq.QuestionId = seqa.QuestionId
+	AND eq.ChosenAnswer = seqa.AnswerOrder 
+	AND eq.Semester = seqa.Semester
+	JOIN atbl_University_ExamsQuestionsAnswers eqa ON seqa.AnswerId = eqa.AnswerId
+	WHERE eqa.Correct = 1 AND eq.Semester = @Semester
 
     IF @TotalQuestions > 0
         SET @Score = CAST((@CorrectAnswers * 100.0) / @TotalQuestions AS DECIMAL(5, 2));
@@ -25,4 +28,3 @@ BEGIN
 
     RETURN @Score;
 END;
-GO

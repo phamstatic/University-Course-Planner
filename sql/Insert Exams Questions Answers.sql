@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS atbl_University_Exams;
 DROP TABLE IF EXISTS atbl_University_ExamsQuestionsAnswers;
 DROP TABLE IF EXISTS atbl_University_ExamsQuestions;
-DROP TABLE IF EXISTS atbl_University_ExamsQuestionsAnswers;
-DROP TABLE IF EXISTS atbl_University_StudentsExams;
+DROP TABLE IF EXISTS atbl_University_Exams;
+DROP TABLE IF EXISTS atbl_University_StudentsExamsQuestionsAnswers;
 DROP TABLE IF EXISTS atbl_University_StudentsExamsQuestions;
+DROP TABLE IF EXISTS atbl_University_StudentsExams;
 
 CREATE TABLE atbl_University_Exams (
 	ExamId INT IDENTITY (1, 1),
@@ -71,7 +71,8 @@ CREATE TABLE atbl_University_StudentsExamsQuestions (
 	ExamId INT NOT NULL,
 	QuestionId INT NOT NULL,
 	QuestionOrder INT,
-	AnswerId INT
+	AnswerId INT,
+	ChosenAnswer INT
 );
 
 ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestions_ExamId FOREIGN KEY (ExamId) REFERENCES atbl_University_Exams (ExamId);
@@ -81,6 +82,23 @@ ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_Univer
 ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestions_QuestionId FOREIGN KEY (QuestionId) REFERENCES atbl_University_ExamsQuestions (QuestionId);
 
 ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestions_AnswerId FOREIGN KEY (AnswerId) REFERENCES atbl_University_ExamsQuestionsAnswers (AnswerId);
+
+CREATE TABLE atbl_University_StudentsExamsQuestionsAnswers (
+	StudentId INT NOT NULL,
+	Semester NVARCHAR(14) NOT NULL,
+	ExamId INT NOT NULL,
+	QuestionId INT NOT NULL,
+	AnswerId INT,
+	AnswerOrder INT,
+);
+
+ALTER TABLE atbl_University_StudentsExamsQuestionsAnswers ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestionsAnswers_StudentId FOREIGN KEY (StudentId) REFERENCES atbl_University_Students (StudentId);
+
+ALTER TABLE atbl_University_StudentsExamsQuestionsAnswers ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestionsAnswers_ExamId FOREIGN KEY (ExamId) REFERENCES atbl_University_Exams (ExamId);
+
+ALTER TABLE atbl_University_StudentsExamsQuestionsAnswers ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestionsAnswers_QuestionId FOREIGN KEY (QuestionId) REFERENCES atbl_University_ExamsQuestions (QuestionId);
+
+ALTER TABLE atbl_University_StudentsExamsQuestionsAnswers ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestionsAnswers_AnswerId FOREIGN KEY (AnswerId) REFERENCES atbl_University_ExamsQuestionsAnswers (AnswerId);
 
 ---------
 
@@ -108,3 +126,12 @@ INSERT INTO atbl_University_ExamsQuestionsAnswers (QuestionId, Correct, Answer) 
 (4, 0, 'create function()'),
 (4, 1, 'def function()'),
 (4, 0, 'const function()')
+
+
+SELECT * FROM atbl_University_Exams
+SELECT * FROM atbl_University_ExamsQuestions
+SELECT * FROM atbl_University_ExamsQuestionsAnswers
+
+SELECT * FROM atbl_University_StudentsExams
+SELECT * FROM atbl_University_StudentsExamsQuestions
+SELECT * FROM atbl_University_StudentsExamsQuestionsAnswers
