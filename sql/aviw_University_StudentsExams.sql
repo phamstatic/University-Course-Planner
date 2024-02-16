@@ -25,5 +25,3 @@ GROUP BY
 	seqa.AnswerId,
 	seqa.AnswerOrder,
 	eqa.Correct
---ORDER BY 
---	seq.QuestionOrder
