@@ -1,5 +1,5 @@
-CREATE TRIGGER atbl_University_StudentsExamsAnswers_AddUpdateTrig
-ON atbl_University_StudentsExamsAnswers
+CREATE TRIGGER atbl_University_StudentsExamsQuestions_AddUpdateTrig
+ON atbl_University_StudentsExamsQuestions
 AFTER INSERT, UPDATE
 AS
 BEGIN
