@@ -32,8 +32,8 @@ BEGIN
     INSERT INTO atbl_University_StudentsExams (StudentID, DegreeID, Semester, CourseID, ExamID)
     VALUES (@StudentID, @DegreeID, @Semester, @CourseID, @ExamID);
 
-    INSERT INTO atbl_University_StudentsExamsQuestions (StudentID, Semester, ExamID, QuestionId, AnswerId, QuestionOrder, ChosenAnswer)
-    SELECT @StudentID, @Semester, @ExamID, rq.QuestionId, NULL, ROW_NUMBER() OVER (ORDER BY rq.RandomOrder), NULL
+    INSERT INTO atbl_University_StudentsExamsQuestions (StudentID, Semester, ExamID, QuestionId, QuestionOrder, ChosenAnswer)
+    SELECT @StudentID, @Semester, @ExamID, rq.QuestionId, ROW_NUMBER() OVER (ORDER BY rq.RandomOrder), NULL
     FROM @RandomizedQuestions rq;
 
     INSERT INTO atbl_University_StudentsExamsQuestionsAnswers (StudentId, QuestionId, Semester, ExamId, AnswerId, AnswerOrder)

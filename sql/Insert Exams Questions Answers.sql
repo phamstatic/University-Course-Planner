@@ -71,7 +71,6 @@ CREATE TABLE atbl_University_StudentsExamsQuestions (
 	ExamId INT NOT NULL,
 	QuestionId INT NOT NULL,
 	QuestionOrder INT,
-	AnswerId INT,
 	ChosenAnswer INT
 );
 
@@ -80,8 +79,6 @@ ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_Univer
 ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestions_StudentId FOREIGN KEY (StudentId) REFERENCES atbl_University_Students (StudentId);
 
 ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestions_QuestionId FOREIGN KEY (QuestionId) REFERENCES atbl_University_ExamsQuestions (QuestionId);
-
-ALTER TABLE atbl_University_StudentsExamsQuestions ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestions_AnswerId FOREIGN KEY (AnswerId) REFERENCES atbl_University_ExamsQuestionsAnswers (AnswerId);
 
 CREATE TABLE atbl_University_StudentsExamsQuestionsAnswers (
 	StudentId INT NOT NULL,
