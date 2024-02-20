@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS atbl_University_Exams;
 DROP TABLE IF EXISTS atbl_University_StudentsExamsQuestionsAnswers;
 DROP TABLE IF EXISTS atbl_University_StudentsExamsQuestions;
 DROP TABLE IF EXISTS atbl_University_StudentsExams;
-
+-- (Q1 + Q2 + Q3 + 2xMidTerm + 3xFinal) / 8
 CREATE TABLE atbl_University_Exams (
 	ExamId INT IDENTITY (1, 1),
 	CourseId NVARCHAR(8) NOT NULL,
@@ -53,8 +53,7 @@ CREATE TABLE atbl_University_StudentsExams (
 	DegreeId NVARCHAR(256) NOT NULL,
 	CourseId NVARCHAR(8) NOT NULL,
 	Semester NVARCHAR(14) NOT NULL,
-	ExamId INT NOT NULL,
-	Score DECIMAL(5, 2),
+	ExamId INT NOT NULL
 );
 
 ALTER TABLE atbl_University_StudentsExams ADD CONSTRAINT FK_atbl_University_StudentsExams_StudentId FOREIGN KEY (StudentId) REFERENCES atbl_University_Students (StudentId);
@@ -98,15 +97,28 @@ ALTER TABLE atbl_University_StudentsExamsQuestionsAnswers ADD CONSTRAINT FK_atbl
 ALTER TABLE atbl_University_StudentsExamsQuestionsAnswers ADD CONSTRAINT FK_atbl_University_StudentsExamsQuestionsAnswers_AnswerId FOREIGN KEY (AnswerId) REFERENCES atbl_University_ExamsQuestionsAnswers (AnswerId);
 
 ---------
-
-INSERT INTO atbl_University_Exams (CourseId, GradeWeight, ExamDescription)
-VALUES ('COSC1336', 1, 'Python Introduction Quiz')
+INSERT INTO atbl_University_Exams (CourseId, GradeWeight, ExamDescription) VALUES 
+('COSC1336', 1, 'Python Introduction Quiz'),
+('COSC1336', 1, 'Languages Quiz'),
+('COSC1336', 1, 'Free Quiz'),
+('COSC1336', 2, 'Programming Midterm'),
+('COSC1336', 3, 'Programming Final')
 
 INSERT INTO atbl_University_ExamsQuestions (ExamId, Question) VALUES
 (1, 'How do you print "Hello World!" in Python?'),
 (1, 'Does Python require a semicolon to end a statement?'),
 (1, 'What file type is a Python script?'),
-(1, 'What is the correct way to create a function in Python?')
+(1, 'What is the correct way to create a function in Python?'),
+(2, 'C++ is a programming language'),
+(2, 'Python is a programming language'),
+(2, 'JavaScript is a programming language'),
+(2, 'English is a programming language'),
+(3, 'Answer true to get a 100 on this quiz!'),
+(4, 'How do you print "Hello World!" in Python?'),
+(4, 'Does Python require a semicolon to end a statement?'),
+(4, 'What file type is a Python script?'),
+(4, 'What is the correct way to create a function in Python?'),
+(5, 'Answer true to get a 100 on this quiz!')
 
 INSERT INTO atbl_University_ExamsQuestionsAnswers (QuestionId, Correct, Answer) VALUES 
 (1, 0, 'console.log("Hello World!")'),
@@ -122,8 +134,36 @@ INSERT INTO atbl_University_ExamsQuestionsAnswers (QuestionId, Correct, Answer) 
 (4, 0, 'function()'),
 (4, 0, 'create function()'),
 (4, 1, 'def function()'),
-(4, 0, 'const function()')
+(4, 0, 'const function()'),
+(5, 1, 'True'),
+(5, 0, 'False'),
+(6, 1, 'True'),
+(6, 0, 'False'),
+(7, 1, 'True'),
+(7, 0, 'False'),
+(8, 0, 'True'),
+(8, 1, 'False'),
+(9, 1, 'True'),
+(9, 0, 'False'),
+(10, 0, 'console.log("Hello World!")'),
+(10, 0, 'std::cout << "Hello World!" << std::endl;'),
+(10, 0, 'System.out.println("Hello World!");'),
+(10, 1, 'print("Hello World!")'),
+(11, 0, 'Yes'),
+(11, 1, 'No'),
+(12, 0, '.cpp'),
+(12, 0, '.js'),
+(12, 0, '.html'),
+(12, 1, '.py'),
+(13, 0, 'function()'),
+(13, 0, 'create function()'),
+(13, 1, 'def function()'),
+(13, 0, 'const function()'),
+(14, 1, 'True'),
+(14, 0, 'False')
 
+
+SELECT * FROM atbl_University_ExamsQuestions
 
 SELECT * FROM atbl_University_Exams
 SELECT * FROM atbl_University_ExamsQuestions
