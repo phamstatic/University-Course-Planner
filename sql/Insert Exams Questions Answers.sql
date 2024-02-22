@@ -54,6 +54,7 @@ CREATE TABLE atbl_University_StudentsExams (
 	CourseId NVARCHAR(8) NOT NULL,
 	Semester NVARCHAR(14) NOT NULL,
 	ExamId INT NOT NULL
+	CONSTRAINT CannotTakeTheSameExamInASemester UNIQUE (StudentId, DegreeId, CourseId, Semester, ExamId)
 );
 
 ALTER TABLE atbl_University_StudentsExams ADD CONSTRAINT FK_atbl_University_StudentsExams_StudentId FOREIGN KEY (StudentId) REFERENCES atbl_University_Students (StudentId);
